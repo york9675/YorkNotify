@@ -66,6 +66,12 @@ git clone https://github.com/york9675/YorkNotify.git
 
 - **Build Errors**: If you encounter build errors, check the build output in Xcode for clues on missing files, configurations, or dependencies.
 
+## Bug report / Feedback
+
+If you encounter any problems during use or have feedback, please fill out **[this form](https://forms.gle/o1hFjy4q98Ua1H7L7)** to report.
+
+Alternatively, you can report back by creating issues.
+
 ## Contribution
 
 Feel free to contribute to this project by creating issues, submitting pull requests, or improving documentation.
