@@ -4,6 +4,22 @@
 
 An iOS app that can schedule notifications.
 
+# Table of Contents
+
+- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Steps to Import and Run the Project in Xcode](#steps-to-import-and-run-the-project-in-xcode)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Open the Project in Xcode](#2-open-the-project-in-xcode)
+  - [3. Set Up Signing & Capabilities](#3-set-up-signing--capabilities)
+  - [4. Choose Your Target Device](#4-choose-your-target-device)
+  - [5. Build and Run the App](#5-build-and-run-the-app)
+- [Troubleshooting](#troubleshooting)
+- [Bug report / Feedback](#bug-report--feedback)
+- [Contribution](#contribution)
+- [License](#license)
+- [Support](#support)
+
 # installation
 
 This guide will help you import this project into Xcode and run it on your iPhone or iOS simulator.
@@ -61,6 +77,9 @@ git clone https://github.com/york9675/YorkNotify.git
 3. **Trusting the Developer on iPhone (if required)**:  
    If you’re using a free developer account and testing on a physical iPhone, you may need to manually trust the app. Go to:
    - **Settings** > **General** > **VPN & Device Management** > **Your Apple ID** > **Trust**.
+
+4. **Important Note about Code Signing Expiration**:  
+   If you're using a free Apple Developer account, the app's code signing is only valid for 7 days. After that period, the app will no longer launch, and you'll need to reinstall it by re-running the project in Xcode.
 
 ## Troubleshooting
 
