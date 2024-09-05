@@ -1,6 +1,6 @@
 # YorkNotify
 
-[繁體中文](readme_TW.md)
+[繁體中文](README_TW.md)
 
 An iOS app that can schedule notifications.
 
