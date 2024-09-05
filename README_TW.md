@@ -1,6 +1,6 @@
 # YorkNotify
 
-[English](readme.md)
+[English](README.md)
 
 一個可以排程通知的 iOS 應用程式。
 
