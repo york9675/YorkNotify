@@ -13,7 +13,7 @@ This guide will help you import this project into Xcode and run it on your iPhon
 Before you begin, ensure that you have the following:
 
 - **A Computer** with macOS.
-- **Xcode** installed (requires macOS 13 or higher to support development for iOS 15 and above). You can download Xcode from the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835).
+- **Xcode** installed (requires macOS 13 or higher to support development for iOS 15 and above). You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835).
 - **iPhone/iPad** (physical device or simulator) requires iOS 15 or higher.
 - **Apple Developer Account** (free or paid) for code signing and device testing.
 
