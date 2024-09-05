@@ -4,7 +4,7 @@
 
 An iOS app that can schedule notifications.
 
-# Table of Contents
+## Table of Contents
 
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
