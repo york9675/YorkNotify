@@ -4,9 +4,12 @@
 
 An iOS app that can schedule notifications.
 
+# installation
+
+This guide will help you import this project into Xcode and run it on your iPhone or iOS simulator.
+
 ## Table of Contents
 
-- [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [Steps to Import and Run the Project in Xcode](#steps-to-import-and-run-the-project-in-xcode)
   - [1. Clone the Repository](#1-clone-the-repository)
@@ -19,10 +22,6 @@ An iOS app that can schedule notifications.
 - [Contribution](#contribution)
 - [License](#license)
 - [Support](#support)
-
-# installation
-
-This guide will help you import this project into Xcode and run it on your iPhone or iOS simulator.
 
 ## Prerequisites
 
