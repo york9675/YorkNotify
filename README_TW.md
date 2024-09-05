@@ -1,0 +1,79 @@
+# YorkNotify
+
+[English](readme.md)
+
+一個可以排程通知的 iOS 應用程式。
+
+# 安裝
+
+本指南將幫助您將此專案匯入 Xcode 並將此程式在 iPhone 或 iOS 模擬器上執行。
+
+## 備料
+
+在開始之前，請確保您具備以下條件：
+
+- **一台裝有 macOS 的電腦**。
+- **Xcode** (需要macOS 13 或更高版本以支援iOS 15以上的開發) 您可以從 [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
+- **iPhone/iPad** (實體機或模擬機) 需要 iOS 15 或更高版本。
+- **Apple 開發者帳戶** (免費或付費) 用於程式碼簽署和裝置測試。
+
+## 在 Xcode 中匯入並執行專案的步驟
+
+### 1.複製儲存庫
+
+- 您可以從 GitHub 儲存庫下載 ZIP 檔案形式的項目，並將其解壓縮到您所需的位置。
+
+- 或者，使用 Git 將專案儲存庫複製到本機：
+
+````bash
+git clone https://github.com/york9675/YorkNotify.git
+````
+
+### 2. 在 Xcode 中開啟項目
+
+1. **打開 Xcode**。
+2. **開啟專案**：導覽至複製/下載專案的目錄，然後開啟 `YorkNotify/YorkNotify.xcodeproj`。
+
+### 3. 設定簽名和功能
+
+1. **選擇您的Team**：
+ - 在 Xcode 中，按一下專案導覽器中的項目。
+ - 前往 **Signing & Capabilities**。
+ - 在 **Team** 下拉清單中，選擇您的 Apple ID（如果不存在，請在 Xcode > Preferences > Accounts 新增您的Apple ID）。
+ - 確保勾選 **Automatically manage signing**。
+
+2. **設定檔**：
+ Xcode 將自動為您產生設定文件，讓您在設備上執行該應用程式。
+
+### 4. 選擇您的目標設備
+
+1. 在頂部工具列中，從下拉式選單中選擇您的目標裝置。
+2. 確保您的裝置已透過 USB 或 Wi-Fi 連接，或者如果您沒有可用的實體設備，請選擇模擬器。
+
+### 5. 建置並運行應用程式
+
+1. **建置專案**：
+ 點選 Xcode 左上角的 **Run** 按鈕（播放圖示）。 Xcode 將編譯程式碼並建立應用程式。
+
+2. **執行應用程式**：
+ 建置成功後，Xcode會自動將應用程式安裝到所選裝置或模擬器上。
+
+3. **信任 iPhone 上的開發者（如果需要）**：
+ 如果您使用免費的開發者帳戶並在實體 iPhone 上進行測試，則可能需要手動信任該應用程式。前往：
+ - **設定** > **一般** > **VPN與裝置管理** > **您的 Apple ID** > **信任**。
+
+## 故障排除
+
+- **建置錯誤**：如果遇到建置錯誤，請檢查 Xcode 中的建置輸出，以取得有關遺失檔案、配置或相依性的線索。
+
+## 貢獻
+
+請隨意透過建立問題、提交拉取請求或改進文件來為該專案做出貢獻。
+
+## 許可證
+
+該項目已獲得 MIT 許可證的許可。有關更多詳細信息，請參閱許可證文件。
+
+## 贊助
+
+<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br><br>
