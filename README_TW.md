@@ -13,7 +13,7 @@
 在開始之前，請確保您具備以下條件：
 
 - **一台裝有 macOS 的電腦**。
-- **Xcode** (需要macOS 13 或更高版本以支援iOS 15以上的開發) 您可以從 [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
+- **Xcode** (需要macOS 13 或更高版本以支援iOS 15以上的開發) 您可以從 [App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
 - **iPhone/iPad** (實體機或模擬機) 需要 iOS 15 或更高版本。
 - **Apple 開發者帳戶** (免費或付費) 用於程式碼簽署和裝置測試。
 
