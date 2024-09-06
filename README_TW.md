@@ -92,7 +92,7 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ## 貢獻
 
-請隨意透過建立問題、提交拉取請求或改進文件來為該專案做出貢獻。
+請透過建立Issues、提交Pull Request或改進檔案來為該專案做出貢獻。
 
 ## 許可證
 
