@@ -1,8 +1,17 @@
-# YorkNotify
+![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=An%20iOS%20app%20that%20can%20schedule%20notifications.&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
-[繁體中文](README_TW.md)
+<p align="center">
+  <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.3-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-An iOS app that can schedule notifications.
+<p align="center"> 
+  <a href="README.md">English</a> 
+  ·
+  <a href="README_TW.md">繁體中文</a> 
+</p>
 
 # installation
 
@@ -77,8 +86,8 @@ git clone https://github.com/york9675/YorkNotify.git
    If you’re using a free developer account and testing on a physical iPhone, you may need to manually trust the app. Go to:
    - **Settings** > **General** > **VPN & Device Management** > **Your Apple ID** > **Trust**.
 
-4. **Important Note about Code Signing Expiration**:  
-   If you're using a free Apple Developer account, the app's code signing is only valid for 7 days. After that period, the app will no longer launch, and you'll need to reinstall it by re-running the project in Xcode.
+> [!WARNING]\
+> If you're using a free Apple Developer account, the app's code signing is only valid for 7 days. After that period, the app will no longer launch, and you'll need to reinstall it by re-running the project in Xcode.
 
 ## Troubleshooting
 
@@ -100,4 +109,12 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Support
 
+Give a ⭐️ if you think this project is great!
+
 <p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br><br>
+
+***
+
+2024 York Development
+
+Made in Taiwan with :heart: and Swift.

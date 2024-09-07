@@ -1,8 +1,17 @@
-# YorkNotify
+![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=一個可以排程通知的%20iOS%20應用程式。&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
-[English](README.md)
+<p align="center">
+  <img alt="版本" src="https://img.shields.io/badge/Version-Beta--1.2.3-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-一個可以排程通知的 iOS 應用程式。
+<p align="center"> 
+  <a href="README.md">English</a> 
+  ·
+  <a href="README_TW.md">繁體中文</a> 
+</p>
 
 # 安裝
 
@@ -77,8 +86,8 @@ git clone https://github.com/york9675/YorkNotify.git
  如果您使用免費的開發者帳戶並在實體 iPhone 上進行測試，則可能需要手動信任該應用程式。前往：
  - **設定** > **一般** > **VPN與裝置管理** > **您的 Apple ID** > **信任**。
 
-4. **關於應用程式簽名過期的重要說明**：  
-   如果您使用免費的 Apple 開發者帳戶，應用程式的簽名有效期僅為 7 天。在此期限之後，應用程式將不能再使用，您需要透過在 Xcode 中重新執行專案來重新安裝它。
+> [!WARNING]\
+> 如果您使用免費的 Apple 開發者帳戶，應用程式的簽名有效期僅為 7 天。在此期限之後，應用程式將不能再使用，您需要透過在 Xcode 中重新執行專案來重新安裝它。
 
 ## 故障排除
 
@@ -100,4 +109,12 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ## 贊助
 
+如果你覺得這個專案很棒，歡迎留顆⭐️！
+
 <p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br><br>
+
+***
+
+2024 York Development
+
+使用 :heart: 及 Swift 在台灣製作！
