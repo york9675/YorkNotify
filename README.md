@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=An%20iOS%20app%20that%20can%20schedule%20notifications.&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.3-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.4-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -56,7 +56,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 2. Open the Project in Xcode
 
 1. **Open Xcode**.
-2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `YorkNotify/YorkNotify.xcodeproj`.
+2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `YorkNotify/YorkNotify.xcodeproj`. (Please unzip `YorkNotify/YorkNotify.xcodeproj.zip` first)
 
 ### 3. Set Up Signing & Capabilities
 

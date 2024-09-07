@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=一個可以排程通知的%20iOS%20應用程式。&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
-  <img alt="版本" src="https://img.shields.io/badge/Version-Beta--1.2.3-blue.svg?cacheSeconds=2592000" />
+  <img alt="版本" src="https://img.shields.io/badge/Version-Beta--1.2.4-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -56,7 +56,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 2. 在 Xcode 中開啟項目
 
 1. **打開 Xcode**。
-2. **開啟專案**：導覽至複製/下載專案的目錄，然後開啟 `YorkNotify/YorkNotify.xcodeproj`。
+2. **開啟專案**：導覽至複製/下載專案的目錄，然後開啟 `YorkNotify/YorkNotify.xcodeproj`。 (請先將 `YorkNotify/YorkNotify.xcodeproj.zip` 解壓縮)
 
 ### 3. 設定簽名和功能
 

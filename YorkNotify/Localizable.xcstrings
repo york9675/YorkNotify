@@ -293,24 +293,24 @@
         }
       }
     },
-    "修復App icon無法更換的問題" : {
+    "修復App icon無法更換的問題\n修改icon列表文字顏色" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fix the problem that the App icon cannot be changed"
+            "value" : "Fix the problem that the App icon cannot be changed\nModify icon list text color"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アプリアイコンが置き換えられない問題を修正"
+            "value" : "アプリアイコンが置き換えられない問題を修正\nアイコンリストのテキストの色を変更する"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "修复App icon无法更换的问题"
+            "value" : "修复App icon无法更换的问题\n修改icon列表文字颜色"
           }
         }
       }

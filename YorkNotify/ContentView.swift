@@ -8,8 +8,8 @@
 import SwiftUI
 import UserNotifications
 
-let appVersion = "Beta 1.2.3"
-let build = "10"
+let appVersion = "Beta 1.2.4"
+let build = "12"
 
 struct ContentView: View {
     @AppStorage("selectedTheme") private var selectedTheme: String = Theme.system.rawValue
@@ -645,7 +645,7 @@ struct VersionView: View {
     var body: some View {
         Form {
             Section(header: Text("更新日誌")) {
-                Text("修復App icon無法更換的問題")
+                Text("修復App icon無法更換的問題\n修改icon列表文字顏色")
             }
             Section(header: Text("已知問題")) {
                 Text("修改主題後創建通知的主題在重新啟動應用程式前不會改變")
@@ -782,7 +782,6 @@ enum AppIcon: String, CaseIterable {
     }
     
     var icon: Image {
-        // Keep the rawValue for image previews, so the image name remains correct
         Image("\(self.rawValue)-Preview")
     }
 
@@ -816,6 +815,7 @@ struct IconView: View {
                             }
                         }
                     }
+                    .foregroundColor(.primary)
                 }
             }
         }
@@ -861,7 +861,6 @@ class CommonUtils {
 }
 
 /*
-
 ░░░░░██████╗░░██████╗░░░░░
 ░░░░██╔════╝░██╔════╝░░░░░
 ░░░░██║░░██╗░██║░░██╗░░░░░
