@@ -15,12 +15,14 @@
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-<table>
-  <tr>
-    <td><img src="./Screenshots/Home_TW.png" alt="Home" width="300"/></td>
-    <td><img src="./Screenshots/Settings_TW.png" alt="Settings" width="300"/></td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="./Screenshots/Home_TW.png" alt="Home" width="300"/></td>
+      <td><img src="./Screenshots/Settings_TW.png" alt="Settings" width="300"/></td>
+    </tr>
+  </table>
+</div>
 
 - 排程通知並在指定時間傳送
 - 使用SwiftUI製成的精美介面

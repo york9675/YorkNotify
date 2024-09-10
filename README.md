@@ -15,12 +15,14 @@
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-<table>
-  <tr>
-    <td><img src="./Screenshots/Home.png" alt="Home" width="300"/></td>
-    <td><img src="./Screenshots/Settings.png" alt="Settings" width="300"/></td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="./Screenshots/Home.png" alt="Home" width="300"/></td>
+      <td><img src="./Screenshots/Settings.png" alt="Settings" width="300"/></td>
+    </tr>
+  </table>
+</div>
 
 - Schedule notifications and send them at specified times
 - Beautiful interface made using SwiftUI
