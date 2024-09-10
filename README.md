@@ -18,8 +18,8 @@
 <div align="center">
   <table>
     <tr>
-      <td><img src="./Screenshots/Home.png" alt="Home" width="300"/></td>
-      <td><img src="./Screenshots/Settings.png" alt="Settings" width="300"/></td>
+      <td><img src="./Screenshots/Home.png" alt="Home" width="250"/></td>
+      <td><img src="./Screenshots/Settings.png" alt="Settings" width="250"/></td>
     </tr>
   </table>
 </div>
