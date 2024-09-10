@@ -8,8 +8,8 @@
 import SwiftUI
 import UserNotifications
 
-let appVersion = "Beta 1.2.4"
-let build = "12"
+let appVersion = "Beta 1.2.5"
+let build = "16"
 
 struct ContentView: View {
     @AppStorage("selectedTheme") private var selectedTheme: String = Theme.system.rawValue
@@ -19,7 +19,7 @@ struct ContentView: View {
         TabView {
             HomeTabView()
                 .tabItem {
-                    Label("首頁", systemImage: "house")
+                    Label("Home", systemImage: "house")
                 }
             
             SettingsTabView(selectedTheme: Binding(
@@ -27,7 +27,7 @@ struct ContentView: View {
                 set: { selectedTheme = $0.rawValue }
             ))
                 .tabItem {
-                    Label("設定", systemImage: "gear")
+                    Label("Settings", systemImage: "gear")
                 }
         }
         .preferredColorScheme(Theme(rawValue: selectedTheme)?.colorScheme)
@@ -42,11 +42,11 @@ enum Theme: String, CaseIterable, Identifiable {
     var localizedString: String {
         switch self {
         case .system:
-            return String(localized: "系統")
+            return String(localized: "System")
         case .light:
-            return String(localized: "淺色")
+            return String(localized: "Light")
         case .dark:
-            return String(localized: "深色")
+            return String(localized: "Dark")
         }
     }
     
@@ -71,12 +71,12 @@ struct HomeTabView: View {
     @State private var searchText = ""
     @State private var showDeleteAlert = false
     @State private var notificationToDelete: NotificationItem?
-    @State private var greetingTitle: String = "首頁"
+    @State private var greetingTitle: String = "Home"
     @State private var showSettingsAlert = false
     
     enum SortOrder: String, CaseIterable, Identifiable {
-        case time = "照通知時間排序"
-        case alphabetical = "照A-Z排序"
+        case time = "Time"
+        case alphabetical = "A-Z"
 
         var id: String { self.rawValue }
     }
@@ -85,11 +85,11 @@ struct HomeTabView: View {
         let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
             case 5..<12:
-                greetingTitle = String(localized: "早安")
+                greetingTitle = String(localized: "Good morning")
             case 12..<18:
-                greetingTitle = String(localized: "午安")
+                greetingTitle = String(localized: "Good afternoon")
             default:
-                greetingTitle = String(localized: "晚安")
+                greetingTitle = String(localized: "Good night")
         }
     }
     
@@ -98,7 +98,7 @@ struct HomeTabView: View {
         current.getNotificationSettings { settings in
             DispatchQueue.main.async {
                 if settings.authorizationStatus == .denied {
-                    print("沒權限傳通知！")
+                    print("No permission to send notifications.")
                     showSettingsAlert = true
                 }
             }
@@ -115,10 +115,10 @@ struct HomeTabView: View {
                             .padding(.bottom, 5.0)
                             .font(.largeTitle)
                             .foregroundColor(.gray)
-                        Text("暫無通知")
+                        Text("No notification yet")
                             .font(.headline)
                             .foregroundColor(.gray)
-                        Text("點擊右上方「+」來排程通知。")
+                        Text("Tap \"+\" above to schedule notifications.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -147,29 +147,29 @@ struct HomeTabView: View {
                                     notificationToDelete = notification
                                     showDeleteAlert = true
                                 } label: {
-                                    Label("刪除", systemImage: "trash")
+                                    Label("Delete", systemImage: "trash")
                                 }
                                 .tint(.red)
                             }
                             .alert(isPresented: $showDeleteAlert) {
                                 Alert(
-                                    title: Text("警告"),
-                                    message: Text("您確定刪除已排程的通知「\(notificationToDelete?.title ?? "")」？\n此操作無法復原"),
-                                    primaryButton: .destructive(Text("刪除")) {
+                                    title: Text("Warning"),
+                                    message: Text("Are you sure you want to delete the scheduled notification\"\(notificationToDelete?.title ?? "")\"?\nThis operation cannot be undone"),
+                                    primaryButton: .destructive(Text("Delete")) {
                                         if let notification = notificationToDelete,
                                            let index = notifications.firstIndex(where: { $0.id == notification.id }) {
                                             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
                                             notifications.remove(at: index)
                                         }
                                     },
-                                    secondaryButton: .cancel(Text("取消"))
+                                    secondaryButton: .cancel(Text("Cancel"))
                                 )
                             }
                         }
                     }
                 }
             }
-            .searchable(text: $searchText, prompt: "搜尋通知")
+            .searchable(text: $searchText, prompt: "Search Notifications")
             .onAppear {
                 loadNotifications()
                 updateGreeting()
@@ -179,21 +179,21 @@ struct HomeTabView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
-                        Section("更改排序方式") {
+                        Section("Sort by...") {
                             Button(action: {
                                 sortOrder = .time
                             }) {
-                                Label("照通知時間", systemImage: "clock")
+                                Label("Time", systemImage: "clock")
                             }
                             
                             Button(action: {
                                 sortOrder = .alphabetical
                             }) {
-                                Label("照A-Z", systemImage: "character")
+                                Label("A-Z", systemImage: "character")
                             }
                         }
                     } label: {
-                        Label("排序方式", systemImage: "ellipsis.circle")
+                        Label("Sort by...", systemImage: "ellipsis.circle")
                     }
                 }
                 
@@ -201,7 +201,7 @@ struct HomeTabView: View {
                     Button(action: {
                         showingCreateView = true
                     }) {
-                        Label("創建通知", systemImage: "plus")
+                        Label("Create Notification", systemImage: "plus")
                     }
                     .sheet(isPresented: $showingCreateView) {
                         CreateNotificationView(notifications: $notifications)
@@ -211,9 +211,9 @@ struct HomeTabView: View {
             }
             .alert(isPresented: $showSettingsAlert) {
                 Alert(
-                    title: Text("通知權限未開啟"),
-                    message: Text("請至系統設定允許通知，否則程式將無法如期運作。\n（放心，我們不會寄送垃圾通知！）"),
-                    dismissButton: .default(Text("前往設定")) {
+                    title: Text("No permission to send notifications!"),
+                    message: Text("Please go to the system settings to allow notifications, otherwise this app will not work as expected.\n(Don’t worry, we won’t send junk notifications!)"),
+                    dismissButton: .default(Text("Settings")) {
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(url)
                         }
@@ -278,9 +278,9 @@ enum RepeatFrequency: String, CaseIterable, Identifiable, Codable {
     var localizedString: String {
         switch self {
         case .daily:
-            return String(localized: "每日")
+            return String(localized: "Daily")
         case .weekly:
-            return String(localized: "每週")
+            return String(localized: "Weekly")
         }
     }
     
@@ -302,18 +302,18 @@ struct CreateNotificationView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("通知內容")) {
-                    TextField("通知標題", text: $title)
+                Section(header: Text("Notification Content")) {
+                    TextField("Notification Title", text: $title)
                         .onChange(of: title) { _ in updateValidity() }
-                    TextField("通知內文", text: $content)
+                    TextField("Notification Text", text: $content)
                         .onChange(of: content) { _ in updateValidity() }
                 }
-                Section(header: Text("通知設定")) {
-                    DatePicker("時間", selection: $time, in: Date()..., displayedComponents: [.date, .hourAndMinute])
+                Section(header: Text("Notification Settings")) {
+                    DatePicker("Time", selection: $time, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                         .onChange(of: time) { _ in updateValidity() }
-                    Toggle("重複", isOn: $repeats)
+                    Toggle("Repeat", isOn: $repeats)
                     if repeats {
-                        Picker("重複頻率", selection: $repeatFrequency) {
+                        Picker("Frequency", selection: $repeatFrequency) {
                             ForEach(RepeatFrequency.allCases) { frequency in
                                 Text(frequency.localizedString).tag(frequency)
                             }
@@ -321,11 +321,11 @@ struct CreateNotificationView: View {
                     }
                 }
             }
-            .navigationTitle("創建通知")
+            .navigationTitle("Create Notification")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("取消") {
+                    Button("Cancel") {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
@@ -341,12 +341,12 @@ struct CreateNotificationView: View {
                             showAlert = true
                         }
                     }) {
-                        Text("儲存").bold()
+                        Text("Save").bold()
                     }
                 }
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("警告"), message: Text(alertMessage), dismissButton: .default(Text("確定")))
+                Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
         }
         .onAppear {
@@ -365,13 +365,13 @@ struct CreateNotificationView: View {
     private func updateValidity() {
         if title.isEmpty {
             isValid = false
-            alertMessage = String(localized: "請填寫通知標題")
+            alertMessage = String(localized: "Please fill in the notification title.")
         } else if content.isEmpty {
             isValid = false
-            alertMessage = String(localized: "請填寫通知內容")
+            alertMessage = String(localized: "Please fill in the notification text.")
         } else if !isValidTime() {
             isValid = false
-            alertMessage = String(localized: "請選擇未來的時間")
+            alertMessage = String(localized: "Please select a time in the future.")
         } else {
             isValid = true
         }
@@ -399,7 +399,7 @@ struct CreateNotificationView: View {
 
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("通知設定失敗 \(error.localizedDescription)")
+                print("Failed to create notification \(error.localizedDescription)")
             }
         }
     }
@@ -418,18 +418,18 @@ struct EditNotificationView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("通知內容")) {
-                TextField("通知標題", text: $notification.title)
+            Section(header: Text("Notification Content")) {
+                TextField("Notification Title", text: $notification.title)
                     .onChange(of: notification.title) { _ in updateValidity() }
-                TextField("通知內文", text: $notification.content)
+                TextField("Notification Text", text: $notification.content)
                     .onChange(of: notification.content) { _ in updateValidity() }
             }
-            Section(header: Text("通知設定")) {
-                DatePicker("時間", selection: $notification.time, in: Date()..., displayedComponents: [.date, .hourAndMinute])
+            Section(header: Text("Notification Settings")) {
+                DatePicker("Time", selection: $notification.time, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                     .onChange(of: notification.time) { _ in updateValidity() }
-                Toggle("重複", isOn: $notification.repeats)
+                Toggle("Repeat", isOn: $notification.repeats)
                 if notification.repeats {
-                    Picker("重複頻率", selection: $notification.repeatFrequency) {
+                    Picker("Frequency", selection: $notification.repeatFrequency) {
                         ForEach(RepeatFrequency.allCases) { frequency in
                             Text(frequency.localizedString).tag(frequency)
                         }
@@ -450,10 +450,10 @@ struct EditNotificationView: View {
                     showAlert = true
                 }
             }) {
-                Text("儲存").bold()
+                Text("Save").bold()
             }
         }
-        .navigationTitle("編輯通知")
+        .navigationTitle("Edit Notification")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -466,20 +466,20 @@ struct EditNotificationView: View {
             }
         }
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("警告"), message: Text(alertMessage), dismissButton: .default(Text("確定")))
+            Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
         .alert(isPresented: $showDeleteAlert) {
             Alert(
-                title: Text("警告"),
-                message: Text("您確定刪除已排程的通知「\(notification.title)」？\n此操作無法復原"),
-                primaryButton: .destructive(Text("刪除")) {
+                title: Text("Warning"),
+                message: Text("Are you sure you want to delete the scheduled notification\"\(notification.title)\"?\nThis operation cannot be undone"),
+                primaryButton: .destructive(Text("Delete")) {
                     if let index = notifications.firstIndex(where: { $0.id == notification.id }) {
                         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
                         notifications.remove(at: index)
                     }
                     presentationMode.wrappedValue.dismiss()
                 },
-                secondaryButton: .cancel(Text("取消"))
+                secondaryButton: .cancel(Text("Cancel"))
             )
         }
         .onAppear {
@@ -498,13 +498,13 @@ struct EditNotificationView: View {
     private func updateValidity() {
         if notification.title.isEmpty {
             isValid = false
-            alertMessage = String(localized: "請填寫通知標題")
+            alertMessage = String(localized: "Please fill in the notification title.")
         } else if notification.content.isEmpty {
             isValid = false
-            alertMessage = String(localized: "請填寫通知內容")
+            alertMessage = String(localized: "Please fill in the notification text.")
         } else if !isValidTime() {
             isValid = false
-            alertMessage = String(localized: "請選擇未來的時間")
+            alertMessage = String(localized: "Please select a time in the future.")
         } else {
             isValid = true
         }
@@ -532,7 +532,7 @@ struct EditNotificationView: View {
 
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                print("通知設定失敗 \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
             }
         }
     }
@@ -549,8 +549,8 @@ struct SettingsTabView: View {
         NavigationView {
             Form {
                 
-                Section(header: Text("一般")) {
-                    Picker(selection: $selectedTheme, label: Label("主題", systemImage: "moon")) {
+                Section(header: Text("General")) {
+                    Picker(selection: $selectedTheme, label: Label("Theme", systemImage: "moon")) {
                         ForEach(Theme.allCases) { theme in
                             Text(theme.localizedString).tag(theme)
                         }
@@ -558,27 +558,27 @@ struct SettingsTabView: View {
                     
                     NavigationLink(destination: IconView()) {
                         HStack {
-                            Label("App圖標", systemImage: "square.grid.2x2")
+                            Label("App Icon", systemImage: "square.grid.2x2")
                         }
                     }
                     
                     NavigationLink(destination: LangView()) {
                         HStack {
-                            Label("語言", systemImage: "globe")
+                            Label("Language", systemImage: "globe")
                         }
                     }
                 }
                 
-                Section(header: Text("關於"), footer: Text("2024 York Development")) {
+                Section(header: Text("About"), footer: Text("2024 York Development")) {
                     NavigationLink(destination: HelpView()) {
                         HStack {
-                            Label("幫助", systemImage: "questionmark.circle")
+                            Label("Help", systemImage: "questionmark.circle")
                         }
                     }
                     
                     NavigationLink(destination: AutherView()) {
                         HStack {
-                            Label("作者", systemImage: "person")
+                            Label("Auther", systemImage: "person")
                             Spacer()
                             Text("York")
                                 .foregroundColor(.gray)
@@ -587,7 +587,7 @@ struct SettingsTabView: View {
                     
                     NavigationLink(destination: VersionView()) {
                         HStack {
-                            Label("版本", systemImage: "info.circle")
+                            Label("Version", systemImage: "info.circle")
                             Spacer()
                             Text("\(appVersion) (\(build))")
                                 .foregroundColor(.gray)
@@ -599,7 +599,7 @@ struct SettingsTabView: View {
                         }
                     }) {
                         HStack {
-                            Label("意見回饋", systemImage: "info.bubble")
+                            Label("Feedback", systemImage: "info.bubble")
                             Spacer()
                             Image(systemName: "arrow.up.right.square")
                         }
@@ -611,7 +611,7 @@ struct SettingsTabView: View {
 //                    VStack(alignment: .leading, spacing: 5) {
 //                        HStack {
 //                            Label {
-//                                Text("警告")
+//                                Text("Warning")
 //                                    .font(.headline)
 //                            } icon: {
 //                                Image(systemName: "exclamationmark.triangle").foregroundColor(.red)
@@ -626,7 +626,7 @@ struct SettingsTabView: View {
 //                            }
 //                        }
 //                        
-//                        Text("測試版可能包含許多bug")
+//                        Text("TEXT")
 //                            .font(.footnote)
 //                        
 //                    }
@@ -634,7 +634,7 @@ struct SettingsTabView: View {
 //                }
                 
             }
-            .navigationTitle("設定")
+            .navigationTitle("Settings")
         }
     }
 }
@@ -644,11 +644,11 @@ struct VersionView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("更新日誌")) {
-                Text("修復App icon無法更換的問題\n修改icon列表文字顏色")
+            Section(header: Text("Update Log")) {
+                Text("Fix the problem that the App icon cannot be changed\nModify icon list text color\nOther minor modifications and bugfixes")
             }
-            Section(header: Text("已知問題")) {
-                Text("修改主題後創建通知的主題在重新啟動應用程式前不會改變")
+            Section(header: Text("Known Issues")) {
+                Text("After modifying the theme, the theme of \"Create Notification\" will not change until the application is restarted")
             }
             Section() {
                 Button(action: {
@@ -657,7 +657,7 @@ struct VersionView: View {
                     }
                 }) {
                     HStack {
-                        Label("問題回報", systemImage: "exclamationmark.triangle")
+                        Label("Bug Report", systemImage: "exclamationmark.triangle")
                             .foregroundColor(.red)
                     }
                 }
@@ -673,27 +673,29 @@ struct LangView: View {
     
     var body: some View {
         Form {
-            Text("請點擊下方按鈕跳進入系統設定，並點選「語言」來更改您偏好的App語言。\n\n翻譯可能使用大量機器翻譯，並包含許多錯誤或不合理之處，如翻譯有誤，請前往意見回饋表單回報，感謝！")
-            Button(action: {
-                let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url)
-            }) {
-                HStack {
-                    Label("App設定", systemImage: "gear")
+            Section(header: Text("Description")) {
+                Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!")
+                Button(action: {
+                    let url = URL(string: UIApplication.openSettingsURLString)!
+                    UIApplication.shared.open(url)
+                }) {
+                    HStack {
+                        Label("App Settings", systemImage: "gear")
+                    }
                 }
-            }
-            Button(action: {
-                if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
-                    openURL(url)
-                }
-            }) {
-                HStack {
-                    Label("翻譯問題回報", systemImage: "exclamationmark.triangle")
-                        .foregroundColor(.red)
+                Button(action: {
+                    if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
+                        openURL(url)
+                    }
+                }) {
+                    HStack {
+                        Label("Translation problem report", systemImage: "exclamationmark.triangle")
+                            .foregroundColor(.red)
+                    }
                 }
             }
         }
-        .navigationTitle("更換語言")
+        .navigationTitle("Language")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -703,14 +705,14 @@ struct HelpView: View {
 
     var body: some View {
         Form{
-            Section(header: Text("說明")) {
-                Text("歡迎來到幫助中心！\n這裡會提供關於操作本應用程式的方法等！")
+            Section(header: Text("Description")) {
+                Text("Welcome to the Help Center!\nHere you will find information on how to operate this application and more!")
             }
-            Section(header: Text("Q: 如何排程通知？")) {
-                Text("點擊首頁右上方「+」的符號，輸入通知標題及內文，最後設定好時間並且按下保存後即可排程通知。")
+            Section(header: Text("Q: How to schedule notifications?")) {
+                Text("Tap the \"+\" symbol in the upper right corner of the home tab, enter the notification title and content, finally set the time and click Save to schedule the notification.")
             }
-            Section(header: Text("Q: 還有其他問題？")) {
-                Text("使用我們的問題回報表單尋求協助！")
+            Section(header: Text("Q: Any other questions?")) {
+                Text("Use our feedback form to get help!")
             }
             Section() {
                 Button(action: {
@@ -719,13 +721,13 @@ struct HelpView: View {
                     }
                 }) {
                     HStack {
-                        Label("問題回報", systemImage: "exclamationmark.triangle")
+                        Label("Bug Report", systemImage: "exclamationmark.triangle")
                             .foregroundColor(.red)
                     }
                 }
             }
         }
-        .navigationTitle("幫助中心")
+        .navigationTitle("Help Center")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -735,8 +737,8 @@ struct AutherView: View {
 
     var body: some View {
         Form {
-            Text("此應用程式的開發者！")
-            Section(header: Text("連結")) {
+            Text("The developer of this app!")
+            Section(header: Text("Links")) {
                 Button(action: {
                     if let url = URL(string: "https://github.com/york9675") {
                         openURL(url)
@@ -747,7 +749,7 @@ struct AutherView: View {
                     }
                 }
             }
-            Section(header: Text("贊助")) {
+            Section(header: Text("Donate")) {
                 Button(action: {
                     if let url = URL(string: "https://www.buymeacoffee.com/york0524") {
                         openURL(url)
@@ -795,7 +797,7 @@ struct IconView: View {
     
     var body: some View {
         List {
-            Section(header: Text("選擇要更換的App圖標")) {
+            Section(header: Text("Choose app icon you want to change")) {
                 ForEach(AppIcon.allCases, id: \.self) { icon in
                     Button(action: {
                         selectedIcon = icon
@@ -812,6 +814,7 @@ struct IconView: View {
                             Spacer()
                             if selectedIcon == icon {
                                 Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(Color.blue)
                             }
                         }
                     }
@@ -819,7 +822,7 @@ struct IconView: View {
                 }
             }
         }
-        .navigationTitle("App圖標")
+        .navigationTitle("App Icon")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             getCurrentIcon()
@@ -846,8 +849,6 @@ class CommonUtils {
             UIApplication.shared.setAlternateIconName(iconName) { error in
                 if let error = error {
                     print("Could not update icon: \(error)")
-                    print("Error domain: \(error._domain)")
-                    print("Error code: \(error._code)")
                 } else {
                     print("Icon updated successfully to: \(iconName ?? "default")")
                 }

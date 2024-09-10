@@ -1,7 +1,9 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=An%20iOS%20app%20that%20can%20schedule%20notifications.&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.4-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.5-blue.svg?cacheSeconds=2592000" />
+  </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -12,6 +14,20 @@
   ·
   <a href="README_TW.md">繁體中文</a> 
 </p>
+
+<table>
+  <tr>
+    <td><img src="./Screenshots/Home.png" alt="Home" width="300"/></td>
+    <td><img src="./Screenshots/Settings.png" alt="Settings" width="300"/></td>
+  </tr>
+</table>
+
+- Schedule notifications and send them at specified times
+- Beautiful interface made using SwiftUI
+- Completely free, open source
+
+> [!NOTE]  
+> This application is not on the App Store because the developer cannot afford the Apple Developer Program membership fee. You need to install it on your device using Xcode. You are also welcome to sponsor developers through the Buy Me a Coffee button below, thank you!
 
 # installation
 
@@ -38,7 +54,7 @@ Before you begin, ensure that you have the following:
 
 - **A Computer** with macOS.
 - **Xcode** installed (requires macOS 13 or higher to support development for iOS 15 and above). You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835).
-- **iPhone/iPad** (physical device or simulator) requires iOS 15 or higher.
+- **iPhone/iPad** (physical device or simulator) requires iOS 15 or higher. If it is a physical machine, please enable "Developer Mode" first.
 - **Apple Developer Account** (free or paid) for code signing and device testing.
 
 ## Steps to Import and Run the Project in Xcode
@@ -117,4 +133,4 @@ Give a ⭐️ if you think this project is great!
 
 2024 York Development
 
-Made in Taiwan with :heart: and Swift.
+Made in Taiwan using :heart: and Swift.
