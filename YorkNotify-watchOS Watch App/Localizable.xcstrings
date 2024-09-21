@@ -1,0 +1,28 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "YorkNotify for watchOS is coming soon!\n(Maybe...)" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YorkNotify の watchOS バージョンがまもなく登場します!\n(たぶん...)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "watchOS 版的 YorkNotify 即将推出！\n（可能吧...）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "watchOS 版的 YorkNotify 即將推出！\n（可能吧...）"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

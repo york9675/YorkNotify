@@ -8,8 +8,8 @@
 import SwiftUI
 import UserNotifications
 
-let appVersion = "Beta 1.2.5"
-let build = "16"
+let appVersion = "v2.0.0-beta"
+let build = "25"
 
 struct ContentView: View {
     @AppStorage("selectedTheme") private var selectedTheme: String = Theme.system.rawValue
@@ -64,23 +64,75 @@ enum Theme: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
+class AppState: ObservableObject {
+    @Published var hasCheckedForUpdates: Bool = false
+    @Published var latestVersion: String? = nil
+}
+
+struct GitHubRelease: Decodable {
+    let tag_name: String
+}
+
+func fetchLatestVersion(completion: @escaping (String?) -> Void) {
+    guard let url = URL(string: "https://api.github.com/repos/york9675/YorkNotify/releases/latest") else {
+        completion(nil)
+        return
+    }
+
+    URLSession.shared.dataTask(with: url) { data, response, error in
+        if let data = data {
+            do {
+                let release = try JSONDecoder().decode(GitHubRelease.self, from: data)
+                completion(release.tag_name)
+            } catch {
+                completion(nil)
+            }
+        } else {
+            completion(nil)
+        }
+    }.resume()
+}
+
+func isNewVersionAvailable(currentVersion: String, latestVersion: String) -> Bool {
+    let currentVersion = currentVersion.replacingOccurrences(of: "v", with: "")
+    let latestVersion = latestVersion.replacingOccurrences(of: "v", with: "")
+    
+    return latestVersion.compare(currentVersion, options: .numeric) == .orderedDescending
+}
+
 struct HomeTabView: View {
     @State private var notifications: [NotificationItem] = []
     @State private var showingCreateView = false
     @State private var sortOrder: SortOrder = .time
     @State private var searchText = ""
-    @State private var showDeleteAlert = false
     @State private var notificationToDelete: NotificationItem?
     @State private var greetingTitle: String = "Home"
-    @State private var showSettingsAlert = false
     
+    @State private var latestVersion: String?
+    
+    @EnvironmentObject var appState: AppState
+
+    enum ActiveAlert: Identifiable {
+        case delete, settings, update
+        
+        var id: String {
+            switch self {
+            case .delete: return "delete"
+            case .settings: return "settings"
+            case .update: return "update"
+            }
+        }
+    }
+    
+    @State private var activeAlert: ActiveAlert? = nil
+
     enum SortOrder: String, CaseIterable, Identifiable {
         case time = "Time"
         case alphabetical = "A-Z"
-
+        
         var id: String { self.rawValue }
     }
-    
+
     private func updateGreeting() {
         let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
@@ -98,26 +150,29 @@ struct HomeTabView: View {
         current.getNotificationSettings { settings in
             DispatchQueue.main.async {
                 if settings.authorizationStatus == .denied {
-                    print("No permission to send notifications.")
-                    showSettingsAlert = true
+                    activeAlert = .settings
                 }
             }
         }
+    }
+    
+    private func refreshNotifications() {
+        loadNotifications()
+        updateGreeting()
+        checkNotificationSettings()
     }
 
     var body: some View {
         NavigationView {
             VStack {
-
                 if notifications.isEmpty {
-                    VStack() {
+                    VStack {
                         Image(systemName: "bell")
-                            .padding(.bottom, 5.0)
+                            .padding(.bottom, 5)
                             .font(.largeTitle)
                             .foregroundColor(.gray)
                         Text("No notification yet")
                             .font(.headline)
-                            .foregroundColor(.gray)
                         Text("Tap \"+\" above to schedule notifications.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
@@ -145,36 +200,24 @@ struct HomeTabView: View {
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 Button {
                                     notificationToDelete = notification
-                                    showDeleteAlert = true
+                                    activeAlert = .delete
                                 } label: {
                                     Label("Delete", systemImage: "trash")
                                 }
                                 .tint(.red)
-                            }
-                            .alert(isPresented: $showDeleteAlert) {
-                                Alert(
-                                    title: Text("Warning"),
-                                    message: Text("Are you sure you want to delete the scheduled notification\"\(notificationToDelete?.title ?? "")\"?\nThis operation cannot be undone"),
-                                    primaryButton: .destructive(Text("Delete")) {
-                                        if let notification = notificationToDelete,
-                                           let index = notifications.firstIndex(where: { $0.id == notification.id }) {
-                                            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
-                                            notifications.remove(at: index)
-                                        }
-                                    },
-                                    secondaryButton: .cancel(Text("Cancel"))
-                                )
                             }
                         }
                     }
                 }
             }
             .searchable(text: $searchText, prompt: "Search Notifications")
-            .onAppear {
-                loadNotifications()
-                updateGreeting()
-                checkNotificationSettings()
+            .refreshable {
+                refreshNotifications()
             }
+            .onAppear {
+                refreshNotifications()
+            }
+            .onAppear(perform: checkForUpdatesOnce)
             .navigationTitle(greetingTitle)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -185,7 +228,6 @@ struct HomeTabView: View {
                             }) {
                                 Label("Time", systemImage: "clock")
                             }
-                            
                             Button(action: {
                                 sortOrder = .alphabetical
                             }) {
@@ -196,7 +238,13 @@ struct HomeTabView: View {
                         Label("Sort by...", systemImage: "ellipsis.circle")
                     }
                 }
-                
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        refreshNotifications()
+                    }) {
+                        Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: {
                         showingCreateView = true
@@ -207,18 +255,41 @@ struct HomeTabView: View {
                         CreateNotificationView(notifications: $notifications)
                     }
                 }
-                
             }
-            .alert(isPresented: $showSettingsAlert) {
-                Alert(
-                    title: Text("No permission to send notifications!"),
-                    message: Text("Please go to the system settings to allow notifications, otherwise this app will not work as expected.\n(Don’t worry, we won’t send junk notifications!)"),
-                    dismissButton: .default(Text("Settings")) {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.open(url)
+            .alert(item: $activeAlert) { alertType in
+                switch alertType {
+                case .delete:
+                    return Alert(
+                        title: Text("Warning"),
+                        message: Text("Are you sure you want to delete the scheduled notification \"\(notificationToDelete?.title ?? "")\"?\nThis operation cannot be undone"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            if let notification = notificationToDelete,
+                               let index = notifications.firstIndex(where: { $0.id == notification.id }) {
+                                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
+                                notifications.remove(at: index)
+                            }
+                        },
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )
+                    
+                case .settings:
+                    return Alert(
+                        title: Text("No permission to send notifications!"),
+                        message: Text("Please go to the system settings to allow notifications, otherwise this app will not work as expected.\n(Don’t worry, we won’t send junk notifications!)"),
+                        dismissButton: .default(Text("Settings")) {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url)
+                            }
                         }
-                    }
-                )
+                    )
+                    
+                case .update:
+                    return Alert(
+                        title: Text("Update Available"),
+                        message: Text("A new version \(appState.latestVersion ?? "unknown") is available, go to GitHub to download and install the latest version."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
             }
         }
     }
@@ -260,6 +331,23 @@ struct HomeTabView: View {
             return sortedNotifications.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.content.localizedCaseInsensitiveContains(searchText) }
         }
     }
+    
+    private func checkForUpdatesOnce() {
+        if !appState.hasCheckedForUpdates, UserDefaults.standard.bool(forKey: "autoCheckUpdates") {
+            fetchLatestVersion { latest in
+                DispatchQueue.main.async {
+                    if let latest = latest {
+                        if isNewVersionAvailable(currentVersion: appVersion, latestVersion: latest) {
+                            appState.latestVersion = latest
+                            activeAlert = .update
+                        }
+                    }
+                    appState.hasCheckedForUpdates = true
+                }
+            }
+        }
+    }
+
 }
 
 struct NotificationItem: Identifiable, Codable {
@@ -290,14 +378,34 @@ enum RepeatFrequency: String, CaseIterable, Identifiable, Codable {
 struct CreateNotificationView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var notifications: [NotificationItem]
+    
     @State private var title = ""
     @State private var content = ""
-    @State private var time = Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date()
+    @State private var time = Calendar.current.date(byAdding: .minute, value: 5, to: Date()) ?? Date()
     @State private var repeats = false
     @State private var repeatFrequency: RepeatFrequency = .daily
-    @State private var showAlert = false
-    @State private var alertMessage = ""
     @State private var isValid = false
+    @State private var isTimeSensitive = false
+    
+    @State private var alertMessage = ""
+    
+    enum ActiveAlert: Identifiable {
+        case warning, proceedWithDefault
+
+        var id: String {
+            switch self {
+            case .warning: return "warning"
+            case .proceedWithDefault: return "proceedWithDefault"
+            }
+        }
+    }
+    
+    @State private var activeAlert: ActiveAlert? = nil
+
+    @AppStorage("defaultNotificationTitle") private var defaultTitle: String = "York Notify"
+    @AppStorage("defaultNotificationContent") private var defaultContent: String = "Please remember."
+    @AppStorage("showMissingInfoAlert") private var showMissingInfoAlert = true
+    @AppStorage("enableTimeSensitiveNotifications") private var enableTimeSensitiveNotifications = false
     
     var body: some View {
         NavigationView {
@@ -305,6 +413,7 @@ struct CreateNotificationView: View {
                 Section(header: Text("Notification Content")) {
                     TextField("Notification Title", text: $title)
                         .onChange(of: title) { _ in updateValidity() }
+                    
                     TextField("Notification Text", text: $content)
                         .onChange(of: content) { _ in updateValidity() }
                 }
@@ -319,6 +428,9 @@ struct CreateNotificationView: View {
                             }
                         }
                     }
+                    if enableTimeSensitiveNotifications {
+                        Toggle("Time Sensitive Notifications", isOn: $isTimeSensitive)
+                    }
                 }
             }
             .navigationTitle("Create Notification")
@@ -331,58 +443,110 @@ struct CreateNotificationView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        if isValid {
-                            let newNotification = NotificationItem(title: title, content: content, time: time, repeats: repeats, repeatFrequency: repeatFrequency)
-                            notifications.append(newNotification)
-                            scheduleNotification(notification: newNotification)
-                            saveNotifications()
-                            presentationMode.wrappedValue.dismiss()
+                        if title.isEmpty || content.isEmpty {
+                            handleMissingInfo()
+                        } else if isValid {
+                            saveNotification()
                         } else {
-                            showAlert = true
+                            activeAlert = .warning
                         }
                     }) {
                         Text("Save").bold()
                     }
                 }
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            .alert(item: $activeAlert) { alertType in
+                switch alertType {
+                case .warning:
+                    return Alert(
+                        title: Text("Warning"),
+                        message: Text(alertMessage),
+                        dismissButton: .default(Text("OK"))
+                    )
+                    
+                case .proceedWithDefault:
+                    return Alert(
+                        title: Text("Missing Information"),
+                        message: Text("You haven't filled out all fields. The default content will be used for the missing fields. Do you want to proceed?"),
+                        primaryButton: .destructive(Text("Proceed")) {
+                            if title.isEmpty {
+                                title = defaultTitle
+                            }
+                            if content.isEmpty {
+                                content = defaultContent
+                            }
+                            saveNotification()
+                        },
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )
+                }
             }
         }
         .onAppear {
             updateValidity()
         }
     }
+    
+    private func saveNotification() {
+        let newNotification = NotificationItem(
+            title: title,
+            content: content,
+            time: time,
+            repeats: repeats,
+            repeatFrequency: repeatFrequency
+        )
+        notifications.append(newNotification)
+        scheduleNotification(notification: newNotification)
+        saveNotifications()
+        presentationMode.wrappedValue.dismiss()
+    }
+
     private func saveNotifications() {
         if let encodedData = try? JSONEncoder().encode(notifications) {
             UserDefaults.standard.set(encodedData, forKey: "savedNotifications")
         }
     }
+
     private func isValidTime() -> Bool {
         return time > Date()
     }
 
     private func updateValidity() {
-        if title.isEmpty {
+        if title.isEmpty || content.isEmpty {
             isValid = false
-            alertMessage = String(localized: "Please fill in the notification title.")
-        } else if content.isEmpty {
-            isValid = false
-            alertMessage = String(localized: "Please fill in the notification text.")
+            alertMessage = "Please fill in the notification title and text."
         } else if !isValidTime() {
             isValid = false
-            alertMessage = String(localized: "Please select a time in the future.")
+            alertMessage = "Please select a time in the future."
         } else {
             isValid = true
         }
     }
     
+    private func handleMissingInfo() {
+        if showMissingInfoAlert {
+            activeAlert = .proceedWithDefault
+        } else {
+            if title.isEmpty {
+                title = defaultTitle
+            }
+            if content.isEmpty {
+                content = defaultContent
+            }
+            saveNotification()
+        }
+    }
+
     func scheduleNotification(notification: NotificationItem) {
         let content = UNMutableNotificationContent()
         content.title = notification.title
         content.body = notification.content
         content.sound = .default
         content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+
+        if isTimeSensitive {
+            content.interruptionLevel = .timeSensitive
+        }
 
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notification.time)
         if notification.repeats {
@@ -403,7 +567,6 @@ struct CreateNotificationView: View {
             }
         }
     }
-
 }
 
 struct EditNotificationView: View {
@@ -414,7 +577,27 @@ struct EditNotificationView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var isValid = false
-    @State private var showDeleteAlert = false
+
+    enum ActiveAlert: Identifiable {
+        case delete, warning, proceedWithDefault
+
+        var id: String {
+            switch self {
+            case .delete:
+                return "delete"
+            case .warning:
+                return "warning"
+            case .proceedWithDefault:
+                return "proceedWithDefault"
+            }
+        }
+    }
+    
+    @State private var activeAlert: ActiveAlert? = nil
+
+    @AppStorage("defaultNotificationTitle") private var defaultTitle: String = "YorkNotift"
+    @AppStorage("defaultNotificationContent") private var defaultContent: String = "Please remember."
+    @AppStorage("showMissingInfoAlert") private var showMissingInfoAlert = true
 
     var body: some View {
         Form {
@@ -438,16 +621,12 @@ struct EditNotificationView: View {
             }
             
             Button(action: {
-                if isValid {
-                    if let index = notifications.firstIndex(where: { $0.id == notification.id }) {
-                        notifications[index] = notification
-                        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
-                        scheduleNotification(notification: notification)
-                        saveNotifications()
-                    }
-                    presentationMode.wrappedValue.dismiss()
+                if notification.title.isEmpty || notification.content.isEmpty {
+                    handleMissingInfo()
+                } else if isValid {
+                    saveNotification()
                 } else {
-                    showAlert = true
+                    activeAlert = .warning
                 }
             }) {
                 Text("Save").bold()
@@ -458,58 +637,105 @@ struct EditNotificationView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    showDeleteAlert = true
+                    activeAlert = .delete
                 }) {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
                 }
             }
         }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Warning"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-        }
-        .alert(isPresented: $showDeleteAlert) {
-            Alert(
-                title: Text("Warning"),
-                message: Text("Are you sure you want to delete the scheduled notification\"\(notification.title)\"?\nThis operation cannot be undone"),
-                primaryButton: .destructive(Text("Delete")) {
-                    if let index = notifications.firstIndex(where: { $0.id == notification.id }) {
-                        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
-                        notifications.remove(at: index)
-                    }
-                    presentationMode.wrappedValue.dismiss()
-                },
-                secondaryButton: .cancel(Text("Cancel"))
-            )
+        .alert(item: $activeAlert) { alertType in
+            switch alertType {
+            case .delete:
+                return Alert(
+                    title: Text("Warning"),
+                    message: Text("Are you sure you want to delete the scheduled notification \"\(notification.title)\"?\nThis operation cannot be undone"),
+                    primaryButton: .destructive(Text("Delete")) {
+                        if let index = notifications.firstIndex(where: { $0.id == notification.id }) {
+                            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
+                            notifications.remove(at: index)
+                        }
+                        presentationMode.wrappedValue.dismiss()
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
+                
+            case .warning:
+                return Alert(
+                    title: Text("Warning"),
+                    message: Text(alertMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+                
+            case .proceedWithDefault:
+                return Alert(
+                    title: Text("Missing Information"),
+                    message: Text("You haven't filled out all fields. The default content will be used for the missing fields. Do you want to proceed?"),
+                    primaryButton: .destructive(Text("Proceed")) {
+                        if notification.title.isEmpty {
+                            notification.title = defaultTitle
+                        }
+                        if notification.content.isEmpty {
+                            notification.content = defaultContent
+                        }
+                        saveNotification()
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
+            }
         }
         .onAppear {
             updateValidity()
         }
     }
+    
+    private func saveNotification() {
+        if let index = notifications.firstIndex(where: { $0.id == notification.id }) {
+            notifications[index] = notification
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
+            scheduleNotification(notification: notification)
+            saveNotifications()
+        }
+        presentationMode.wrappedValue.dismiss()
+    }
+
     private func saveNotifications() {
         if let encodedData = try? JSONEncoder().encode(notifications) {
             UserDefaults.standard.set(encodedData, forKey: "savedNotifications")
         }
     }
+
     private func isValidTime() -> Bool {
         return notification.time > Date()
     }
 
     private func updateValidity() {
-        if notification.title.isEmpty {
+        if notification.title.isEmpty && notification.content.isEmpty {
             isValid = false
-            alertMessage = String(localized: "Please fill in the notification title.")
-        } else if notification.content.isEmpty {
-            isValid = false
-            alertMessage = String(localized: "Please fill in the notification text.")
+            alertMessage = "Please fill in the notification title and text."
         } else if !isValidTime() {
             isValid = false
-            alertMessage = String(localized: "Please select a time in the future.")
+            alertMessage = "Please select a time in the future."
         } else {
             isValid = true
         }
     }
-    
+
+    private func handleMissingInfo() {
+        if showMissingInfoAlert {
+            activeAlert = .proceedWithDefault
+        } else {
+            // Automatically use default values without showing the alert
+            if notification.title.isEmpty {
+                notification.title = defaultTitle
+            }
+            if notification.content.isEmpty {
+                notification.content = defaultContent
+            }
+            saveNotification()
+        }
+    }
+
     func scheduleNotification(notification: NotificationItem) {
         let content = UNMutableNotificationContent()
         content.title = notification.title
@@ -550,9 +776,16 @@ struct SettingsTabView: View {
             Form {
                 
                 Section(header: Text("General")) {
+                    
                     Picker(selection: $selectedTheme, label: Label("Theme", systemImage: "moon")) {
                         ForEach(Theme.allCases) { theme in
                             Text(theme.localizedString).tag(theme)
+                        }
+                    }
+                    
+                    NavigationLink(destination: DefaultContentView()) {
+                        HStack {
+                            Label("Default Content", systemImage: "character")
                         }
                     }
                     
@@ -565,6 +798,15 @@ struct SettingsTabView: View {
                     NavigationLink(destination: LangView()) {
                         HStack {
                             Label("Language", systemImage: "globe")
+                        }
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: LabView()) {
+                        HStack {
+                            Label("Lab", systemImage: "flask")
+                                .foregroundColor(Color.purple)
                         }
                     }
                 }
@@ -593,6 +835,7 @@ struct SettingsTabView: View {
                                 .foregroundColor(.gray)
                         }
                     }
+                    
                     Button(action: {
                         if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
                             openURL(url)
@@ -642,15 +885,43 @@ struct SettingsTabView: View {
 struct VersionView: View {
     @Environment(\.openURL) private var openURL
     
+    @AppStorage("autoCheckUpdates") private var autoCheckUpdates = true
+    
     var body: some View {
         Form {
+            
+            Section {
+                VStack {
+                    Image(systemName: "info.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30, height: 30)
+                        .aspectRatio(contentMode: .fit)
+                    
+                    Text("Version")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+            }
+
             Section(header: Text("Update Log")) {
-                Text("Fix the problem that the App icon cannot be changed\nModify icon list text color\nOther minor modifications and bugfixes")
+                Text("• New \"Default Content\" feature\n• Add notification list refresh button\n• Add \"Lab\"\n• Add the ability to automatically check for updates from GitHub\n• Some interface changes were made to be more in line with Apple’s design style (I may have accidentally learned Apple’s bug-increasing techniques in the process XD)\n• Other minor modifications and bug fixes")
             }
-            Section(header: Text("Known Issues")) {
-                Text("After modifying the theme, the theme of \"Create Notification\" will not change until the application is restarted")
+            
+            Section(footer: Text("When enabled, this app will automatically check if new updates are available from GitHub on startup.")) {
+                Toggle("Check for Updates Automatically", isOn: $autoCheckUpdates)
+                    .onChange(of: autoCheckUpdates) { value in
+                        UserDefaults.standard.set(value, forKey: "autoCheckUpdates")
+                    }
             }
-            Section() {
+            
+            Section {
                 Button(action: {
                     if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
                         openURL(url)
@@ -668,13 +939,158 @@ struct VersionView: View {
     }
 }
 
+struct DefaultContentView: View {
+    @AppStorage("defaultNotificationTitle") private var defaultTitle: String = "York Notify"
+    @AppStorage("defaultNotificationContent") private var defaultContent: String = "Please remember."
+    @AppStorage("showMissingInfoAlert") private var showMissingInfoAlert = true
+
+    private let originalDefaultTitle = "York Notify"
+    private let originalDefaultContent = "Please remember."
+
+    var body: some View {
+        Form {
+            
+            Section {
+                VStack {
+                    Image(systemName: "character")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.blue)
+                    
+                    Text("Default Content")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here. This ensures that all notifications are complete and consistent, even if specific details are missing during creation.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+            }
+            
+            Section(header: Text("Default Notification Content")) {
+                HStack {
+                    Text("Default Title")
+                    TextField("Title", text: $defaultTitle)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack {
+                    Text("Default Text")
+                    TextField("Text", text: $defaultContent)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                Button(action: {
+                    resetToDefault()
+                }) {
+                    HStack {
+                        Label("Reset", systemImage: "arrow.triangle.2.circlepath")
+                    }
+                }
+            }
+            
+            Section(header: Text("Alert"), footer: Text("If disabled, the default content will be automatically used without warning when creating notifications if information is missing.")) {
+                Toggle("Show missing information alert", isOn: $showMissingInfoAlert)
+            }
+        }
+        .navigationTitle("Default Content")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func resetToDefault() {
+        defaultTitle = originalDefaultTitle
+        defaultContent = originalDefaultContent
+    }
+}
+
+struct LabView: View {
+    @AppStorage("enableExperimentalFeatures") private var enableExperimentalFeatures = false
+    @AppStorage("enableTimeSensitiveNotifications") private var enableTimeSensitiveNotifications = false
+
+    var body: some View {
+        Form {
+            Section {
+                VStack {
+                    Image(systemName: "flask.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.purple)
+                    
+                    Text("Lab")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Enable Experimental Features to try out new, unfinished features that may not work as expected.\n\nThese features are in testing and could change or be removed in future updates. Use with caution, and expect occasional issues.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+                
+                Toggle("Enable Experimental Features", isOn: Binding(
+                    get: { enableExperimentalFeatures },
+                    set: { newValue in
+                        enableExperimentalFeatures = newValue
+                        if !newValue {
+                            enableTimeSensitiveNotifications = false
+                        }
+                    }
+                ))
+            }
+
+            if enableExperimentalFeatures {
+                Section(header: Text("Available Features")) {
+                    HStack {
+                        Image(systemName: "clock.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(Color.yellow)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Time Sensitive Notifications")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            
+                            Text("Time Sensitive Notifications are a special category of alerts that can break through Focus modes or Do Not Disturb settings to deliver important information. When enabled, notifications marked as \"Time Sensitive Notifications\" will be treated with higher urgency and will be shown to the user even when their device is otherwise set to minimize interruptions.")
+                                .font(.subheadline)
+                        }
+                        Spacer()
+                    }
+                    .padding(.vertical)
+                    
+                    Toggle("Enable", isOn: $enableTimeSensitiveNotifications)
+                }
+            }
+        }
+        .navigationTitle("Lab")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+
 struct LangView: View {
     @Environment(\.openURL) private var openURL
     
     var body: some View {
         Form {
-            Section(header: Text("Description")) {
-                Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!")
+            Section {
+                VStack {
+                    Image(systemName: "globe")
+                        .resizable()
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30, height: 30)
+                        .aspectRatio(contentMode: .fit)
+                    
+                    Text("Language")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+                
                 Button(action: {
                     let url = URL(string: UIApplication.openSettingsURLString)!
                     UIApplication.shared.open(url)
@@ -705,8 +1121,24 @@ struct HelpView: View {
 
     var body: some View {
         Form{
-            Section(header: Text("Description")) {
-                Text("Welcome to the Help Center!\nHere you will find information on how to operate this application and more!")
+            Section {
+                VStack {
+                    Image(systemName: "questionmark.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30, height: 30)
+                        .aspectRatio(contentMode: .fit)
+                    
+                    Text("Help Center")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Welcome to the Help Center!\n\nHere, you’ll find everything you need to get the most out of this app. Whether you’re a first-time user or an experienced pro, our Help Center offers guides, tutorials, and troubleshooting tips. Browse through our comprehensive FAQs for additional support. If you need further assistance, don’t hesitate to fill the report form.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
             }
             Section(header: Text("Q: How to schedule notifications?")) {
                 Text("Tap the \"+\" symbol in the upper right corner of the home tab, enter the notification title and content, finally set the time and click Save to schedule the notification.")
@@ -714,7 +1146,7 @@ struct HelpView: View {
             Section(header: Text("Q: Any other questions?")) {
                 Text("Use our feedback form to get help!")
             }
-            Section() {
+            Section {
                 Button(action: {
                     if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
                         openURL(url)
@@ -772,8 +1204,7 @@ enum AppIcon: String, CaseIterable {
     case black = "AppIconBlack"
     case whiteLogo = "AppIconWhiteLogo"
     case blackLogo = "AppIconBlackLogo"
-    
-    // Description with "AppIcon" removed
+
     var description: String {
         // Removing the "AppIcon" prefix for display
         if self == .default {
@@ -797,7 +1228,26 @@ struct IconView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Choose app icon you want to change")) {
+            Section {
+                VStack {
+                    Image(systemName: "square.grid.2x2.fill")
+                        .resizable()
+                        .foregroundColor(Color.blue)
+                        .frame(width: 30, height: 30)
+                        .aspectRatio(contentMode: .fit)
+                    
+                    Text("App Icon")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Here, you have the option to personalize your app experience by selecting your preferred app icon.\n\nChoose from a variety of available icons to customize the look and feel of the app on your device. Once you've made your selection, the app icon will automatically update, reflecting your choice instantly. This allows you to tailor your app's appearance to match your personal style or preferences, giving you more control over your user experience.")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+            }
+            Section(header: Text("Select the app icon you want to change")) {
                 ForEach(AppIcon.allCases, id: \.self) { icon in
                     Button(action: {
                         selectedIcon = icon

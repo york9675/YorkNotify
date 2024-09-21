@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/Version-Beta--1.2.5-blue.svg?cacheSeconds=2592000" />
+    <img alt="Version" src="https://img.shields.io/badge/Version-Beta--2.0.0-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -26,6 +26,7 @@
 
 - 排程通知並在指定時間傳送
 - 使用SwiftUI製成的精美介面
+- 易使用
 - 完全免費開源且超實用
 
 > [!NOTE]  

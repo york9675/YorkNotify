@@ -10,12 +10,18 @@ import UserNotifications
 
 @main
 struct YorkNotifyApp: App {
+    @StateObject private var appState = AppState()
+    
     init() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+        print("Welcome to the YorkNotify app by York!\n\nIf you like this app, please leave a star on the GitHub project page, or consider sponsoring me through Buy Me a Coffee!\nEncounter any problems during use? Please create GitHub Issues or fill out the feedback form to report!")
+        print("\nCOPYRIGHT 2024 YORK")
+        print("========== HAVE A NICE DAY! ==========")
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
-                print("Notification permission granted.")
-            } else {
-                print("Notification permission denied.")
+//                print("Permission granted")
+            } else if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
         }
 
@@ -34,6 +40,7 @@ struct YorkNotifyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appState)
         }
     }
 }

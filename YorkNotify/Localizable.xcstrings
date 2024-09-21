@@ -29,6 +29,28 @@
         }
       }
     },
+    "• New \"Default Content\" feature\n• Add notification list refresh button\n• Add \"Lab\"\n• Add the ability to automatically check for updates from GitHub\n• Some interface changes were made to be more in line with Apple’s design style (I may have accidentally learned Apple’s bug-increasing techniques in the process XD)\n• Other minor modifications and bug fixes" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 新しい「デフォルト コンテンツ」機能\n• 通知リスト更新ボタンを追加 • 「ラボ」を追加 • GitHub からの更新を自動的にチェックする機能を追加しました\n• Apple のデザイン スタイルに沿うようにインターフェイスを一部変更しました (その過程で Apple のバグ増加テクニックを偶然学んだかもしれません XD)\n• その他の小さな変更とバグ修正"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 新的「预设内容」功能\n• 新增通知清单刷新按钮 • 新增「实验室」 • 新增自动从 GitHub 检查更新的功能\n• 一些介面更改以更加符合苹果的设计风格（可能在过程中不小心学了苹果增加Bug的技术XD)\n• 其他细微修改和错误修复"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• 新的「預設內容」功能\n• 新增通知清單刷新按鈕 • 新增「實驗室」 • 新增自動從 GitHub 檢查更新的功能\n• 一些介面更改以更加符合蘋果的設計風格（可能在過程中不小心學了蘋果增加Bug的技術XD)\n• 其他細微修改和錯誤修復"
+          }
+        }
+      }
+    },
     "2024 York Development" : {
       "localizations" : {
         "ja" : {
@@ -47,6 +69,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "2024 York Development"
+          }
+        }
+      }
+    },
+    "A new version %@ is available, go to GitHub to download and install the latest version." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョン %@ が利用可能です。GitHub にアクセスして最新バージョンをダウンロードしてインストールしてください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有新版本 %@ 可用，前往GitHub來下載並安裝最新的版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有新版本 %@ 可用，前往GitHub來下載並安裝最新的版本。"
           }
         }
       }
@@ -95,24 +139,46 @@
         }
       }
     },
-    "After modifying the theme, the theme of \"Create Notification\" will not change until the application is restarted" : {
+    "Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テーマを変更した後、アプリケーションを再起動するまで「通知の作成」のテーマは変更されません。"
+            "value" : "新機能、改善点、バグ修正の概要を記した完全な更新ログなど、現在のソフトウェア バージョンに関する包括的な詳細情報にアクセスできます。 \nさらに、下のボタンを使用してバグを簡単に報告できます。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "修改主题后创建通知的主题在重新启动应用程式前不会改变"
+            "value" : "查看有关目前软体版本的全面详细信息，包括新功能、改进和错误修复的完整更新日志。 \n此外，您可以使用下面的按钮轻松报告错误。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "修改主題後創建通知的主題在重新啟動應用程式前不會改變"
+            "value" : "查看有關目前軟體版本的全面詳細信息，包括新功能、改進和錯誤修復的完整更新日誌。 \n此外，您可以使用下面的按鈕輕鬆回報錯誤。"
+          }
+        }
+      }
+    },
+    "Alert" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "警告"
           }
         }
       }
@@ -161,7 +227,7 @@
         }
       }
     },
-    "Are you sure you want to delete the scheduled notification\"%@\"?\nThis operation cannot be undone" : {
+    "Are you sure you want to delete the scheduled notification \"%@\"?\nThis operation cannot be undone" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -201,6 +267,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "作者"
+          }
+        }
+      }
+    },
+    "Available Features" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利用可能な機能"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用功能"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用功能"
           }
         }
       }
@@ -271,24 +359,24 @@
         }
       }
     },
-    "Choose app icon you want to change" : {
+    "Check for Updates Automatically" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "変更したいアプリアイコンを選択してください"
+            "value" : "アップデートを自動的にチェックする"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选择你要更换的App图标"
+            "value" : "自动检查更新"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "選擇你要更換的App圖標"
+            "value" : "自動檢查更新"
           }
         }
       }
@@ -359,6 +447,94 @@
         }
       }
     },
+    "Default Content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルトコンテンツ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设内容"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設內容"
+          }
+        }
+      }
+    },
+    "Default Notification Content" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルトの通知内容"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设通知内文"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設通知內容"
+          }
+        }
+      }
+    },
+    "Default Text" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルトテキスト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设内文"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設文字"
+          }
+        }
+      }
+    },
+    "Default Title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルトタイトル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预设标题"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設標題"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "ja" : {
@@ -377,28 +553,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "刪除"
-          }
-        }
-      }
-    },
-    "Description" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "説明"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "说明"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "說明"
           }
         }
       }
@@ -447,6 +601,72 @@
         }
       }
     },
+    "Enable" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効にする"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用"
+          }
+        }
+      }
+    },
+    "Enable Experimental Features" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実験的な機能を有効にする"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "实验性功能"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用實驗性功能"
+          }
+        }
+      }
+    },
+    "Enable Experimental Features to try out new, unfinished features that may not work as expected.\n\nThese features are in testing and could change or be removed in future updates. Use with caution, and expect occasional issues." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実験的機能を有効にすると、期待どおりに動作しない可能性のある新しい未完成の機能を試すことができます。\n\nこれらの機能はテスト中であり、将来のアップデートで変更または削除される可能性があります。注意して使用してください。問題が発生する場合があります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用实验性功能来抢先体验可能无法如预期运作的全新、未完成的功能。\n\n这些功能正在测试中，可能会在未来的更新中更改或删除。请谨慎使用，并预计可能会出现问题。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用實驗性功能來搶先體驗可能無法如預期運作的全新、未完成的功能。\n\n這些功能正在測試中，可能會在未來的更新中更改或刪除。請謹慎使用，並預計可能會出現問題。"
+          }
+        }
+      }
+    },
     "Feedback" : {
       "localizations" : {
         "ja" : {
@@ -465,28 +685,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "意見回饋"
-          }
-        }
-      }
-    },
-    "Fix the problem that the App icon cannot be changed\nModify icon list text color\nOther minor modifications and bugfixes" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アプリアイコンを変更できない問題を修正\nアイコンリストのテキストの色を変更\nその他の小さな変更とバグ修正"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "修复App图示无法更改的问题\n修改icon列表文字颜色\n其他小修改和错误修复"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "修復App圖示無法更改的問題\n修改icon列表文字顏色\n其他小修改和錯誤修復"
           }
         }
       }
@@ -667,6 +865,28 @@
         }
       }
     },
+    "Here, you have the option to personalize your app experience by selecting your preferred app icon.\n\nChoose from a variety of available icons to customize the look and feel of the app on your device. Once you've made your selection, the app icon will automatically update, reflecting your choice instantly. This allows you to tailor your app's appearance to match your personal style or preferences, giving you more control over your user experience." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここでは、好みのアプリ アイコンを選択して、アプリ エクスペリエンスをカスタマイズできます。  さまざまなアイコンから選択して、デバイス上のアプリの外観と操作性をカスタマイズします。選択すると、アプリ アイコンが自動的に更新され、選択内容が即座に反映されます。これにより、アプリの外観を個人のスタイルや好みに合わせてカスタマイズできるため、ユーザー エクスペリエンスをより細かく制御できます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在这里，您可以透过选择您喜欢的应用程式图示来客制化您的应用程式体验。  从各种可用图示中进行选择，以自订装置上应用程式的外观和风格。一旦您做出选择，应用程式图示将自动更新。这使您可以根据您的个人风格或偏好自订应用程式的外观，从而更好地控制使用者体验。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在這裡，您可以透過選擇您喜歡的應用程式圖示來客製化您的應用程式體驗。  從各種可用圖示中進行選擇，以自訂裝置上應用程式的外觀和風格。一旦您做出選擇，應用程式圖示將自動更新。這使您可以根據您的個人風格或偏好自訂應用程式的外觀，從而更好地控制使用者體驗。"
+          }
+        }
+      }
+    },
     "Home" : {
       "localizations" : {
         "ja" : {
@@ -689,24 +909,46 @@
         }
       }
     },
-    "Known Issues" : {
+    "If disabled, the default content will be automatically used without warning when creating notifications if information is missing." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "既知の問題"
+            "value" : "無効にすると、情報が不足している場合に通知を作成するときに警告なしにデフォルトのコンテンツが自動的に使用されます。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已知问题"
+            "value" : "如果停用，则在建立通知时如果资讯遗失，将自动使用预设内容，而不发出警告。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已知問題"
+            "value" : "如果停用，則在建立通知時如果資訊遺失，將自動使用預設內容，而不發出警告。"
+          }
+        }
+      }
+    },
+    "Lab" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ラボ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "实验室"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "實驗室"
           }
         }
       }
@@ -773,6 +1015,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "連結"
+          }
+        }
+      }
+    },
+    "Missing Information" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不足している情報"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺失资讯"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺失資訊"
           }
         }
       }
@@ -933,66 +1197,28 @@
     },
     "Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!  This language translation was contributed by: York, Google Translate"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "下のボタンをクリックしてシステム設定に移動し、「言語」をタップしてアプリの優先言語を変更してください。\n\n翻訳には大量の機械翻訳が使用されているため、多くの誤りや不合理な点が含まれている可能性があります。翻訳に誤りがある場合は、フィードバックフォームにアクセスして報告してください。ありがとうございます！"
+            "value" : "下のボタンをクリックしてシステム設定に移動し、「言語」をタップしてアプリの優先言語を変更してください。\n\n翻訳には大量の機械翻訳が使用されているため、多くの誤りや不合理な点が含まれている可能性があります。翻訳に誤りがある場合は、フィードバックフォームにアクセスして報告してください。ありがとうございます！  この言語翻訳の貢献者: Google Translate"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请点击下方按钮跳进入系统设定，并点选「语言」来更改您偏好的App语言。\n\n翻译可能使用大量机器翻译，并包含许多错误或不合理之处，如翻译有误，请前往意见回馈表单回报，感谢！"
+            "value" : "请点击下方按钮跳进入系统设定，并点选「语言」来更改您偏好的App语言。\n\n翻译可能使用大量机器翻译，并包含许多错误或不合理之处，如翻译有误，请前往意见回馈表单回报，感谢！  此语言翻译贡献者：York"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請點擊下方按鈕跳進入系統設定，並點選「語言」來更改您偏好的App語言。\n\n翻譯可能使用大量機器翻譯，並包含許多錯誤或不合理之處，如翻譯有誤，請前往意見回饋表單回報，感謝！"
-          }
-        }
-      }
-    },
-    "Please fill in the notification text." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "通知テキストを入力してください"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "请填写通知内文"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請填寫通知內文"
-          }
-        }
-      }
-    },
-    "Please fill in the notification title." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "通知タイトルを入力してください。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "请填写通知标题"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "請填寫通知標題"
+            "value" : "請點擊下方按鈕跳進入系統設定，並點選「語言」來更改您偏好的App語言。\n\n翻譯可能使用大量機器翻譯，並包含許多錯誤或不合理之處，如翻譯有誤，請前往意見回饋表單回報，感謝！  此語言翻譯貢獻者：York"
           }
         }
       }
@@ -1019,24 +1245,24 @@
         }
       }
     },
-    "Please select a time in the future." : {
+    "Proceed" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "将来の時間を選択してください。"
+            "value" : "進む"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "请选择未来的时间"
+            "value" : "仍要继续"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "請選擇未來的時間"
+            "value" : "仍要繼續"
           }
         }
       }
@@ -1085,6 +1311,28 @@
         }
       }
     },
+    "Refresh" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リフレッシュ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新整理"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新整理"
+          }
+        }
+      }
+    },
     "Repeat" : {
       "localizations" : {
         "ja" : {
@@ -1103,6 +1351,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "重複"
+          }
+        }
+      }
+    },
+    "Reset" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リセット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重設"
           }
         }
       }
@@ -1151,6 +1421,50 @@
         }
       }
     },
+    "Select the app icon you want to change" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更したいアプリアイコンを選択します"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择您要变更的应用程式图标"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇您要變更的應用程式圖標"
+          }
+        }
+      }
+    },
+    "Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here. This ensures that all notifications are complete and consistent, even if specific details are missing during creation." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここでデフォルトの通知コンテンツを設定します。 \n新しい通知を作成しても特定のフィールドを空のままにしておくと、アプリはここで定義したデフォルトのコンテンツを自動的に挿入します。これにより、作成時に特定の詳細が欠落していても、すべての通知が完全で一貫性のあるものになります。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此处设定预设通知内容。 \n每当您建立新通知但将某些栏位留空时，应用程式都会自动插入您在此处定义的预设内容。这可确保所有通知完整且一致，即使在建立过程中缺少特定详细资讯也是如此。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此處設定預設通知內容。 \n每當您建立新通知但將某些欄位留空時，應用程式都會自動插入您在此處定義的預設內容。這可確保所有通知完整且一致，即使在建立過程中缺少特定詳細資訊也是如此。"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "ja" : {
@@ -1169,6 +1483,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定"
+          }
+        }
+      }
+    },
+    "Show missing information alert" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不足情報アラートを表示"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示缺失资讯警告"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示缺失資訊警告"
           }
         }
       }
@@ -1261,6 +1597,28 @@
         }
       }
     },
+    "Text" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンテンツ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内文"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "內文"
+          }
+        }
+      }
+    },
     "The developer of this app!" : {
       "localizations" : {
         "ja" : {
@@ -1327,6 +1685,72 @@
         }
       }
     },
+    "Time Sensitive Notifications" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間制限のある通知"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "具时效性通知"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "具時效性通知"
+          }
+        }
+      }
+    },
+    "Time Sensitive Notifications are a special category of alerts that can break through Focus modes or Do Not Disturb settings to deliver important information. When enabled, notifications marked as \"Time Sensitive Notifications\" will be treated with higher urgency and will be shown to the user even when their device is otherwise set to minimize interruptions." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間依存通知は、フォーカス モードや「時間制限のある通知」設定を回避して重要な情報を届けることができる特別なカテゴリのアラートです。有効にすると、「時間依存」としてマークされた通知は緊急度が高まり、デバイスが中断を最小限に抑えるように設定されている場合でもユーザーに表示されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "具时效性通知是一种特殊的通知，可以突破专注模式或勿扰模式设定来传送重要讯息。启用后，标记为「具时效性通知」的通知将以更高的紧急程度进行处理，并且即使用户的设备设定为尽量减少打扰，也会向用户显示。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "具時效性通知是一種特殊的通知，可以突破專注模式或勿擾模式設定來傳送重要訊息。啟用後，標記為「具時效性通知」的通知將以更高的緊急程度進行處理，並且即使用戶的設備設定為盡量減少打擾，也會向用戶顯示。"
+          }
+        }
+      }
+    },
+    "Title" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイトル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标题"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "標題"
+          }
+        }
+      }
+    },
     "Translation problem report" : {
       "localizations" : {
         "ja" : {
@@ -1345,6 +1769,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "翻譯問題回報"
+          }
+        }
+      }
+    },
+    "Update Available" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデートが利用可能"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有可用更新"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有可用更新"
           }
         }
       }
@@ -1459,24 +1905,46 @@
         }
       }
     },
-    "Welcome to the Help Center!\nHere you will find information on how to operate this application and more!" : {
+    "Welcome to the Help Center!\n\nHere, you’ll find everything you need to get the most out of this app. Whether you’re a first-time user or an experienced pro, our Help Center offers guides, tutorials, and troubleshooting tips. Browse through our comprehensive FAQs for additional support. If you need further assistance, don’t hesitate to fill the report form." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ヘルプ センターへようこそ!\nここでは、このアプリケーションの操作方法などに関する情報をご覧いただけます。"
+            "value" : "ヘルプ センターへようこそ!\n\nここでは、このアプリを最大限に活用するために必要なものがすべて見つかります。初めてのユーザーでも、経験豊富なプロでも、ヘルプ センターではガイド、チュートリアル、トラブルシューティングのヒントを提供しています。追加のサポートについては、包括的な FAQ を参照してください。さらにサポートが必要な場合は、レポート フォームに記入してください。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欢迎来到帮助中心！\n这里会提供关于操作本应用程序的方法等！"
+            "value" : "欢迎来到帮助中心！ \n在这里，您将找到充分利用此应用程式所需的一切。无论您是初次使用者还是经验丰富的专业人士，我们的帮助中心都提供指南、教学和故障排除提示。浏览我们全面的常见问题以获得更多支援。如果您需要进一步的协助，请随时填写意见回馈表单。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "歡迎來到幫助中心！\n這裡會提供關於操作本應用程式的方法等！"
+            "value" : "歡迎來到幫助中心！ \n在這裡，您將找到充分利用此應用程式所需的一切。無論您是初次使用者還是經驗豐富的專業人士，我們的幫助中心都提供指南、教學和故障排除提示。瀏覽我們全面的常見問題以獲得更多支援。如果您需要進一步的協助，請隨時填寫意見回饋表單。"
+          }
+        }
+      }
+    },
+    "When enabled, this app will automatically check if new updates are available from GitHub on startup." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効にすると、このアプリは起動時に GitHub から新しいアップデートが利用可能かどうかを自動的に確認します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当启用时,会自动于开启程式时从GitHub检查是否有新的更新可用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "當啟用時，會自動於程式開啟時從GitHub檢查是否有新的更新可用。"
           }
         }
       }
@@ -1499,6 +1967,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "York"
+          }
+        }
+      }
+    },
+    "You haven't filled out all fields. The default content will be used for the missing fields. Do you want to proceed?" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべてのフィールドに入力されていません。不足しているフィールドにはデフォルトの内容が使用されます。続行しますか?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您尚未填写所有栏位。预设内容将用于缺失的栏位。您想继续吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您尚未填寫所有欄位。預設內容將用於缺失的欄位。您想繼續嗎？"
           }
         }
       }
