@@ -128,12 +128,20 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Support
 
-Give a ⭐️ if you think this project is great!
+When I first started developing apps, my goal was simple yet heartfelt: to create tools that genuinely help people, and to offer them for free. In a world saturated with paid features and intrusive ads, I wanted to offer something different—apps that anyone could use without cost, designed solely to make life a little easier. Since day one, my apps have been completely ad-free, and some, like my current project, are even open-source. I’ve always believed that if my apps make life just a bit more convenient for even a small group of users, then the effort is worth it.
 
-<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br><br>
+However, the journey hasn’t been without its challenges—particularly financial ones. There's a significant gap between my ideals and the practical realities of being an independent developer. While I have the passion and skills to keep building, I’m limited by the cost of joining the Apple Developer Program. This $99 annual fee is essential for accessing key features like Time-Sensitive Notifications and for distributing apps on the App Store. Unfortunately, as a student working with a Hackintosh setup, I simply can’t afford the membership right now.
+
+Without this membership, I’m unable to unlock the full functionality I envision for my apps or make them available to the broader iOS community through the App Store. If my apps have helped you in any way or made your day a little easier, I’d be incredibly grateful for your support. Even something as small as the cost of a cup of coffee could help me cover the Apple Developer Program fee, allowing me to continue improving my apps and sharing them with a wider audience.
+
+Your contribution, no matter how modest, would mean the world to me. It’s not just about funding an app—it’s about supporting the belief that technology can be accessible, useful, and free for everyone. Thank you for helping me keep this vision alive.
+
+<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
+
+Or you can simply just give a :star:!
 
 ***
 
-2024 York Development
+© 2024 York Development
 
 Made with :heart: and Swift in Taiwan.
