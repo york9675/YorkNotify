@@ -128,9 +128,17 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ## 贊助
 
-如果你覺得這個專案很棒，歡迎留顆⭐️！
+當我開始開發應用程式時，我的目標很簡單但真誠：創造一些真正有幫助的東西，並且免費提供。在這個充斥著付費功能和廣告的世界中，我希望能夠建立一些任何人都能免費使用的工具，純粹是為了讓生活變得更方便。我的應用程式一直是無廣告的，有些甚至是開源的（像目前的這個專案）。我始終相信，即使我的應用程式只能幫助到一小部分人，讓他們的生活更容易或更高效，那也已經值得了。
 
-<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br><br>
+然而，在這個過程中我遇到了一些財務上的挑戰。我的理想與身為獨立開發者的現實之間存在明顯的差距。儘管我擁有繼續開發的熱情與技術，但卻因為無法支付加入 Apple Developer Program 的費用而受到了限制。這個會員資格是必須的，它能讓我使用一些必要的功能，例如「時間敏感通知」，並且能讓應用程式上架於 App Store。每年 99 美元的費用，對於目前身為學生且使用 Hackintosh （因為我負擔不起一台真正的 Mac）開發的我來說，實在無力承擔。
+
+沒有這個會員資格，我無法實現我對應用程式的完整構想，也無法通過 App Store 將應用程式廣泛地提供給 iOS 使用者。如果你曾從我的應用程式中受益，並感覺它們讓你的生活稍微方便了一些，我會非常感激你的支持。即使只是請我喝一杯咖啡，也能幫助我支付 Apple Developer Program 的費用，從而讓我能解鎖應用程式的全部潛力，並將它們分享給更多的人。
+
+你的支持，不論多小，對我來說都意義非凡。這不僅僅是為了一個應用程式籌資，而是支持一種信念：科技可以是簡單、實用且免費的。感謝你與我一同堅持這個願景，幫助它繼續前行。
+
+<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
+  
+或者您也可以簡單的給顆 :star: ！
 
 ***
 
