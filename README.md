@@ -75,7 +75,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 2. Open the Project in Xcode
 
 1. **Open Xcode**.
-2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `YorkNotify/YorkNotify.xcodeproj`. (Please unzip `YorkNotify/YorkNotify.xcodeproj.zip` first)
+2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `YorkNotify/YorkNotify.xcodeproj`.
 
 ### 3. Set Up Signing & Capabilities
 
