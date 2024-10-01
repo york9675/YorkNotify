@@ -75,7 +75,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 2. 在 Xcode 中開啟項目
 
 1. **打開 Xcode**。
-2. **開啟專案**：導覽至複製/下載專案的目錄，然後開啟 `YorkNotify/YorkNotify.xcodeproj`。 (請先將 `YorkNotify/YorkNotify.xcodeproj.zip` 解壓縮)
+2. **開啟專案**：導覽至複製/下載專案的目錄，然後開啟 `YorkNotify/YorkNotify.xcodeproj`。
 
 ### 3. 設定簽名和功能
 
