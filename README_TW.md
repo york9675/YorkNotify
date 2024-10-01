@@ -142,6 +142,6 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ***
 
-2024 York Development
+© 2024 York Development
 
 使用 :heart: 及 Swift 在台灣製作！
