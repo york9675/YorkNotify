@@ -11,10 +11,11 @@ import SwiftUI
 struct SettingsTabView: View {
     @Binding var selectedTheme: Theme
     @State private var showErrorAlert = false
+    @State private var showAcknowledgementView = false
     @Environment(\.openURL) private var openURL
-    
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("General")) {
                     Picker(selection: $selectedTheme, label: Label("Theme", systemImage: "moon")) {
@@ -53,7 +54,7 @@ struct SettingsTabView: View {
 
                     NavigationLink(destination: AutherView()) {
                         HStack {
-                            Label("Auther", systemImage: "person")
+                            Label("Author", systemImage: "person")
                             Spacer()
                             Text("York")
                                 .foregroundColor(.secondary)
@@ -67,6 +68,15 @@ struct SettingsTabView: View {
                             Text("\(appVersion) (\(build))")
                                 .foregroundColor(.secondary)
                         }
+                    }
+
+                    Button(action: {
+                        showAcknowledgementView = true
+                    }) {
+                        Label("Acknowledgements", systemImage: "doc.text")
+                    }
+                    .sheet(isPresented: $showAcknowledgementView) {
+                        AcknowledgementsView()
                     }
 
                     Button(action: {

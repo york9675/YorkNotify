@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/Version-2.1.0--beta-blue.svg?cacheSeconds=2592000" />
+    <img alt="Version" src="https://img.shields.io/badge/Version-2.2.0--beta-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -18,8 +18,8 @@
 <div align="center">
   <table>
     <tr>
-      <td><img src="./Screenshots/Home_TW.png" alt="Home" width="300"/></td>
-      <td><img src="./Screenshots/Settings_TW.png" alt="Settings" width="300"/></td>
+      <td><img src="./Screenshots/Home_TW.png" alt="Home" width="250"/></td>
+      <td><img src="./Screenshots/Settings_TW.png" alt="Settings" width="250"/></td>
     </tr>
   </table>
 </div>
@@ -56,8 +56,8 @@
 在開始之前，請確保您具備以下條件：
 
 - **一台裝有 macOS 的電腦**。
-- **Xcode** (需要macOS 13 或更高版本以支援iOS 15以上的開發) 您可以從 [App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
-- **iPhone/iPad** (實體機或模擬機) 需要 iOS 15 或更高版本。如是實體機，請先開啟「開發者模式」。
+- **Xcode** (需要macOS 13 或更高版本以支援iOS 16以上的開發) 您可以從 [App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
+- **iPhone/iPad** (實體機或模擬機) 需要 iOS 16 或更高版本。如是實體機，請先開啟「開發者模式」。
 - **Apple 開發者帳戶** (免費或付費) 用於程式碼簽署和裝置測試。
 
 ## 在 Xcode 中匯入並執行專案的步驟

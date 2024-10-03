@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 struct VersionView: View {
-   @AppStorage("customColor") private var customColorHex: String = ""
+    @State private var showWhatsNew = false
+    
+    @AppStorage("customColor") private var customColorHex: String = ""
 
     var customColor: Color {
         Color(hex: customColorHex) ?? .blue
     }
 
-    
     @Environment(\.openURL) private var openURL
     @StateObject private var appState = AppState()
     @AppStorage("autoCheckUpdates") private var autoCheckUpdates = true
@@ -57,18 +58,13 @@ struct VersionView: View {
             }
             
             Section(header: Text("What's New?")) {
-                Text("• New \"Color Scheme\" feature\n• Other minor modifications and bug fixes")
-                
                 Button(action: {
-                    if let url = URL(string: "https://github.com/york9675/YorkNotify/releases/tag/\(appVersion)") {
-                        openURL(url)
-                    }
+                    showWhatsNew = true
                 }) {
-                    HStack {
-                        Label("Full Changelog", systemImage: "info.circle")
-                        Spacer()
-                        Image(systemName: "arrow.up.right.square")
-                    }
+                    Label("Show What's New", systemImage: "sparkle")
+                }
+                .sheet(isPresented: $showWhatsNew) {
+                    WhatsNewSheet()
                 }
             }
             
@@ -138,6 +134,10 @@ struct VersionView: View {
             }
         }
     }
+}
+
+#Preview {
+    VersionView()
 }
 
 /*

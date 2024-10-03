@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeTabView: View {
+
     @State private var notifications: [NotificationItem] = []
     @State private var showingCreateView = false
     @State private var sortOrder: SortOrder = .time
@@ -80,7 +81,7 @@ struct HomeTabView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 if notifications.isEmpty {
                     VStack {

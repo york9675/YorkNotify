@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/Version-2.1.0--beta-blue.svg?cacheSeconds=2592000" />
+    <img alt="Version" src="https://img.shields.io/badge/Version-2.2.0--beta-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -56,8 +56,8 @@ This guide will help you import this project into Xcode and run it on your iPhon
 Before you begin, ensure that you have the following:
 
 - **A Computer** with macOS.
-- **Xcode** installed (requires macOS 13 or higher to support development for iOS 15 and above). You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835).
-- **iPhone/iPad** (physical device or simulator) requires iOS 15 or higher. If it is a physical machine, please enable "Developer Mode" first.
+- **Xcode** installed (requires macOS 13 or higher to support development for iOS 16 and above). You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835).
+- **iPhone/iPad** (physical device or simulator) requires iOS 16 or higher. If it is a physical machine, please enable "Developer Mode" first.
 - **Apple Developer Account** (free or paid) for code signing and device testing.
 
 ## Steps to Import and Run the Project in Xcode

@@ -20,10 +20,12 @@
 		983370D82CAC1FBE00B5EB72 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370D72CAC1FBE00B5EB72 /* HelpView.swift */; };
 		983370DA2CAC1FD700B5EB72 /* AutherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370D92CAC1FD700B5EB72 /* AutherView.swift */; };
 		983370DC2CAC1FF900B5EB72 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370DB2CAC1FF900B5EB72 /* IconView.swift */; };
+		986EF3272CAD3864009AC755 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986EF3262CAD3864009AC755 /* AcknowledgementView.swift */; };
 		988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */; };
 		988516F62C2EEFA60025FCAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988516F52C2EEFA60025FCAC /* ContentView.swift */; };
 		988516F82C2EEFA70025FCAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988516F72C2EEFA70025FCAC /* Assets.xcassets */; };
 		988516FB2C2EEFA70025FCAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988516FA2C2EEFA70025FCAC /* Preview Assets.xcassets */; };
+		989B53C32CAE5B3F00BDA23C /* WhatsNewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */; };
 		98CC8BF72C901FE20057111D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 98CC8BF62C901FE20057111D /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
@@ -55,11 +57,13 @@
 		983370D72CAC1FBE00B5EB72 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		983370D92CAC1FD700B5EB72 /* AutherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutherView.swift; sourceTree = "<group>"; };
 		983370DB2CAC1FF900B5EB72 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		986EF3262CAD3864009AC755 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementView.swift; sourceTree = "<group>"; };
 		988516F02C2EEFA60025FCAC /* YorkNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YorkNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YorkNotifyApp.swift; sourceTree = "<group>"; };
 		988516F52C2EEFA60025FCAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		988516F72C2EEFA70025FCAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		988516FA2C2EEFA70025FCAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewSheet.swift; sourceTree = "<group>"; };
 		98CC8BF62C901FE20057111D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,20 +97,22 @@
 		988516F22C2EEFA60025FCAC /* YorkNotify */ = {
 			isa = PBXGroup;
 			children = (
-				988516F52C2EEFA60025FCAC /* ContentView.swift */,
+				989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */,
 				983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */,
+				988516F52C2EEFA60025FCAC /* ContentView.swift */,
 				983370C52CAC1E6100B5EB72 /* HomeTabView.swift */,
-				983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */,
 				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
 				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
-				983370CD2CAC1F2C00B5EB72 /* VersionView.swift */,
+				983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */,
+				983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */,
+				983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */,
 				983370DB2CAC1FF900B5EB72 /* IconView.swift */,
-				983370D92CAC1FD700B5EB72 /* AutherView.swift */,
-				983370D72CAC1FBE00B5EB72 /* HelpView.swift */,
 				983370D52CAC1FA300B5EB72 /* LangView.swift */,
 				983370D32CAC1F8500B5EB72 /* LabView.swift */,
-				983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */,
-				983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */,
+				983370D72CAC1FBE00B5EB72 /* HelpView.swift */,
+				983370D92CAC1FD700B5EB72 /* AutherView.swift */,
+				983370CD2CAC1F2C00B5EB72 /* VersionView.swift */,
+				986EF3262CAD3864009AC755 /* AcknowledgementView.swift */,
 				988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */,
 				98CC8BF62C901FE20057111D /* Localizable.xcstrings */,
 				988516F72C2EEFA70025FCAC /* Assets.xcassets */,
@@ -172,6 +178,8 @@
 				ja,
 			);
 			mainGroup = 988516E72C2EEFA60025FCAC;
+			packageReferences = (
+			);
 			productRefGroup = 988516F12C2EEFA60025FCAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,6 +214,8 @@
 				983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */,
 				983370C82CAC1E9100B5EB72 /* CreateNotificationView.swift in Sources */,
 				988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */,
+				986EF3272CAD3864009AC755 /* AcknowledgementView.swift in Sources */,
+				989B53C32CAE5B3F00BDA23C /* WhatsNewSheet.swift in Sources */,
 				983370DA2CAC1FD700B5EB72 /* AutherView.swift in Sources */,
 				983370D62CAC1FA300B5EB72 /* LangView.swift in Sources */,
 				983370D42CAC1F8500B5EB72 /* LabView.swift in Sources */,
@@ -355,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -366,14 +376,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -396,7 +406,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -407,14 +417,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

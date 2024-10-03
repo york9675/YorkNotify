@@ -9,9 +9,6 @@ import Foundation
 import SwiftUI
 import UserNotifications
 
-let appVersion = "v2.1.0-beta"
-let build = "34"
-
 extension Color {
     var toHex: String? {
         guard let components = self.cgColor?.components, components.count >= 3 else {
