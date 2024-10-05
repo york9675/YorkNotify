@@ -140,6 +140,10 @@ git clone https://github.com/york9675/YorkNotify.git
   
 或者您也可以簡單的給顆 :star: ！
 
+## 星星歷史
+
+[![Star History Chart](https://api.star-history.com/svg?repos=york9675/YorkNotify&type=Date)](https://star-history.com/#york9675/YorkNotify&Date)
+
 ***
 
 © 2024 York Development
