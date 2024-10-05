@@ -140,6 +140,10 @@ Your contribution, no matter how small, would mean the world to me. It’s not j
 
 Or you can simply just give a :star:!
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=york9675/YorkNotify&type=Date)](https://star-history.com/#york9675/YorkNotify&Date)
+
 ***
 
 © 2024 York Development
