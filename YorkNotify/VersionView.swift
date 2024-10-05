@@ -57,11 +57,11 @@ struct VersionView: View {
                 .padding()
             }
             
-            Section(header: Text("What's New?")) {
+            Section {
                 Button(action: {
                     showWhatsNew = true
                 }) {
-                    Label("Show What's New", systemImage: "sparkle")
+                    Label("What's New?", systemImage: "sparkles")
                 }
                 .sheet(isPresented: $showWhatsNew) {
                     WhatsNewSheet()

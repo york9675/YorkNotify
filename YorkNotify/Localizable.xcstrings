@@ -2015,28 +2015,6 @@
         }
       }
     },
-    "Show What's New" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新着情報を表示"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "显示新内容"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顯示新內容"
-          }
-        }
-      }
-    },
     "Sort by..." : {
       "localizations" : {
         "ja" : {

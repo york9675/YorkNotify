@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-let appVersion = "v2.2.0-beta"
-let build = "35"
+let appVersion = "v2.2.1-beta"
+let build = "36"
 
 struct WhatsNewSheet: View {
     @Environment(\.openURL) private var openURL
@@ -17,17 +17,18 @@ struct WhatsNewSheet: View {
     
     var body: some View {
         VStack(spacing: 15) {
+            Spacer()
+            
             Text("What's New?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, 50)
             
             Text("\(appVersion)")
                 .foregroundColor(.secondary)
             
             Spacer()
 
-            HStack(alignment: .top, spacing: 15) {
+            HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "sparkles.rectangle.stack.fill")
                     .font(.system(size: 32))
                     .foregroundColor(.yellow)
@@ -45,7 +46,7 @@ struct WhatsNewSheet: View {
             }
             .padding(.horizontal)
 
-            HStack(alignment: .top, spacing: 15) {
+            HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "paintbrush.fill")
                     .font(.system(size: 32))
                     .foregroundColor(.teal)
@@ -63,7 +64,7 @@ struct WhatsNewSheet: View {
             }
             .padding(.horizontal)
 
-            HStack(alignment: .top, spacing: 15) {
+            HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "ipad.and.iphone")
                     .font(.system(size: 32))
                     .foregroundColor(.green)
@@ -81,7 +82,7 @@ struct WhatsNewSheet: View {
             }
             .padding(.horizontal)
 
-            HStack(alignment: .top, spacing: 15) {
+            HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "ladybug.fill")
                     .font(.system(size: 32))
                     .foregroundColor(.red)
@@ -124,7 +125,7 @@ struct WhatsNewSheet: View {
                 .cornerRadius(10)
             }
         }
-        .padding(.bottom, 25)
+        .padding(.bottom)
         .padding(.horizontal)
     }
 }
