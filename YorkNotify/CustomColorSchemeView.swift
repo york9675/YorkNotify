@@ -19,7 +19,7 @@ struct CustomColorSchemeView: View {
     var body: some View {
         Form {
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "paintbrush.fill")
                         .font(.largeTitle)
                         .foregroundColor(customColor)
@@ -34,6 +34,7 @@ struct CustomColorSchemeView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             }
 
             Section {

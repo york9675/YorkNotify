@@ -38,7 +38,7 @@ struct VersionView: View {
     var body: some View {
         Form {
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "info.circle.fill")
                         .resizable()
                         .foregroundColor(customColor)
@@ -55,6 +55,7 @@ struct VersionView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             }
             
             Section {

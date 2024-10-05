@@ -20,7 +20,7 @@ struct LangView: View {
     var body: some View {
         Form {
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "globe")
                         .resizable()
                         .foregroundColor(customColor)
@@ -37,6 +37,7 @@ struct LangView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 
                 Button(action: {
                     let url = URL(string: UIApplication.openSettingsURLString)!

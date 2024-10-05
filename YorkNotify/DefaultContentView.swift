@@ -24,9 +24,8 @@ struct DefaultContentView: View {
 
     var body: some View {
         Form {
-            
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "character")
                         .font(.largeTitle)
                         .foregroundColor(customColor)
@@ -41,6 +40,7 @@ struct DefaultContentView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             }
             
             Section(header: Text("Default Notification Content")) {

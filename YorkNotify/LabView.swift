@@ -22,7 +22,7 @@ struct LabView: View {
     var body: some View {
         Form {
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "flask.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color.purple)
@@ -37,6 +37,7 @@ struct LabView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
                 
                 Toggle("Enable Experimental Features", isOn: Binding(
                     get: { enableExperimentalFeatures },

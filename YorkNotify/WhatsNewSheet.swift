@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-let appVersion = "v2.2.1-beta"
-let build = "36"
+let appVersion = "v2.2.2-beta"
+let build = "37"
 
 struct WhatsNewSheet: View {
     @Environment(\.openURL) private var openURL

@@ -20,7 +20,7 @@ struct HelpView: View {
     var body: some View {
         Form{
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "questionmark.circle.fill")
                         .resizable()
                         .foregroundColor(customColor)
@@ -37,6 +37,7 @@ struct HelpView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             }
             Section(header: Text("Q: How to schedule notifications?")) {
                 Text("Tap the \"+\" symbol in the upper right corner of the home tab, enter the notification title and content, finally set the time and click Save to schedule the notification.")

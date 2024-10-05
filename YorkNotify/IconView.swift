@@ -20,7 +20,7 @@ struct IconView: View {
     var body: some View {
         List {
             Section {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: "square.grid.2x2.fill")
                         .resizable()
                         .foregroundColor(customColor)
@@ -37,6 +37,7 @@ struct IconView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             }
             Section(header: Text("Select the app icon you want to change")) {
                 ForEach(AppIcon.allCases, id: \.self) { icon in
