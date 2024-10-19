@@ -1,11 +1,17 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=An%20iOS%20app%20that%20can%20schedule%20notifications.&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
-  <a href="#" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/Version-2.2.1--beta-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/york9675/YorkNotify/releases" target="_blank">
+    <img alt="Version" src="https://img.shields.io/github/release/york9675/YorkNotify?style=for-the-badge" />
   </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <a href="https://developer.apple.com/swift/" target="_blank">
+    <img alt="Swift" src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" />
+  </a>
+  <a href="https://www.apple.com/ios" target="_blank">
+    <img alt="iOS" src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" />
+  </a>
+  <a href="#License" target="_blank">
+    <img alt="License" src="https://img.shields.io/github/license/york9675/YorkNotify?logo=github&style=for-the-badge" />
   </a>
 </p>
 
