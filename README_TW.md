@@ -1,14 +1,19 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=一個可以排程通知的%20iOS%20應用程式。&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
-  <a href="#" target="_blank">
-    <img alt="Version" src="https://img.shields.io/badge/Version-2.2.1--beta-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/york9675/YorkNotify/releases" target="_blank">
+    <img alt="Version" src="https://img.shields.io/github/release/york9675/YorkNotify?style=for-the-badge" />
   </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <a href="https://developer.apple.com/swift/" target="_blank">
+    <img alt="Swift" src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" />
+  </a>
+  <a href="https://www.apple.com/ios" target="_blank">
+    <img alt="iOS" src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" />
+  </a>
+  <a href="#License" target="_blank">
+    <img alt="License" src="https://img.shields.io/github/license/york9675/YorkNotify?logo=github&style=for-the-badge" />
   </a>
 </p>
-
 <p align="center"> 
   <a href="README.md">English</a> 
   ·
@@ -126,19 +131,29 @@ git clone https://github.com/york9675/YorkNotify.git
 
 該項目已獲得 MIT 許可證的許可。有關更多詳細信息，請參閱許可證文件。
 
-## 贊助
+## 支持
 
-當我開始開發應用程式時，我的目標很簡單但真誠：創造一些真正有幫助的東西，並且免費提供。在這個充斥著付費功能和廣告的世界中，我希望能夠建立一些任何人都能免費使用的工具，純粹是為了讓生活變得更方便。我的應用程式一直是無廣告的，有些甚至是開源的（像目前的這個專案）。我始終相信，即使我的應用程式只能幫助到一小部分人，讓他們的生活更容易或更高效，那也已經值得了。
+當我開始開發應用程式時，我的目標很簡單：創造出真正有幫助的應用程式並免費提供給大家。在這個充滿付費功能和廣告的世界中，我希望能建立一些任何人都能免費使用的東西，單純只是為了讓生活更方便。我開發的應用程式一直都是無廣告的，而且像這個專案一樣，有些甚至是開源的。如果我的應用程式能夠幫助哪怕是一小部分人提高效率或解決問題，那就值得了。
 
-然而，在這個過程中我遇到了一些財務上的挑戰。我的理想與身為獨立開發者的現實之間存在明顯的差距。儘管我擁有繼續開發的熱情與技術，但卻因為無法支付加入 Apple Developer Program 的費用而受到了限制。這個會員資格是必須的，它能讓我使用一些必要的功能，例如「時間敏感通知」，並且能讓應用程式上架於 App Store。每年 99 美元的費用，對於目前身為學生且使用 Hackintosh （因為我負擔不起一台真正的 Mac）開發的我來說，實在無力承擔。
+然而，作為一名學生和獨立開發者，我面臨了一些財務上的挑戰。每年3000多台幣的 Apple 開發者計劃會費成為了一個不小的障礙。這個會員資格是解鎖一些 iOS 功能（如具時效性通知）並將應用程式發布到 App Store 所必需的。不幸的是，這是我目前無法負擔的成本。我甚至不得不使用 Hackintosh 進行開發，因為我沒有能力購買 Mac。
 
-沒有這個會員資格，我無法實現我對應用程式的完整構想，也無法通過 App Store 將應用程式廣泛地提供給 iOS 使用者。如果你曾從我的應用程式中受益，並感覺它們讓你的生活稍微方便了一些，我會非常感激你的支持。即使只是請我喝一杯咖啡，也能幫助我支付 Apple Developer Program 的費用，從而讓我能解鎖應用程式的全部潛力，並將它們分享給更多的人。
+儘管面臨這些挑戰，我依然承諾讓這款應用程式保持**完全免費**——不會有廣告或應用內購買。但是，為了讓應用程式功能完善並對 iOS 用戶完全開放，我需要一些資助來支付 Apple 開發者帳戶的費用。
 
-你的支持，不論多小，對我來說都意義非凡。這不僅僅是為了一個應用程式籌資，而是支持一種信念：科技可以是簡單、實用且免費的。感謝你與我一同堅持這個願景，幫助它繼續前行。
+### 如何支持
+
+如果你認同這個專案並希望幫助它成長，以下是幾種支持的方式：
+
+- **捐款：** 無論金額大小，都將幫助我支付每年的 Apple 開發者費用。你可以透過下方的 [Buy Me a Coffee](https://buymeacoffee.com/york0524) 按鈕贊助這個專案！
+- **分享：** 將這個專案分享給你的朋友、家人，或任何可能受益或支持的人！
+- **合作：** 如果你是開發者、設計師，或者有改進建議，歡迎透過創建Issues、提交 Pull Requests或改善文件來為這個專案做出貢獻！
+
+無論你選擇如何支持，這都將幫助我解鎖這款應用程式的全部潛力，並保持它對所有人免費。感謝你幫助我維持這個願景的實現！
 
 <p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
-  
-或者您也可以簡單的給顆 :star: ！
+
+或者，您也可以簡單的給顆 :star: ！
+
+_感謝你抽出時間閱讀，並感謝你提供的任何支持。讓我們一起改善這款應用程式，幫助更多的人！_
 
 ## 星星歷史
 
