@@ -134,17 +134,27 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ## Support
 
-When I started developing apps, I had a simple yet sincere goal: to create something genuinely helpful, and to offer it for free. In a world dominated by paid features and ads, I wanted to build tools that anyone could use without any cost, purely to make life more convenient. My apps have been ad-free, and some, like this current project, are even open-source. I’ve always believed that even if my apps help just a small group of people, making their lives easier or more efficient, it would all be worth it.
+When I began developing apps, my mission was simple: to create genuinely helpful tools and offer them for free. In a world saturated with paid features and ads, I aimed to build something that anyone could use without cost, simply to make life a little easier. My apps have always been ad-free, and some, like this project, are open-source. If my work can help even a small group of people become more efficient or solve a problem, it’s worth it.
 
-However, I’ve encountered some financial challenges along the way. There’s a stark gap between my ideals and the reality of being an independent developer. While I have the passion and skills to continue developing, I’m held back by the cost of joining the Apple Developer Program. This membership is required to access certain essential features—like Time-Sensitive Notifications—and to distribute apps on the App Store. At $99 a year, it’s a fee I currently can’t afford, especially as a student working on a Hackintosh setup since I cannot afford a real Mac.
+However, as a student and independent developer, I’ve encountered some financial challenges. The $99 annual fee for Apple’s Developer Program has become a significant hurdle. This membership is necessary to unlock key iOS features, like Time-Sensitive Notifications, and to distribute apps on the App Store. Unfortunately, it’s a cost I can’t currently afford. I’ve even had to use a Hackintosh because I don’t have the resources to purchase a Mac for development.
 
-Without the membership, I’m unable to provide the full functionality I envision for my apps or make them widely available to iOS users through the App Store. If you've benefited from my apps and feel that they’ve made your life a little easier, I would deeply appreciate your support. Even something as simple as buying me a cup of coffee would help cover the costs of the Apple Developer Program, enabling me to unlock the full potential of my apps and share them with a wider audience.
+Despite these challenges, I remain committed to keeping this app **completely free**—with no ads or in-app purchases. But in order to make the app fully functional and accessible to iOS users, I need assistance covering the Apple Developer Account fee.
 
-Your contribution, no matter how small, would mean the world to me. It’s not just about funding an app—it’s about supporting the belief that technology can be simple, helpful, and free. Thank you for standing with me and helping keep this vision alive.
+### How You Can Help
+
+If you believe in this project and would like to support its growth, here are a few ways you can contribute:
+
+- **Donate:** Any amount, large or small, will help cover the annual Apple Developer fee. You can sponsor the project via [Buy Me a Coffee](https://buymeacoffee.com/york0524) using the button below!
+- **Spread the Word:** Share this project with your network—friends, family, or anyone who might benefit from or support it!
+- **Collaborate:** If you’re a developer, designer, or have ideas for improvement, feel free to contribute to the project by creating issues, submitting pull requests, or improving documentation!
+
+Your support, in any form, will help unlock the full potential of this app and keep it free for everyone. Thank you for helping keep this vision alive!
 
 <p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
 
-Or you can simply just give a :star:!
+Or, you can simply give the project a :star:!
+
+_Thank you for taking the time to read and for any support you can offer. Together, we can improve this app and help more people!_
 
 ## Star History
 
