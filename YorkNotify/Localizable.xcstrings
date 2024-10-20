@@ -1729,6 +1729,28 @@
         }
       }
     },
+    "Please select a setting first" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最初に設定を選択してください"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请先选择一个设定"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請先選擇一個設定"
+          }
+        }
+      }
+    },
     "Proceed" : {
       "localizations" : {
         "ja" : {

@@ -49,6 +49,7 @@ struct LabView: View {
                         }
                     }
                 ))
+                .tint(.green)
             }
 
             if enableExperimentalFeatures {
@@ -71,6 +72,7 @@ struct LabView: View {
                     .padding(.vertical)
                     
                     Toggle("Enable", isOn: $enableTimeSensitiveNotifications)
+                        .tint(.green)
                 }
                 
                 Section {
@@ -92,6 +94,7 @@ struct LabView: View {
                     .padding(.vertical)
                     
                     Toggle("Enable", isOn: $enableCustomFrequency)
+                        .tint(.green)
                         .disabled(true)
                 }
                 

@@ -15,7 +15,7 @@ struct SettingsTabView: View {
     @Environment(\.openURL) private var openURL
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             Form {
                 Section(header: Text("General")) {
                     Picker(selection: $selectedTheme, label: Label("Theme", systemImage: "moon")) {
@@ -93,6 +93,16 @@ struct SettingsTabView: View {
                 }
             }
             .navigationTitle("Settings")
+            VStack {
+                Image(systemName: "gear")
+                    .padding(.bottom, 5)
+                    .font(.largeTitle)
+                    .foregroundColor(.secondary)
+                Text("Please select a setting first")
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+            }
+            .padding()
         }
     }
 }

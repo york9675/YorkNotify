@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let appVersion = "v2.2.2-beta"
+let appVersion = "v2.2.3-beta"
 let build = "37"
 
 struct WhatsNewSheet: View {

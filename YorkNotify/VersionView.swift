@@ -71,6 +71,7 @@ struct VersionView: View {
             
             Section(header: Text("Check for updates"), footer: Text("When enabled, this app will automatically check if new updates are available from GitHub on startup.")) {
                 Toggle("Check for Updates Automatically", isOn: $autoCheckUpdates)
+                    .tint(.green)
                     .onChange(of: autoCheckUpdates) { value in
                         UserDefaults.standard.set(value, forKey: "autoCheckUpdates")
                     }

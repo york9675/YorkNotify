@@ -65,6 +65,7 @@ struct DefaultContentView: View {
             
             Section(header: Text("Alert"), footer: Text("If disabled, the default content will be automatically used without warning when creating notifications if information is missing.")) {
                 Toggle("Show missing information alert", isOn: $showMissingInfoAlert)
+                    .tint(.green)
             }
         }
         .navigationTitle("Default Content")

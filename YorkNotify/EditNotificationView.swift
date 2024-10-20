@@ -53,7 +53,10 @@ struct EditNotificationView: View {
             Section(header: Text("Notification Settings")) {
                 DatePicker("Time", selection: $notification.time, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                     .onChange(of: notification.time) { _ in updateValidity() }
+                
                 Toggle("Repeat", isOn: $notification.repeats)
+                    .tint(.green)
+                
                 if notification.repeats {
                     Picker("Frequency", selection: $notification.repeatFrequency) {
                         ForEach(RepeatFrequency.allCases) { frequency in
@@ -63,6 +66,7 @@ struct EditNotificationView: View {
                 }
                 if enableTimeSensitiveNotifications {
                     Toggle("Time Sensitive Notifications", isOn: $isTimeSensitive)
+                        .tint(.green)
                         .disabled(true)
                 }
             }
