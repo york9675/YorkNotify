@@ -21,14 +21,14 @@
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-<div align="center">
+<p align="center">
   <table>
     <tr>
       <td><img src="./Screenshots/Home.png" alt="Home" width="250"/></td>
       <td><img src="./Screenshots/Settings.png" alt="Settings" width="250"/></td>
     </tr>
   </table>
-</div>
+</p>
 
 - Schedule notifications and send them at specified times
 - Beautiful interface made using SwiftUI
