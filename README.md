@@ -30,10 +30,12 @@
   </table>
 </p>
 
-- Schedule notifications and send them at specified times
-- Beautiful interface made using SwiftUI
-- Easy to use
-- Completely free, open source
+**YorkNotify** is a fully-featured, beautifully designed iOS app that makes scheduling notifications incredibly easy.
+
+- 📅 **Schedule Notifications**: Plan and receive reminders exactly when you need them.
+- 🎨 **Beautiful Interface**: Designed with SwiftUI, giving it a smooth, modern feel.
+- ✨ **User-Friendly**: Clean and intuitive, so setting notifications is quick and easy.
+- 💸 **Free & Open Source**: No ads, no cost, and fully transparent.
 
 > [!NOTE]  
 > This application is not on the App Store because the developer cannot afford the Apple Developer Program membership fee. You need to install it on your device using Xcode. You are also welcome to sponsor developers through the Buy Me a Coffee button below, thank you!
