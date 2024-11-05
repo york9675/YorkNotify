@@ -44,7 +44,7 @@ struct ContentView: View {
     }
 
     func checkForNewVersion() {
-        if lastSeenVersion != appVersion {
+        if lastSeenVersion != whatNewVersion {
             showWhatsNew = true
             lastSeenVersion = whatNewVersion
         }
