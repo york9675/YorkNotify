@@ -77,7 +77,7 @@ struct SettingsTabView: View {
                         HStack {
                             Label("Version", systemImage: "info.circle")
                             Spacer()
-                            Text("\(appVersion) (\(build))")
+                            Text("\(appVersion) (\(buildNumber))")
                                 .foregroundColor(.secondary)
                         }
                     }

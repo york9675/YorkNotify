@@ -10,8 +10,7 @@ import SwiftUI
 
 let whatNewVersion = "2"
 
-let appVersion = "v2.3.1-beta"
-let build = "41"
+let appVersion = "v2.3.2-beta"
 
 struct WhatsNewSheet: View {
     @Environment(\.openURL) private var openURL
@@ -100,6 +99,7 @@ struct WhatsNewSheet: View {
                     openURL(url)
                 }
             }
+            .padding(.bottom, 20)
             
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
@@ -117,6 +117,7 @@ struct WhatsNewSheet: View {
                 .background(Color.blue)
                 .cornerRadius(10)
             }
+            .padding(.bottom, 20)
         }
         .padding(.bottom)
         .padding(.horizontal)

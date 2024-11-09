@@ -17,6 +17,8 @@ struct ContentView: View {
     var customColor: Color {
         Color(hex: customColorHex) ?? .blue
     }
+    
+    @EnvironmentObject private var appState: AppState
 
     var body: some View {
         TabView {
@@ -24,6 +26,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .environmentObject(appState)
             
             SettingsTabView(selectedTheme: Binding(
                 get: { Theme(rawValue: selectedTheme) ?? .system },

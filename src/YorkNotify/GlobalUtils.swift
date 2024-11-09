@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import UserNotifications
 
+let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "Unknown"
+
 extension Color {
     var toHex: String? {
         guard let components = self.cgColor?.components, components.count >= 3 else {
