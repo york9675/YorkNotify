@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YorkNotify - Schedule Notifications with Ease</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(270deg, #3b82f6, #14b8a6, #6366f1, #3b82f6);
+      background-size: 300% 300%;
+      animation: gradientFlow 10s ease infinite;
+    }
+    
+    .fade-in {
+      animation: fadeIn 2s ease-in forwards;
+    }
+    
+    .screenshot-container {
+      -ms-overflow-style: none;
+    }
+    
+    .screenshot-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .nav-arrow {
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+    }
+    
+    .nav-arrow:hover {
+      opacity: 1;
+    }
+    
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #CBD5E0;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dot.active {
+      background-color: #3B82F6;
+    }
+
+    @keyframes autoScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold text-gray-900 flex items-center">
+        <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/src/YorkNotify/Assets.xcassets/AppIconDefault.appiconset/AppIcon-Default.jpeg" alt="YorkNotify Icon" class="w-8 h-8 mr-2">
+        YorkNotify
+      </a>
+      <div>
+        <a href="#features" class="text-gray-700 hover:text-gray-900 mx-4">Features</a>
+        <a href="#download" class="text-gray-700 hover:text-gray-900 mx-4">Download</a>
+        <a href="#support" class="text-gray-700 hover:text-gray-900 mx-4">Support</a>
+        <a href="https://github.com/york9675/YorkNotify" class="text-gray-700 hover:text-gray-900 mx-4">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-gradient py-20">
+    <div class="container mx-auto px-6 text-center fade-in">
+      <h1 class="text-5xl font-bold text-white">Never Miss a Thing with YorkNotify</h1>
+      <p class="text-xl text-white mt-4">Schedule notifications effortlessly on your iOS device.</p>
+      <div class="mt-8 space-y-4">
+        <a href="#download" class="inline-flex items-center bg-white text-blue-500 font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition">
+          <i class="fas fa-download mr-2"></i>
+          Download Now
+        </a>
+        <p class="text-white text-sm">
+          <i class="fab fa-github mr-1"></i>
+          Open Source Project - Available on GitHub
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20">
+    <div class="container mx-auto px-6 fade-in">
+      <h2 class="text-4xl font-bold text-center mb-12">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <div class="text-blue-500 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Easy Scheduling</h3>
+          <p class="text-gray-700">Plan and receive reminders exactly when you need them with a few taps.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <div class="text-blue-500 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Beautiful Interface</h3>
+          <p class="text-gray-700">Enjoy a sleek and modern design built with SwiftUI.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <div class="text-blue-500 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4 -4"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10 -10 10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Completely Free</h3>
+          <p class="text-gray-700">No ads, no fees, and fully open source.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 fade-in">
+      <h2 class="text-4xl font-bold text-center mb-12">Screenshots</h2>
+      <div class="relative max-w-6xl mx-auto">
+        <button id="prevBtn" class="nav-arrow absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg z-10 flex items-center justify-center" title="Previous">
+          <i class="fas fa-chevron-left text-blue-500"></i>
+        </button>
+        
+        <div class="screenshot-container overflow-x-auto flex gap-8 scroll-smooth px-16">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home.png" alt="Home Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none"> <!-- Increased width -->
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings.png" alt="Settings Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home_TW.png" alt="Home Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings_TW.png" alt="Settings Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
+        </div>
+        
+        <button id="nextBtn" title="Next" class="nav-arrow absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg z-10 flex items-center justify-center">
+          <i class="fas fa-chevron-right text-blue-500"></i>
+        </button>
+
+        <div class="flex justify-center gap-2 mt-6">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="bg-gray-100 py-20">
+    <div class="container mx-auto px-6 text-center fade-in">
+      <h2 class="text-4xl font-bold mb-6">Get YorkNotify</h2>
+      <div class="max-w-2xl mx-auto">
+        <p class="text-gray-700 mb-8">YorkNotify is currently available through GitHub and requires manual installation. It is not available on the App Store.<br><br>Available for iOS 16.0 and later.</p>
+        <div class="space-y-4">
+          <a href="https://github.com/york9675/YorkNotify" class="inline-flex items-center bg-blue-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition">
+            <i class="fas fa-tools mr-2"></i>
+            Installation Instructions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Section -->
+  <section id="support" class="py-20">
+    <div class="container mx-auto px-6 fade-in">
+      <h2 class="text-4xl font-bold text-center mb-12">Support the Developer</h2>
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-gray-700 mb-6">
+          As an independent developer, I strive to create helpful tools for everyone. Your support can help me continue developing and keep the app free for all users.
+        </p>
+        <a href="https://github.com/york9675" class="inline-flex items-center bg-gray-900 text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition">
+            <i class="fab fa-github mr-2"></i>
+            GitHub
+        </a>
+        <a href="https://www.buymeacoffee.com/york0524" class="inline-flex items-center bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full hover:bg-yellow-500 transition">
+          <i class="fas fa-coffee mr-2"></i>
+          Buy Me a Coffee
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; 2024 York Development. Made with ❤️ and Swift in Taiwan.</p>
+    </div>
+  </footer>
+
+  <script>
+    const container = document.querySelector('.screenshot-container');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    let autoplayInterval;
+    
+    function updateDots(index) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+    
+    function updateArrows() {
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+      nextBtn.style.display = currentIndex === dots.length - 1 ? 'none' : 'flex';
+    }
+    
+    function navigate(direction) {
+      currentIndex = Math.max(0, Math.min(currentIndex + direction, dots.length - 1));
+      scrollToImage(currentIndex);
+    }
+    
+    function scrollToImage(index) {
+      currentIndex = index;
+      const imageWidth = container.querySelector('img').offsetWidth;
+      const gap = 32;
+      container.scrollTo({
+        left: index * (imageWidth + gap),
+        behavior: 'smooth'
+      });
+      updateDots(index);
+      updateArrows();
+    }
+    
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % dots.length;
+        scrollToImage(currentIndex);
+      }, 5000); // Change image every 5 seconds
+    }
+    
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    updateArrows();
+    startAutoplay();
+
+    container.addEventListener('mouseenter', stopAutoplay);
+    container.addEventListener('mouseleave', startAutoplay);
+
+    container.addEventListener('scroll', () => {
+      const imageWidth = container.querySelector('img').offsetWidth;
+      const gap = 32;
+      const index = Math.round(container.scrollLeft / (imageWidth + gap));
+      if (currentIndex !== index) {
+        currentIndex = index;
+        updateDots(index);
+        updateArrows();
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopAutoplay();
+        scrollToImage(index);
+      });
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      stopAutoplay();
+      navigate(-1);
+    });
+    
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      stopAutoplay();
+      navigate(1);
+    });
+  </script>
+</body>
+</html>
