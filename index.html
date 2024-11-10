@@ -65,7 +65,6 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
-
   <!-- Navigation Bar -->
   <nav class="bg-white border-b border-gray-200">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -73,11 +72,18 @@
         <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/src/YorkNotify/Assets.xcassets/AppIconDefault.appiconset/AppIcon-Default.jpeg" alt="YorkNotify Icon" class="w-8 h-8 mr-2">
         YorkNotify
       </a>
-      <div>
-        <a href="#features" class="text-gray-700 hover:text-gray-900 mx-4">Features</a>
-        <a href="#download" class="text-gray-700 hover:text-gray-900 mx-4">Download</a>
-        <a href="#support" class="text-gray-700 hover:text-gray-900 mx-4">Support</a>
-        <a href="https://github.com/york9675/YorkNotify" class="text-gray-700 hover:text-gray-900 mx-4">GitHub</a>
+      <!-- Hamburger Menu Button -->
+      <button id="menuBtn" class="text-gray-700 block md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <!-- Navigation Links -->
+      <div id="navLinks" class="hidden md:flex flex-col md:flex-row absolute md:static bg-white md:bg-transparent w-full md:w-auto left-0 top-full md:top-auto transition-all duration-300 ease-in">
+        <a href="#features" class="text-gray-700 hover:text-gray-900 mx-4 py-2 md:py-0">Features</a>
+        <a href="#download" class="text-gray-700 hover:text-gray-900 mx-4 py-2 md:py-0">Download</a>
+        <a href="#support" class="text-gray-700 hover:text-gray-900 mx-4 py-2 md:py-0">Support</a>
+        <a href="https://github.com/york9675/YorkNotify" class="text-gray-700 hover:text-gray-900 mx-4 py-2 md:py-0">GitHub</a>
       </div>
     </div>
   </nav>
@@ -212,6 +218,13 @@
   </footer>
 
   <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+  
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+    
     const container = document.querySelector('.screenshot-container');
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
