@@ -26,11 +26,13 @@ struct IconView: View {
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 8)
                     
                     Text("App Icon")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Here, you have the option to personalize your app experience by selecting your preferred app icon.\n\nChoose from a variety of available icons to customize the look and feel of the app on your device. Once you've made your selection, the app icon will automatically update, reflecting your choice instantly. This allows you to tailor your app's appearance to match your personal style or preferences, giving you more control over your user experience.")
                         .font(.subheadline)

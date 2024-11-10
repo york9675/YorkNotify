@@ -44,11 +44,13 @@ struct VersionView: View {
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 8)
                     
                     Text("Version")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below.")
                         .font(.subheadline)

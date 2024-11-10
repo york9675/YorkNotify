@@ -29,11 +29,13 @@ struct DefaultContentView: View {
                     Image(systemName: "character")
                         .font(.largeTitle)
                         .foregroundColor(customColor)
+                        .padding(.bottom, 8)
                     
                     Text("Default Content")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here. This ensures that all notifications are complete and consistent, even if specific details are missing during creation.")
                         .font(.subheadline)

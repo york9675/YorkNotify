@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import UserNotifications
 
+let appVersion = "v" + (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown") + "-beta"
 let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "Unknown"
 
 extension Color {

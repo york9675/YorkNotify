@@ -13,79 +13,98 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
+
     @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    
+
     .hero-gradient {
       background: linear-gradient(270deg, #3b82f6, #14b8a6, #6366f1, #3b82f6);
       background-size: 300% 300%;
       animation: gradientFlow 10s ease infinite;
     }
-    
+
     .fade-in {
       animation: fadeIn 2s ease-in forwards;
     }
-    
+
     .screenshot-container {
       -ms-overflow-style: none;
     }
-    
+
     .screenshot-container::-webkit-scrollbar {
       display: none;
     }
-    
+
     .nav-arrow {
       opacity: 0.7;
       transition: all 0.3s ease;
       border-radius: 50%;
     }
-    
+
     .nav-arrow:hover {
       opacity: 1;
     }
-    
+
     .dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background-color: #CBD5E0;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    
+
+    .dot:hover {
+      background-color: #3B82F6;
+      transform: scale(1.5);
+    }
+
     .dot.active {
       background-color: #3B82F6;
+      transform: scale(1.2);
+    }
+
+    .screenshot-item {
+      filter: brightness(0.95);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .screenshot-item:hover {
+      filter: brightness(1);
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
 
     @keyframes autoScroll {
       from { transform: translateX(0); }
       to { transform: translateX(-100%); }
     }
-    
+
     .mobile-nav-links {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
     }
-    
+
     .mobile-nav-links.open {
-        max-height: 200px;
-        border-top: 1px solid #e5e7eb;
+      max-height: 200px;
+      border-top: 1px solid #e5e7eb;
     }
-    
+
     @media (max-width: 768px) {
-        .nav-links {
-            padding: 0.5rem 0;
-        }
-        
-        .mobile-nav-links a {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            border-bottom: 1px solid #f3f4f6;
-        }
+      .nav-links {
+        padding: 0.5rem 0;
+      }
+      
+      .mobile-nav-links a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #f3f4f6;
+      }
     }
   </style>
 </head>
@@ -98,11 +117,11 @@
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <a href="#" class="text-2xl font-semibold text-gray-900 flex items-center">
-          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/src/YorkNotify/Assets.xcassets/AppIconDefault.appiconset/AppIcon-Default.jpeg" alt="YorkNotify Icon" class="w-8 h-8 mr-2">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/src/YorkNotify/Assets.xcassets/AppIconDefault.appiconset/AppIcon-Default.jpeg" alt="YorkNotify Icon" class="w-8 h-8 mr-2 rounded-full">
           YorkNotify
         </a>
         <!-- Hamburger Menu Button -->
-        <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+        <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none" title="Menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -111,6 +130,7 @@
         <div class="hidden md:flex space-x-8">
           <a href="#features" class="text-gray-700 hover:text-gray-900">Features</a>
           <a href="#download" class="text-gray-700 hover:text-gray-900">Download</a>
+          <a href="#report-bugs" class="text-gray-700 hover:text-gray-900">Report Bugs</a>
           <a href="#support" class="text-gray-700 hover:text-gray-900">Support</a>
           <a href="https://github.com/york9675/YorkNotify" class="text-gray-700 hover:text-gray-900">GitHub</a>
         </div>
@@ -119,6 +139,7 @@
       <div id="mobileNav" class="mobile-nav-links md:hidden">
         <a href="#features" class="text-gray-700 hover:text-gray-900">Features</a>
         <a href="#download" class="text-gray-700 hover:text-gray-900">Download</a>
+        <a href="#report-bugs" class="text-gray-700 hover:text-gray-900">Report Bugs</a>
         <a href="#support" class="text-gray-700 hover:text-gray-900">Support</a>
         <a href="https://github.com/york9675/YorkNotify" class="text-gray-700 hover:text-gray-900">GitHub</a>
       </div>
@@ -182,7 +203,7 @@
   </section>
 
   <!-- Screenshots Section -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-gray-100">
     <div class="container mx-auto px-6 fade-in">
       <h2 class="text-4xl font-bold text-center mb-12">Screenshots</h2>
       <div class="relative max-w-6xl mx-auto">
@@ -191,21 +212,21 @@
         </button>
         
         <div class="screenshot-container overflow-x-auto flex gap-8 scroll-smooth px-16">
-          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home.png" alt="Home Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none"> <!-- Increased width -->
-          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings.png" alt="Settings Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
-          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home_TW.png" alt="Home Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
-          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings_TW.png" alt="Settings Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home.png" alt="Home Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings.png" alt="Settings Screen" class="screenshot-item w-96 rounded-lg shadow-lg flex-none transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Home_TW.png" alt="Home Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none transition-transform duration-300 hover:scale-105 cursor-pointer">
+          <img src="https://raw.githubusercontent.com/york9675/YorkNotify/main/Screenshots/Settings_TW.png" alt="Settings Screen TW" class="screenshot-item w-96 rounded-lg shadow-lg flex-none transition-transform duration-300 hover:scale-105 cursor-pointer">
         </div>
         
         <button id="nextBtn" title="Next" class="nav-arrow absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg z-10 flex items-center justify-center">
           <i class="fas fa-chevron-right text-blue-500"></i>
         </button>
-
+  
         <div class="flex justify-center gap-2 mt-6">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
+          <div class="dot active cursor-pointer transition-all duration-300 hover:scale-150" data-index="0"></div>
+          <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="1"></div>
+          <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="2"></div>
+          <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="3"></div>
         </div>
       </div>
     </div>
@@ -221,6 +242,28 @@
           <a href="https://github.com/york9675/YorkNotify" class="inline-flex items-center bg-blue-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition">
             <i class="fas fa-tools mr-2"></i>
             Installation Instructions
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report Bugs Section -->
+  <section id="report-bugs" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 fade-in">
+      <h2 class="text-4xl font-bold text-center mb-12">Report Bugs</h2>
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-gray-700 mb-6">
+          Encountered an issue? Help us improve YorkNotify by reporting bugs through one of the following methods:
+        </p>
+        <div class="space-y-4">
+          <a href="https://forms.gle/o1hFjy4q98Ua1H7L7" class="inline-flex items-center bg-red-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-red-600 transition">
+            <i class="fas fa-pen mr-2"></i>
+            Fill Out the Bug Report Form
+          </a>
+          <a href="https://github.com/york9675/YorkNotify/issues" class="inline-flex items-center bg-blue-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            Create an Issue on GitHub
           </a>
         </div>
       </div>
@@ -255,48 +298,50 @@
   </footer>
 
   <script>
+    // Mobile navigation
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    
+
     menuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('open');
+      mobileNav.classList.toggle('open');
     });
-    
+
     document.querySelectorAll('#mobileNav a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('open');
-        });
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+      });
     });
-    
+
     document.addEventListener('click', (e) => {
-        if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
-            mobileNav.classList.remove('open');
-        }
+      if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+      }
     });
-    
+
+    // Screenshot carousel
     const container = document.querySelector('.screenshot-container');
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
     let autoplayInterval;
-    
+
     function updateDots(index) {
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
     }
-    
+
     function updateArrows() {
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
       nextBtn.style.display = currentIndex === dots.length - 1 ? 'none' : 'flex';
     }
-    
+
     function navigate(direction) {
       currentIndex = Math.max(0, Math.min(currentIndex + direction, dots.length - 1));
       scrollToImage(currentIndex);
     }
-    
+
     function scrollToImage(index) {
       currentIndex = index;
       const imageWidth = container.querySelector('img').offsetWidth;
@@ -308,21 +353,26 @@
       updateDots(index);
       updateArrows();
     }
-    
+
     function startAutoplay() {
+      stopAutoplay(); // Clear any existing interval
       autoplayInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % dots.length;
         scrollToImage(currentIndex);
-      }, 5000); // Change image every 5 seconds
-    }
-    
-    function stopAutoplay() {
-      clearInterval(autoplayInterval);
+      }, 5000);
     }
 
+    function stopAutoplay() {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+      }
+    }
+
+    // Initialize
     updateArrows();
     startAutoplay();
 
+    // Event Listeners
     container.addEventListener('mouseenter', stopAutoplay);
     container.addEventListener('mouseleave', startAutoplay);
 
@@ -337,21 +387,37 @@
       }
     });
 
+    // Enhanced dot navigation
     dots.forEach((dot, index) => {
+      dot.setAttribute('data-index', index); // Add data-index attribute
       dot.addEventListener('click', () => {
         stopAutoplay();
         scrollToImage(index);
+        setTimeout(startAutoplay, 5000); // Restart autoplay after 5 seconds
       });
     });
 
+    // Navigation buttons
     document.getElementById('prevBtn').addEventListener('click', () => {
       stopAutoplay();
       navigate(-1);
+      setTimeout(startAutoplay, 5000);
     });
-    
+
     document.getElementById('nextBtn').addEventListener('click', () => {
       stopAutoplay();
       navigate(1);
+      setTimeout(startAutoplay, 5000);
+    });
+
+    // Add click handler for screenshots
+    const screenshots = document.querySelectorAll('.screenshot-item');
+    screenshots.forEach((screenshot, index) => {
+      screenshot.addEventListener('click', () => {
+        stopAutoplay();
+        scrollToImage(index);
+        setTimeout(startAutoplay, 5000);
+      });
     });
   </script>
 </body>

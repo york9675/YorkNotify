@@ -26,11 +26,13 @@ struct HelpView: View {
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 8)
                     
                     Text("Help Center")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Welcome to the Help Center!\n\nHere, you’ll find everything you need to get the most out of this app. Whether you’re a first-time user or an experienced pro, our Help Center offers guides, tutorials, and troubleshooting tips. Browse through our comprehensive FAQs for additional support. If you need further assistance, don’t hesitate to fill the report form.")
                         .font(.subheadline)

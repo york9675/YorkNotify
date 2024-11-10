@@ -48,3 +48,12 @@ extension WatchConnectivityManager: WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {}
     #endif
 }
+
+/*
+░░░░░██████╗░░██████╗░░░░░
+░░░░██╔════╝░██╔════╝░░░░░
+░░░░██║░░██╗░██║░░██╗░░░░░
+░░░░██║░░╚██╗██║░░╚██╗░░░░
+░░░░╚██████╔╝╚██████╔╝░░░░
+░░░░░╚═════╝░░╚═════╝░░░░░
+*/

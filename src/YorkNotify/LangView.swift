@@ -26,11 +26,13 @@ struct LangView: View {
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 8)
                     
                     Text("Language")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!")
                         .font(.subheadline)

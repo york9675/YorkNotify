@@ -26,11 +26,13 @@ struct LabView: View {
                     Image(systemName: "flask.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color.purple)
+                        .padding(.bottom, 8)
                     
                     Text("Lab")
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .padding(.bottom, 8)
                     
                     Text("Enable Experimental Features to try out new, unfinished features that may not work as expected.\n\nThese features are in testing and could change or be removed in future updates. Use with caution, and expect occasional issues.")
                         .font(.subheadline)
