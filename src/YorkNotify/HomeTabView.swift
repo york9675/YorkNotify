@@ -76,6 +76,30 @@ struct HomeTabView: View {
         }
     }
     
+    private var groupedNotifications: [(Date, [NotificationItem])] {
+        let calendar = Calendar.current
+        let grouped = Dictionary(grouping: searchResults) { notification in
+            calendar.startOfDay(for: notification.time)
+        }
+        return grouped.sorted { $0.key < $1.key }
+    }
+
+    private func formatSectionHeader(_ date: Date) -> String {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
+        
+        if calendar.isDate(date, inSameDayAs: today) {
+            return String(localized: "Today")
+        } else if calendar.isDate(date, inSameDayAs: tomorrow) {
+            return String(localized: "Tomorrow")
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "EEE, MMMM d", options: 0, locale: Locale.current)
+            return formatter.string(from: date)
+        }
+    }
+    
     private func refreshNotifications() {
         loadNotifications()
         updateGreeting()
@@ -100,34 +124,32 @@ struct HomeTabView: View {
                     .padding()
                 } else {
                     List {
-                        ForEach(searchResults) { notification in
-                            NavigationLink(destination: EditNotificationView(notification: notification, notifications: $notifications)) {
-                                VStack(alignment: .leading) {
-                                    Text(notification.title)
-                                        .font(.headline)
-                                    Text(notification.content)
-                                        .font(.body)
-                                    HStack {
-                                        Text(notification.time, style: .date)
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
-                                        Text("•")
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
-                                        Text(notification.time, style: .time)
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
+                        ForEach(groupedNotifications, id: \.0) { date, notifications in
+                            Section(header: Text(formatSectionHeader(date))) {
+                                ForEach(notifications) { notification in
+                                    NavigationLink(destination: EditNotificationView(notification: notification, notifications: $notifications)) {
+                                        VStack(alignment: .leading) {
+                                            Text(notification.title)
+                                                .font(.headline)
+                                            Text(notification.content)
+                                                .font(.body)
+                                            HStack {
+                                                Text(notification.time, style: .time)
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                        }
+                                    }
+                                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                        Button {
+                                            notificationToDelete = notification
+                                            activeAlert = .delete
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
                                     }
                                 }
-                            }
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                Button {
-                                    notificationToDelete = notification
-                                    activeAlert = .delete
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                                .tint(.red)
                             }
                         }
                     }

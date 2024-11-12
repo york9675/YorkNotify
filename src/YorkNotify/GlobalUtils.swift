@@ -125,6 +125,16 @@ enum RepeatFrequency: String, CaseIterable, Identifiable, Codable {
     var id: String { self.rawValue }
 }
 
+private func dateFromSectionTitle(_ title: String, today: Date, tomorrow: Date, dateFormatter: DateFormatter) -> Date {
+    if title == "Today" {
+        return today
+    } else if title == "Tomorrow" {
+        return tomorrow
+    } else {
+        return dateFormatter.date(from: title) ?? Date.distantFuture
+    }
+}
+
 enum AppIcon: String, CaseIterable {
     case `default` = "AppIconDefault"
     case threeD = "AppIcon3D"
