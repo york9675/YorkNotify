@@ -75,8 +75,8 @@
 
     .screenshot-item:hover {
       filter: brightness(1);
-      transform: scale(1.05);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: scale(1.02); /* Reduced scale from 1.05 to 1.02 */
+      box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 5px 5px -5px rgba(0, 0, 0, 0.04); /* Reduced shadow size */
     }
 
     @keyframes autoScroll {
@@ -227,6 +227,54 @@
           <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="1"></div>
           <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="2"></div>
           <div class="dot cursor-pointer transition-all duration-300 hover:scale-150" data-index="3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Feedback Section -->
+  <section id="user-feedback" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 fade-in">
+      <h2 class="text-4xl font-bold text-center mb-12">User Feedback</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <h3 class="text-xl font-semibold mb-2">Lin_tsen</h3>
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-700">YorkNotify has completely changed the way I schedule my notifications. It's incredibly easy to use and the interface is beautiful!</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <h3 class="text-xl font-semibold mb-2">York</h3>
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-700">A must-have app for anyone who needs timely reminders!</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition transform hover:-translate-y-1 h-full">
+          <h3 class="text-xl font-semibold mb-2">David Johnson</h3>
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-700">YorkNotify is both functional and aesthetically pleasing. I love it!</p>
         </div>
       </div>
     </div>
