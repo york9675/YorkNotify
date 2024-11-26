@@ -4,14 +4,15 @@
   <a href="https://github.com/york9675/YorkNotify/releases" target="_blank">
     <img alt="Version" src="https://img.shields.io/github/release/york9675/YorkNotify?style=for-the-badge" />
   </a>
-  <a href="https://developer.apple.com/swift/" target="_blank">
+  <a href="https://github.com/york9675/YorkNotify/releases" target="_blank"><img src="https://img.shields.io/github/downloads/york9675/YorkNotify/total?style=for-the-badge" alt="Total downloads" /></a>
+  <a href="#License" target="_blank">
+    <img alt="License" src="https://img.shields.io/github/license/york9675/YorkNotify?logo=github&style=for-the-badge" />
+  </a>
+    <a href="https://developer.apple.com/swift/" target="_blank">
     <img alt="Swift" src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" />
   </a>
   <a href="https://www.apple.com/ios" target="_blank">
     <img alt="iOS" src="https://img.shields.io/badge/iOS-16.0+-000000?style=for-the-badge&logo=ios&logoColor=white" />
-  </a>
-  <a href="#License" target="_blank">
-    <img alt="License" src="https://img.shields.io/github/license/york9675/YorkNotify?logo=github&style=for-the-badge" />
   </a>
 </p>
 
