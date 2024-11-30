@@ -4,7 +4,6 @@
   <a href="https://github.com/york9675/YorkNotify/releases" target="_blank">
     <img alt="Version" src="https://img.shields.io/github/release/york9675/YorkNotify?style=for-the-badge" />
   </a>
-  <a href="https://github.com/york9675/YorkNotify/releases" target="_blank"><img src="https://img.shields.io/github/downloads/york9675/YorkNotify/total?style=for-the-badge" alt="Total downloads" /></a>
   <a href="#License" target="_blank">
     <img alt="License" src="https://img.shields.io/github/license/york9675/YorkNotify?logo=github&style=for-the-badge" />
   </a>
