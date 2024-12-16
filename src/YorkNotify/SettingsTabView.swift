@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsTabView: View {
     @Binding var selectedTheme: Theme
     @State private var showErrorAlert = false
-    @State private var showAcknowledgementView = false
+    @State private var showAcknowledgementsView = false
     @Environment(\.openURL) private var openURL
 
     // Check if the current platform is macOS (running with Mac Catalyst)
@@ -64,15 +64,6 @@ struct SettingsTabView: View {
                         Label("Help", systemImage: "questionmark.circle")
                     }
 
-                    NavigationLink(destination: AutherView()) {
-                        HStack {
-                            Label("Author", systemImage: "person")
-                            Spacer()
-                            Text("York")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-
                     NavigationLink(destination: VersionView()) {
                         HStack {
                             Label("Version", systemImage: "info.circle")
@@ -83,11 +74,11 @@ struct SettingsTabView: View {
                     }
 
                     Button(action: {
-                        showAcknowledgementView = true
+                        showAcknowledgementsView = true
                     }) {
                         Label("Acknowledgements", systemImage: "doc.text")
                     }
-                    .sheet(isPresented: $showAcknowledgementView) {
+                    .sheet(isPresented: $showAcknowledgementsView) {
                         AcknowledgementsView()
                     }
 

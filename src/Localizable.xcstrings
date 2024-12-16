@@ -29,25 +29,90 @@
         }
       }
     },
-    "•" : {
-      "extractionState" : "stale",
+    "• ChatGPT - Code Assistance" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "•"
+            "value" : "• ChatGPT - Code 支援"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "•"
+            "value" : "• ChatGPT - Code协助"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "•"
+            "value" : "• ChatGPT - Code協助"
+          }
+        }
+      }
+    },
+    "• Google Translate - App Translation" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Google 翻訳 - アプリ翻訳"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Google Translate - 应用程式翻译"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Google Translate - 應用程式翻譯"
+          }
+        }
+      }
+    },
+    "• Lin_tsen - Testing and Feedback" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Lin_tsen - テストとフィードバック"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Lin_tsen - 测试及反馈"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Lin_tsen - 測試及反饋"
+          }
+        }
+      }
+    },
+    "• York - UI/UX Design" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• York - UI/UX デザイン"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• York - UI/UX 设计"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• York - UI/UX 設計"
           }
         }
       }
@@ -162,6 +227,28 @@
         }
       }
     },
+    "About York" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yorkについて"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于York"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關於York"
+          }
+        }
+      }
+    },
     "Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below." : {
       "localizations" : {
         "ja" : {
@@ -202,28 +289,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "致謝"
-          }
-        }
-      }
-    },
-    "Added support for iOS/iPadOS 18, including icon for dark and tinted modes." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダークモードと色付きモードのアイコンを含む、iOS/iPadOS 18 のサポートが追加されました。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增了对 iOS/iPadOS 18 的支持，包括「深色」及「不同色调」模式的图示。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增了對 iOS/iPadOS 18 的支援，包括「深色」及「不同色調」模式的圖示。"
           }
         }
       }
@@ -272,6 +337,28 @@
         }
       }
     },
+    "App Developer" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリ開発者"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用程式开发者"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "應用程式開發者"
+          }
+        }
+      }
+    },
     "App Icon" : {
       "localizations" : {
         "ja" : {
@@ -316,28 +403,6 @@
         }
       }
     },
-    "Apple Watch Support" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watch サポート"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watch支持"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Watch支援"
-          }
-        }
-      }
-    },
     "Are you sure you want to delete the scheduled notification \"%@\"?\nThis operation cannot be undone" : {
       "localizations" : {
         "ja" : {
@@ -356,28 +421,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "您確定刪除已排程的通知「%@」？\n此操作無法復原"
-          }
-        }
-      }
-    },
-    "Author" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "著者"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "作者"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "作者"
           }
         }
       }
@@ -602,6 +645,28 @@
         }
       }
     },
+    "Contributors" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貢献者"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "贡献者"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "貢獻者"
+          }
+        }
+      }
+    },
     "Create Notification" : {
       "localizations" : {
         "ja" : {
@@ -822,6 +887,28 @@
         }
       }
     },
+    "Developer" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発者"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开发者"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開發者"
+          }
+        }
+      }
+    },
     "Donate" : {
       "localizations" : {
         "ja" : {
@@ -972,6 +1059,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "啟用實驗性功能來搶先體驗可能無法如預期運作的全新、未完成的功能。\n\n這些功能正在測試中，可能會在未來的更新中更改或刪除。請謹慎使用，並預計可能會出現問題。"
+          }
+        }
+      }
+    },
+    "Enjoy a refreshed look for the Acknowledgements and About Developer pages." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「謝辞」および「開発者について」ページの新しい外観をお楽しみください。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "享受「致谢」和「关于开发者」页面焕然一新的外观。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "享受「致謝」和「關於開發者」頁面煥然一新的外觀。"
           }
         }
       }
@@ -1284,28 +1393,6 @@
         }
       }
     },
-    "iOS 18 Support" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS 18 サポート"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支持iOS 18"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "支援iOS 18"
-          }
-        }
-      }
-    },
     "Lab" : {
       "localizations" : {
         "ja" : {
@@ -1592,6 +1679,28 @@
         }
       }
     },
+    "Now the home tab list will group notifications by date." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これで、ホーム タブ リストで通知が日付別にグループ化されます。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现在，主画面通知列表将按日期分组通知。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在，主畫面通知列表將按日期分組通知。"
+          }
+        }
+      }
+    },
     "OK" : {
       "localizations" : {
         "ja" : {
@@ -1610,6 +1719,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "確定"
+          }
+        }
+      }
+    },
+    "Open-Source Project" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソースプロジェクト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开源专案"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開源專案"
+          }
+        }
+      }
+    },
+    "Organized Notifications" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整理された通知"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整齐排列的通知"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "整齊排列的通知"
           }
         }
       }
@@ -1814,6 +1967,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "隨機顏色"
+          }
+        }
+      }
+    },
+    "Redesigned Info Pages" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報ページの再設計"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新设计的信息页面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新設計的資訊頁面"
           }
         }
       }
@@ -2060,6 +2235,28 @@
         }
       }
     },
+    "Special Thanks To" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特別な感謝"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特别感谢"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特別感謝"
+          }
+        }
+      }
+    },
     "System" : {
       "localizations" : {
         "ja" : {
@@ -2144,28 +2341,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "內文"
-          }
-        }
-      }
-    },
-    "The new Apple Watch support allows you to conveniently view all scheduled notifications directly on your wrist!" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "新しい Apple Watch サポートにより、スケジュールされたすべての通知を手首で直接便利に表示できるようになりました。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全新 Apple Watch 支援让您可以直接在手腕上方便地查看所有已排程的通知！"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "全新 Apple Watch 支援讓您可以直接在手腕上方便地查看所有已排程的通知！"
           }
         }
       }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let whatNewVersion = "2"
+let whatNewVersion = "3"
 
 struct WhatsNewSheet: View {
     @Environment(\.openURL) private var openURL
@@ -29,17 +29,17 @@ struct WhatsNewSheet: View {
             
             // Feature 1
             HStack(alignment: .top, spacing: 25) {
-                Image(systemName: "applewatch")
+                Image(systemName: "person.crop.rectangle")
                     .font(.system(size: 32))
                     .foregroundColor(.blue)
                     .frame(width: 40, alignment: .center)
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Apple Watch Support")
+                    Text("Redesigned Info Pages")
                         .font(.headline)
                         .fontWeight(.bold)
                     
-                    Text("The new Apple Watch support allows you to conveniently view all scheduled notifications directly on your wrist!")
+                    Text("Enjoy a refreshed look for the Acknowledgements and About Developer pages.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -50,17 +50,17 @@ struct WhatsNewSheet: View {
         
             // Feature 2
             HStack(alignment: .top, spacing: 25) {
-                Image(systemName: "square.grid.2x2.fill")
+                Image(systemName: "calendar.badge.clock")
                     .font(.system(size: 32))
                     .foregroundColor(.green)
                     .frame(width: 40, alignment: .center)
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("iOS 18 Support")
+                    Text("Organized Notifications")
                         .font(.headline)
                         .fontWeight(.bold)
                     
-                    Text("Added support for iOS/iPadOS 18, including icon for dark and tinted modes.")
+                    Text("Now the home tab list will group notifications by date.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
