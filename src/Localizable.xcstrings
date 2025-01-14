@@ -117,24 +117,24 @@
         }
       }
     },
-    "© 2024 York Development" : {
+    "© 2025 York Development" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "© 2024 York Development"
+            "value" : "© 2025 York Development"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "© 2024 York Development"
+            "value" : "© 2025 York Development"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "© 2024 York Development"
+            "value" : "© 2025 York Development"
           }
         }
       }

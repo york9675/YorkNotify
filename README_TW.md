@@ -132,7 +132,7 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ## 許可證
 
-該項目已獲得 MIT 許可證的許可。有關更多詳細信息，請參閱許可證文件。
+該項目已獲得 MIT 許可證的許可。有關更多詳細資訊，請參閱許可證文件。
 
 ## 支持
 
@@ -164,6 +164,6 @@ _感謝你抽出時間閱讀，並感謝你提供的任何支持。讓我們一�
 
 ***
 
-© 2024 York Development
+© 2025 York Development
 
 使用 :heart: 及 Swift 在台灣製作！

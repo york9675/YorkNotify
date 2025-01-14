@@ -59,7 +59,7 @@ struct SettingsTabView: View {
                     }
                 }
 
-                Section(header: Text("About"), footer: Text("© 2024 York Development")) {
+                Section(header: Text("About"), footer: Text("© 2025 York Development")) {
                     NavigationLink(destination: HelpView()) {
                         Label("Help", systemImage: "questionmark.circle")
                     }

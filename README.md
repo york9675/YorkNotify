@@ -164,6 +164,6 @@ _Thank you for taking the time to read and for any support you can offer. Togeth
 
 ***
 
-© 2024 York Development
+© 2025 York Development
 
 Made with :heart: and Swift in Taiwan.
