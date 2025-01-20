@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
-let whatNewVersion = "3"
+let whatNewVersion = "4"
 
 struct WhatsNewSheet: View {
+    @AppStorage("customColor") private var customColorHex: String = ""
+
+    var customColor: Color {
+        Color(hex: customColorHex) ?? .blue
+    }
+    
     @Environment(\.openURL) private var openURL
     @Environment(\.presentationMode) var presentationMode
     
@@ -27,11 +33,31 @@ struct WhatsNewSheet: View {
             
             Spacer()
             
-            // Feature 1
+            HStack(alignment: .top, spacing: 25) {
+                Image(systemName: "applewatch")
+                    .font(.system(size: 32))
+                    .foregroundColor(customColor)
+                    .frame(width: 40, alignment: .center)
+                
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("Redesigned watchOS App")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                    
+                    Text("Enjoy a refreshed look for the watchOS app.")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal)
+            
+            
             HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "person.crop.rectangle")
                     .font(.system(size: 32))
-                    .foregroundColor(.blue)
+                    .foregroundColor(customColor)
                     .frame(width: 40, alignment: .center)
                 
                 VStack(alignment: .leading, spacing: 5) {
@@ -48,11 +74,10 @@ struct WhatsNewSheet: View {
             .padding(.vertical, 10)
             .padding(.horizontal)
         
-            // Feature 2
             HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "calendar.badge.clock")
                     .font(.system(size: 32))
-                    .foregroundColor(.green)
+                    .foregroundColor(customColor)
                     .frame(width: 40, alignment: .center)
                 
                 VStack(alignment: .leading, spacing: 5) {
@@ -69,11 +94,10 @@ struct WhatsNewSheet: View {
             .padding(.vertical, 10)
             .padding(.horizontal)
             
-            // Feature 3
             HStack(alignment: .top, spacing: 25) {
                 Image(systemName: "ladybug.fill")
                     .font(.system(size: 32))
-                    .foregroundColor(.red)
+                    .foregroundColor(customColor)
                     .frame(width: 40, alignment: .center)
                 
                 VStack(alignment: .leading, spacing: 5) {
@@ -112,7 +136,7 @@ struct WhatsNewSheet: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .foregroundColor(.white)
-                .background(Color.blue)
+                .background(customColor)
                 .cornerRadius(10)
             }
             .padding(.bottom, 20)

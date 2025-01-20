@@ -41,16 +41,15 @@ struct SettingsTabView: View {
                         Label("Default Content", systemImage: "character")
                     }
 
-                    // Only show the IconView navigation link if not on macOS
                     if !isMacOS {
                         NavigationLink(destination: IconView()) {
                             Label("App Icon", systemImage: "square.grid.2x2")
                         }
+                        NavigationLink(destination: LangView()) {
+                            Label("Language", systemImage: "globe")
+                        }
                     }
 
-                    NavigationLink(destination: LangView()) {
-                        Label("Language", systemImage: "globe")
-                    }
                 }
 
                 Section {

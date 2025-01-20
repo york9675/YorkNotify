@@ -22,9 +22,9 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            HomeTabView()
+            NotificationListView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("List", systemImage: "list.bullet")
                 }
                 .environmentObject(appState)
             

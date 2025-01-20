@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		98079BD22CD2574D00D8C631 /* YorkNotifyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 98079BC52CD2574C00D8C631 /* YorkNotifyWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */; };
-		983370C62CAC1E6100B5EB72 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C52CAC1E6100B5EB72 /* HomeTabView.swift */; };
+		983370C62CAC1E6100B5EB72 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C52CAC1E6100B5EB72 /* NotificationListView.swift */; };
 		983370C82CAC1E9100B5EB72 /* CreateNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */; };
 		983370CA2CAC1EC400B5EB72 /* EditNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */; };
 		983370CC2CAC1F0500B5EB72 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */; };
@@ -61,7 +61,7 @@
 		981D9BD12CD9E69200C3B4CE /* YorkNotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YorkNotify.entitlements; sourceTree = "<group>"; };
 		98301D382C5D4024000CF262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtils.swift; sourceTree = "<group>"; };
-		983370C52CAC1E6100B5EB72 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		983370C52CAC1E6100B5EB72 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotificationView.swift; sourceTree = "<group>"; };
 		983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotificationView.swift; sourceTree = "<group>"; };
 		983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */,
 				989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */,
 				988516F52C2EEFA60025FCAC /* ContentView.swift */,
-				983370C52CAC1E6100B5EB72 /* HomeTabView.swift */,
+				983370C52CAC1E6100B5EB72 /* NotificationListView.swift */,
 				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
 				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
 				983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */,
@@ -307,7 +307,7 @@
 				983370DC2CAC1FF900B5EB72 /* IconView.swift in Sources */,
 				983370D22CAC1F5E00B5EB72 /* DefaultContentView.swift in Sources */,
 				989D91C32CD76860000FDB7B /* PhoneConnectivityManager.swift in Sources */,
-				983370C62CAC1E6100B5EB72 /* HomeTabView.swift in Sources */,
+				983370C62CAC1E6100B5EB72 /* NotificationListView.swift in Sources */,
 				983370CA2CAC1EC400B5EB72 /* EditNotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -343,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -374,7 +374,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -524,7 +524,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -541,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.1;
+				MARKETING_VERSION = 2.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -565,7 +565,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -582,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.1;
+				MARKETING_VERSION = 2.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

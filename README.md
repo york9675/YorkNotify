@@ -24,8 +24,12 @@
 <p align="center">
   <table>
     <tr>
-      <td><img src="./Screenshots/Home.png" alt="Home" width="250"/></td>
-      <td><img src="./Screenshots/Settings.png" alt="Settings" width="250"/></td>
+      <td><img src="./Screenshots/iOS.png" alt="iPhone" width="250"/></td>
+      <td><img src="./Screenshots/watchOS.png" alt="watchOS" width="250"/></td>
+    </tr>
+    <tr>
+      <td><img src="./Screenshots/iPadOS.png" alt="iPadOS" width="250"/></td>
+      <td><img src="./Screenshots/macOS.png" alt="macOS" width="250"/></td>
     </tr>
   </table>
 </p>

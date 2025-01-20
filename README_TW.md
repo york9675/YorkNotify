@@ -21,14 +21,18 @@
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-<div align="center">
+<p align="center">
   <table>
     <tr>
-      <td><img src="./Screenshots/Home_TW.png" alt="Home" width="250"/></td>
-      <td><img src="./Screenshots/Settings_TW.png" alt="Settings" width="250"/></td>
+      <td><img src="./Screenshots/iOS.png" alt="iPhone" width="250"/></td>
+      <td><img src="./Screenshots/watchOS.png" alt="watchOS" width="250"/></td>
+    </tr>
+    <tr>
+      <td><img src="./Screenshots/iPadOS.png" alt="iPadOS" width="250"/></td>
+      <td><img src="./Screenshots/macOS.png" alt="macOS" width="250"/></td>
     </tr>
   </table>
-</div>
+</p>
 
 **YorkNotify** 是一款功能齊全、設計精美的 iOS 應用程式，讓排程通知變得非常簡單！
 

@@ -9,7 +9,7 @@ import Foundation
 import WatchConnectivity
 import SwiftUI
 
-struct HomeTabView: View {
+struct NotificationListView: View {
     @StateObject private var connectivityManager = PhoneConnectivityManager.shared
     
     @State private var notifications: [NotificationItem] = []
@@ -17,7 +17,7 @@ struct HomeTabView: View {
     @State private var sortOrder: SortOrder = .time
     @State private var searchText = ""
     @State private var notificationToDelete: NotificationItem?
-    @State private var greetingTitle: String = "Home"
+    @State private var greetingTitle: String = "Notification List"
     
     @State private var latestVersion: String?
     
