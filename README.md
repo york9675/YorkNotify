@@ -24,7 +24,7 @@
 <p align="center">
   <table>
     <tr>
-      <td><img src="./Screenshots/iOS.png" alt="iPhone" width="250"/></td>
+      <td><img src="./Screenshots/iOS.png" alt="iOS" width="250"/></td>
       <td><img src="./Screenshots/watchOS.png" alt="watchOS" width="250"/></td>
     </tr>
     <tr>
