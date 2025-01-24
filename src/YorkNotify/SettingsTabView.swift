@@ -45,9 +45,10 @@ struct SettingsTabView: View {
                         NavigationLink(destination: IconView()) {
                             Label("App Icon", systemImage: "square.grid.2x2")
                         }
-                        NavigationLink(destination: LangView()) {
-                            Label("Language", systemImage: "globe")
-                        }
+                    }
+                    
+                    NavigationLink(destination: LangView()) {
+                        Label("Language", systemImage: "globe")
                     }
 
                 }

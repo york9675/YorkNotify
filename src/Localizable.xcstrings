@@ -1927,6 +1927,28 @@
         }
       }
     },
+    "Please go to System Settings > General > Language & Region, scroll to the Applications section, and click Add (+). In the dialog, select YorkNotify from the app list, choose your preferred language from the dropdown menu, and click Add. Restart YorkNotify to apply the new language setting." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム設定 > 一般 > 言語と地域に移動し、アプリケーション セクションまでスクロールして、追加 (+) をクリックします。ダイアログで、アプリ リストから YorkNotify を選択し、ドロップダウン メニューから希望する言語を選択して、追加をクリックします。YorkNotify を再起動して、新しい言語設定を適用します。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请进入系统设置 > 常规 > 语言和地区，滚动到应用程序部分，然后单击添加 (+)。在对话框中，从应用程序列表中选择 YorkNotify，从下拉菜单中选择您的首选语言，然后单击添加。重新启动 YorkNotify 以应用新的语言设置。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請前往系統設定 > 一般 > 語言與地區，捲動至應用程式部分，然後按一下新增 (+)。在對話方塊中，從應用程式清單中選擇 YorkNotify，從下拉式選單中選擇您的首選語言，然後按一下新增。重新啟動 YorkNotify 以套用新的語言設定。"
+          }
+        }
+      }
+    },
     "Please go to the system settings to allow notifications, otherwise this app will not work as expected.\n(Don’t worry, we won’t send junk notifications!)" : {
       "localizations" : {
         "ja" : {

@@ -22,7 +22,7 @@ struct YorkNotifyWatch_Watch_AppApp: App {
         If you like this app, please leave a star on the GitHub project page, or consider sponsoring me through Buy Me a Coffee!
         Encounter any problems during use? Please create GitHub Issues or fill out the feedback form to report!
         
-        © 2024 York Development
+        © 2025 York Development
         
         ========== HAVE A NICE DAY! ==========
         """#)

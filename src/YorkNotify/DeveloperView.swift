@@ -88,7 +88,7 @@ struct DeveloperView: View {
         .onAppear(perform: loadProfileImage) // Load GitHub profile image
     }
     
-    // MARK: - Profile Image Loading with Caching
+    // Profile Image Loading with Caching
     private func loadProfileImage() {
         let cacheKey = "profileImage"
         
