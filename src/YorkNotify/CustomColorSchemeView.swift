@@ -31,7 +31,7 @@ struct CustomColorSchemeView: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 8)
                     
-                    Text("Personalize and customize the theme colors for this app to match your style and preferences. Choose from a wide variety of color palettes or create your own unique combinations to enhance your user experience. Whether you prefer bold and vibrant tones or soft and subtle hues, the customization options allow you to fully express your individuality. Make the app truly yours by setting up a theme that reflects your personal aesthetic.")
+                    Text("Personalize and customize the theme colors for this app to match your style and preferences.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 }

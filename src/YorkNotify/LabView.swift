@@ -75,6 +75,7 @@ struct LabView: View {
                     
                     Toggle("Enable", isOn: $enableTimeSensitiveNotifications)
                         .tint(.green)
+                        .disabled(true)
                 }
                 
                 Section {

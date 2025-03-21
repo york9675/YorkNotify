@@ -50,10 +50,16 @@ struct NotificationListView: View {
                         Text("No notifications yet")
                             .font(.headline)
                         
-                        Text("Schedule notifications using your iPhone.")
+                        Text("Schedule notifications using your iPhone and tap ")
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
+                            + Text(Image(systemName: "arrow.triangle.2.circlepath"))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            + Text(" button.")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+
                     }
                     .padding()
                 } else {
@@ -77,6 +83,7 @@ struct NotificationListView: View {
                 }
             }
         }
+        .navigationTitle("List")
     }
 }
 

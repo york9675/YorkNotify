@@ -1,6 +1,28 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " button." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ボタンをタップします。"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按钮。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按鈕。"
+          }
+        }
+      }
+    },
     "%@ (%@)" : {
       "localizations" : {
         "en" : {
@@ -249,24 +271,24 @@
         }
       }
     },
-    "Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below." : {
+    "Access comprehensive details about the current software version.\n\nAdditionally, you can easily report bugs using the button below." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "現在のソフトウェアバージョンに関する詳細な情報にアクセスできます。新機能、改善点、バグ修正をまとめた完全な更新ログもご覧いただけます。\n\nさらに、下のボタンを使用して簡単にバグを報告することができます"
+            "value" : "現在のソフトウェアバージョンに関する詳細な情報にアクセスできます。\n\nさらに、下のボタンを使用して簡単にバグを報告することができます"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "查看有关目前软体版本的全面详细信息，包括新功能、改进和错误修复的完整更新日志。 \n此外，您可以使用下面的按钮轻松报告错误。"
+            "value" : "查看有关目前软体版本的全面详细信息。 \n此外，您可以使用下面的按钮轻松报告错误。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "查看有關目前軟體版本的全面詳細信息，包括新功能、改進和錯誤修復的完整更新日誌。 \n此外，您可以使用下面的按鈕輕鬆回報錯誤。"
+            "value" : "查看有關目前軟體版本的詳細資訊。 \n此外，您可以使用下方的按鈕回報錯誤。"
           }
         }
       }
@@ -1371,24 +1393,24 @@
         }
       }
     },
-    "Here, you have the option to personalize your app experience by selecting your preferred app icon.\n\nChoose from a variety of available icons to customize the look and feel of the app on your device. Once you've made your selection, the app icon will automatically update, reflecting your choice instantly. This allows you to tailor your app's appearance to match your personal style or preferences, giving you more control over your user experience." : {
+    "Here, you have the option to personalize your app experience by selecting your preferred app icon." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ここでは、お好みのアプリアイコンを選択することで、アプリの体験をパーソナライズするオプションがあります。\n\nさまざまなアイコンの中から選んで、デバイス上でアプリの見た目をカスタマイズしてください。選択が完了すると、アプリアイコンが自動的に更新され、即座に反映されます。これにより、アプリの外観を個人のスタイルや好みに合わせて調整でき、ユーザー体験をよりコントロールできるようになります。"
+            "value" : "ここでは、お好みのアプリアイコンを選択することで、アプリの体験をパーソナライズするオプションがあります。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在这里，您可以透过选择您喜欢的应用程式图示来客制化您的应用程式体验。  从各种可用图示中进行选择，以自订装置上应用程式的外观和风格。一旦您做出选择，应用程式图示将自动更新。这使您可以根据您的个人风格或偏好自订应用程式的外观，从而更好地控制使用者体验。"
+            "value" : "在这里，您可以透过选择您喜欢的应用程式图示来客制化您的应用程式体验。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在這裡，您可以透過選擇您喜歡的應用程式圖示來客製化您的應用程式體驗。  從各種可用圖示中進行選擇，以自訂裝置上應用程式的外觀和風格。一旦您做出選擇，應用程式圖示將自動更新。這使您可以根據您的個人風格或偏好自訂應用程式的外觀，從而更好地控制使用者體驗。"
+            "value" : "在這裡，您可以透過選擇您喜歡的應用程式圖示來客製化您的應用程式體驗。"
           }
         }
       }
@@ -1877,24 +1899,24 @@
         }
       }
     },
-    "Personalize and customize the theme colors for this app to match your style and preferences. Choose from a wide variety of color palettes or create your own unique combinations to enhance your user experience. Whether you prefer bold and vibrant tones or soft and subtle hues, the customization options allow you to fully express your individuality. Make the app truly yours by setting up a theme that reflects your personal aesthetic." : {
+    "Personalize and customize the theme colors for this app to match your style and preferences." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "このアプリのテーマ カラーを、自分のスタイルや好みに合わせてカスタマイズできます。さまざまなカラー パレットから選択するか、独自の組み合わせを作成してユーザー エクスペリエンスを向上させます。大胆で鮮やかな色調を好むか、柔らかく繊細な色調を好むかにかかわらず、カスタマイズ オプションを使用して自分の個性を存分に表現できます。自分の美的感覚を反映したテーマを設定することで、アプリを自分だけのものにできます。"
+            "value" : "このアプリのテーマ カラーを、自分のスタイルや好みに合わせてカスタマイズできます。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "个性化和自订此应用程式的主题颜色，以符合您的风格和偏好。从多种调色板中进行选择或创建您自己的独特组合以增强您的用户体验。无论您喜欢大胆而充满活力的色调还是柔和而微妙的色调，客制化选项都可以让您充分表达您的个性。透过设定反映您个人美学的主题，使该应用程式真正属于您。"
+            "value" : "个性化和自订此应用程式的主题颜色，以符合您的风格和偏好。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "個性化和自訂此應用程式的主題顏色，以符合您的風格和偏好。從多種調色板中進行選擇或創建您自己的獨特組合以增強您的用戶體驗。無論您喜歡大膽而充滿活力的色調還是柔和而微妙的色調，客製化選項都可以讓您充分表達您的個性。透過設定反映您個人美學的主題，使該應用程式真正屬於您。"
+            "value" : "個性化和自訂此應用程式的主題顏色，以符合您的風格和偏好。"
           }
         }
       }
@@ -2213,24 +2235,24 @@
         }
       }
     },
-    "Schedule notifications using your iPhone." : {
+    "Schedule notifications using your iPhone and tap " : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iPhone を使用して通知をスケジュールします。"
+            "value" : "iPhoneを使用して通知をスケジュールし、"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用您的iPhone来排程通知。"
+            "value" : "使用您的iPhone来排程通知並按下"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用您的iPhone來排程通知。"
+            "value" : "使用您的iPhone來排程通知並按下"
           }
         }
       }
@@ -2279,24 +2301,24 @@
         }
       }
     },
-    "Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here. This ensures that all notifications are complete and consistent, even if specific details are missing during creation." : {
+    "Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ここでデフォルトの通知内容を設定します。\n\n新しい通知を作成する際に特定のフィールドが空白のままだと、アプリはここで定義したデフォルトの内容を自動的に挿入します。これにより、特定の詳細が作成中に欠けていても、すべての通知が完全で一貫性のあるものになります。"
+            "value" : "ここでデフォルトの通知内容を設定します。\n\n新しい通知を作成する際に特定のフィールドが空白のままだと、アプリはここで定義したデフォルトの内容を自動的に挿入します。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此处设定预设通知内容。 \n每当您建立新通知但将某些栏位留空时，应用程式都会自动插入您在此处定义的预设内容。这可确保所有通知完整且一致，即使在建立过程中缺少特定详细资讯也是如此。"
+            "value" : "此处设定预设通知内容。 \n每当您建立新通知但将某些栏位留空时，应用程式都会自动插入您在此处定义的预设内容。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此處設定預設通知內容。 \n每當您建立新通知但將某些欄位留空時，應用程式都會自動插入您在此處定義的預設內容。這可確保所有通知完整且一致，即使在建立過程中缺少特定詳細資訊也是如此。"
+            "value" : "此處設定預設通知內容。 \n每當您建立新通知但將某些欄位留空時，應用程式都會自動插入您在此處定義的預設內容。"
           }
         }
       }
@@ -2857,24 +2879,24 @@
         }
       }
     },
-    "Welcome to the Help Center!\n\nHere, you’ll find everything you need to get the most out of this app. Whether you’re a first-time user or an experienced pro, our Help Center offers guides, tutorials, and troubleshooting tips. Browse through our comprehensive FAQs for additional support. If you need further assistance, don’t hesitate to fill the report form." : {
+    "Welcome to the Help Center!\n\nHere, you’ll find everything you need to get the most out of this app. If you need further assistance, don’t hesitate to fill the report form." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ヘルプセンターへようこそ！ \nここでは、このアプリを最大限に活用するために必要なすべての情報を見つけることができます。初めてのユーザーでも、経験豊富なプロでも、ヘルプセンターではガイド、チュートリアル、トラブルシューティングのヒントを提供しています。追加のサポートが必要な場合は、包括的なFAQをご覧ください。さらに支援が必要な場合は、報告フォームに記入することをためらわないでください。"
+            "value" : "ヘルプセンターへようこそ！ \nここでは、このアプリを最大限に活用するために必要なすべての情報を見つけることができます。さらに支援が必要な場合は、報告フォームに記入することをためらわないでください。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欢迎来到帮助中心！ \n在这里，您将找到充分利用此应用程式所需的一切。无论您是初次使用者还是经验丰富的专业人士，我们的帮助中心都提供指南、教学和故障排除提示。浏览我们全面的常见问题以获得更多支援。如果您需要进一步的协助，请随时填写意见回馈表单。"
+            "value" : "欢迎来到帮助中心！ \n在这里，您将找到充分利用此应用程式所需的一切。如果您需要进一步的协助，请随时填写意见回馈表单。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "歡迎來到幫助中心！ \n在這裡，您將找到充分利用此應用程式所需的一切。無論您是初次使用者還是經驗豐富的專業人士，我們的幫助中心都提供指南、教學和故障排除提示。瀏覽我們全面的常見問題以獲得更多支援。如果您需要進一步的協助，請隨時填寫意見回饋表單。"
+            "value" : "歡迎來到幫助中心！ \n在這裡，您將找到充分利用此應用程式所需的一切。如果您需要進一步的協助，請隨時填寫意見回饋表單。"
           }
         }
       }

@@ -52,7 +52,7 @@ struct VersionView: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 8)
                     
-                    Text("Access comprehensive details about the current software version, including a complete update log outlining new features, improvements, and bug fixes.\n\nAdditionally, you can easily report bugs using the button below.")
+                    Text("Access comprehensive details about the current software version.\n\nAdditionally, you can easily report bugs using the button below.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 }

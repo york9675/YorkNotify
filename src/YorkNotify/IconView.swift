@@ -34,7 +34,7 @@ struct IconView: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 8)
                     
-                    Text("Here, you have the option to personalize your app experience by selecting your preferred app icon.\n\nChoose from a variety of available icons to customize the look and feel of the app on your device. Once you've made your selection, the app icon will automatically update, reflecting your choice instantly. This allows you to tailor your app's appearance to match your personal style or preferences, giving you more control over your user experience.")
+                    Text("Here, you have the option to personalize your app experience by selecting your preferred app icon.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 }

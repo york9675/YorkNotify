@@ -37,7 +37,7 @@ struct DefaultContentView: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 8)
                     
-                    Text("Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here. This ensures that all notifications are complete and consistent, even if specific details are missing during creation.")
+                    Text("Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 }
