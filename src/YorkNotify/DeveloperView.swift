@@ -56,6 +56,17 @@ struct DeveloperView: View {
             // Links Section
             Section(header: Text("Links")) {
                 Button(action: {
+                    if let url = URL(string: "https://york9675.github.io/website/") {
+                        openURL(url)
+                    }
+                }) {
+                    HStack {
+                        Label("York Development", systemImage: "globe")
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                }
+                Button(action: {
                     if let url = URL(string: "https://github.com/york9675") {
                         openURL(url)
                     }

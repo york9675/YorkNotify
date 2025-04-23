@@ -28,6 +28,11 @@ struct ContentView: View {
                 }
                 .environmentObject(appState)
             
+            NotificationHistoryView()
+                .tabItem {
+                    Label("History", systemImage: "clock.arrow.circlepath")
+                }
+            
             SettingsTabView(selectedTheme: Binding(
                 get: { Theme(rawValue: selectedTheme) ?? .system },
                 set: { selectedTheme = $0.rawValue }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980473602DB8BEE9007C61F2 /* NotificationHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */; };
 		98079BD22CD2574D00D8C631 /* YorkNotifyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 98079BC52CD2574C00D8C631 /* YorkNotifyWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */; };
 		983370C62CAC1E6100B5EB72 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C52CAC1E6100B5EB72 /* NotificationListView.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHistoryView.swift; sourceTree = "<group>"; };
 		98079BC52CD2574C00D8C631 /* YorkNotifyWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YorkNotifyWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		981D9BD12CD9E69200C3B4CE /* YorkNotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YorkNotify.entitlements; sourceTree = "<group>"; };
 		98301D382C5D4024000CF262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */,
 				988516F52C2EEFA60025FCAC /* ContentView.swift */,
 				983370C52CAC1E6100B5EB72 /* NotificationListView.swift */,
+				9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */,
 				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
 				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
 				983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */,
@@ -242,7 +245,6 @@
 				en,
 				Base,
 				"zh-Hant",
-				"zh-Hans",
 				ja,
 			);
 			mainGroup = 988516E72C2EEFA60025FCAC;
@@ -298,6 +300,7 @@
 				983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */,
 				983370C82CAC1E9100B5EB72 /* CreateNotificationView.swift in Sources */,
 				988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */,
+				980473602DB8BEE9007C61F2 /* NotificationHistoryView.swift in Sources */,
 				986EF3272CAD3864009AC755 /* AcknowledgementsView.swift in Sources */,
 				989B53C32CAE5B3F00BDA23C /* WhatsNewSheet.swift in Sources */,
 				983370DA2CAC1FD700B5EB72 /* DeveloperView.swift in Sources */,
@@ -524,7 +527,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -541,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.2;
+				MARKETING_VERSION = 2.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -565,7 +568,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
 				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
@@ -582,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6.2;
+				MARKETING_VERSION = 2.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

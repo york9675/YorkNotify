@@ -59,7 +59,6 @@ struct NotificationListView: View {
                             + Text(" button.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
-
                     }
                     .padding()
                 } else {

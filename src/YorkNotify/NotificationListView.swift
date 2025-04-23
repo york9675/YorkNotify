@@ -1,5 +1,5 @@
 //
-//  HomeTabView.swift
+//  NotificationListView.swift
 //  YorkNotify
 //
 //  Created by York on 2024/10/1.
@@ -245,25 +245,60 @@ struct NotificationListView: View {
     }
     
     private func loadNotifications() {
-        if let data = UserDefaults.standard.data(forKey: "savedNotifications"),
-           let decodedNotifications = try? JSONDecoder().decode([NotificationItem].self, from: data) {
-            self.notifications = decodedNotifications
-        }
+        var loadedNotifications: [NotificationItem] = []
         
+        if let data = UserDefaults.standard.data(forKey: "savedNotifications"),
+           let decoded = try? JSONDecoder().decode([NotificationItem].self, from: data) {
+            loadedNotifications = decoded
+        }
+
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
-            let currentIds = requests.map { $0.identifier }
+            let activeIds = requests.map { $0.identifier }
+
+            var active: [NotificationItem] = []
+            var history: [NotificationItem] = loadNotificationHistory()
+
+            for notification in loadedNotifications {
+                if activeIds.contains(notification.id.uuidString) {
+                    active.append(notification)
+                } else {
+                    // Expired — move to history
+                    if !history.contains(where: { $0.id == notification.id }) {
+                        history.append(notification)
+                    }
+                }
+            }
+
             DispatchQueue.main.async {
-                self.notifications.removeAll { !currentIds.contains($0.id.uuidString) }
-                self.saveNotifications()
+                self.notifications = active
+                saveNotifications(active)
+                saveNotifications(history, key: "notificationHistory")
+                saveNotificationHistory(history)
             }
         }
     }
 
-    private func saveNotifications() {
-        if let encodedData = try? JSONEncoder().encode(notifications) {
-            UserDefaults.standard.set(encodedData, forKey: "savedNotifications")
+    private func loadNotificationHistory() -> [NotificationItem] {
+        if let data = UserDefaults.standard.data(forKey: "notificationHistory"),
+           let decoded = try? JSONDecoder().decode([NotificationItem].self, from: data) {
+            return decoded
         }
-        connectivityManager.syncNotifications(notifications)
+        return []
+    }
+
+    private func saveNotificationHistory(_ history: [NotificationItem]) {
+        if let encoded = try? JSONEncoder().encode(history) {
+            UserDefaults.standard.set(encoded, forKey: "notificationHistory")
+        }
+    }
+
+    private func saveNotifications(_ list: [NotificationItem], key: String = "savedNotifications") {
+        if let encodedData = try? JSONEncoder().encode(list) {
+            UserDefaults.standard.set(encodedData, forKey: key)
+        }
+        if key == "savedNotifications" {
+            connectivityManager.syncNotifications(list)
+        }
     }
     
     private var sortedNotifications: [NotificationItem] {

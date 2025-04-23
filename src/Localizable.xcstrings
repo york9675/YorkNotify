@@ -315,6 +315,28 @@
         }
       }
     },
+    "Added notification history." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知履歴を追加しました"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增通知历史"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新增通知歷史"
+          }
+        }
+      }
+    },
     "Alert" : {
       "localizations" : {
         "ja" : {
@@ -1107,28 +1129,6 @@
         }
       }
     },
-    "Enjoy a refreshed look for the Acknowledgements and About Developer pages." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "「謝辞」および「開発者について」ページの新しい外観をお楽しみください。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "享受「致谢」和「关于开发者」页面焕然一新的外观。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "享受「致謝」和「關於開發者」頁面煥然一新的外觀。"
-          }
-        }
-      }
-    },
     "Enjoy a refreshed look for the watchOS app." : {
       "localizations" : {
         "ja" : {
@@ -1415,6 +1415,22 @@
         }
       }
     },
+    "History" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歴史"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知歷史"
+          }
+        }
+      }
+    },
     "Home" : {
       "localizations" : {
         "ja" : {
@@ -1613,6 +1629,22 @@
         }
       }
     },
+    "No notification history yet" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ通知履歴がありません"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚無通知歷史"
+          }
+        }
+      }
+    },
     "No notifications yet" : {
       "localizations" : {
         "ja" : {
@@ -1697,6 +1729,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "通知內容"
+          }
+        }
+      }
+    },
+    "Notification History" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知履歴"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知歷史"
           }
         }
       }
@@ -2103,28 +2151,6 @@
         }
       }
     },
-    "Redesigned Info Pages" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "情報ページの再設計"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新设计的信息页面"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新設計的資訊頁面"
-          }
-        }
-      }
-    },
     "Redesigned watchOS App" : {
       "localizations" : {
         "ja" : {
@@ -2257,6 +2283,22 @@
         }
       }
     },
+    "Search History" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索履歴"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜尋歷史紀錄"
+          }
+        }
+      }
+    },
     "Search Notifications" : {
       "localizations" : {
         "ja" : {
@@ -2297,6 +2339,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "選擇您要變更的應用程式圖標"
+          }
+        }
+      }
+    },
+    "Sent notifications will appear here." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "送信された通知はここに表示されます"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已傳送的通知會顯示在這裡"
           }
         }
       }
@@ -2985,6 +3043,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "York"
+          }
+        }
+      }
+    },
+    "York Development" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "York Development"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "York Development"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "York Development"
           }
         }
       }
