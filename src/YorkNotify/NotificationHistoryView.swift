@@ -50,14 +50,16 @@ struct NotificationHistoryView: View {
                         ForEach(groupedHistory, id: \.0) { date, items in
                             Section(header: Text(formatSectionHeader(date))) {
                                 ForEach(items) { item in
-                                    VStack(alignment: .leading) {
-                                        Text(item.title)
-                                            .font(.headline)
-                                        Text(item.content)
-                                            .font(.body)
-                                        Text(item.time, style: .time)
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
+                                    NavigationLink(destination: CreateFromHistoryView(notifications: $history, history: $history, sourceNotification: item)) {
+                                        VStack(alignment: .leading) {
+                                            Text(item.title)
+                                                .font(.headline)
+                                            Text(item.content)
+                                                .font(.body)
+                                            Text(item.time, style: .time)
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                        }
                                     }
                                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                         Button(role: .destructive) {

@@ -1129,28 +1129,6 @@
         }
       }
     },
-    "Enjoy a refreshed look for the watchOS app." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "watchOS Appの新しくなった外観をお楽しみください。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "享受watchOS App焕然一新的外观。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "享受watchOS App煥然一新的外觀。"
-          }
-        }
-      }
-    },
     "Error" : {
       "localizations" : {
         "ja" : {
@@ -1423,6 +1401,12 @@
             "value" : "歴史"
           }
         },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知历史"
+          }
+        },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1637,6 +1621,12 @@
             "value" : "まだ通知履歴がありません"
           }
         },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚无通知历史"
+          }
+        },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1741,6 +1731,12 @@
             "value" : "通知履歴"
           }
         },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知历史"
+          }
+        },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1837,28 +1833,6 @@
         }
       }
     },
-    "Now the home tab list will group notifications by date." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "これで、ホーム タブ リストで通知が日付別にグループ化されます。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "现在，主画面通知列表将按日期分组通知。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "現在，主畫面通知列表將按日期分組通知。"
-          }
-        }
-      }
-    },
     "OK" : {
       "localizations" : {
         "ja" : {
@@ -1899,28 +1873,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "開源專案"
-          }
-        }
-      }
-    },
-    "Organized Notifications" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "整理された通知"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "整齐排列的通知"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "整齊排列的通知"
           }
         }
       }
@@ -2151,28 +2103,6 @@
         }
       }
     },
-    "Redesigned watchOS App" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "再設計されたwatchOS App"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新设计的watchOS App"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重新設計的watchOS App"
-          }
-        }
-      }
-    },
     "Refresh" : {
       "localizations" : {
         "ja" : {
@@ -2291,6 +2221,12 @@
             "value" : "検索履歴"
           }
         },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜寻历史纪录"
+          }
+        },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2349,6 +2285,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "送信された通知はここに表示されます"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已传送的通知会显示在这里"
           }
         },
         "zh-Hant" : {

@@ -34,23 +34,9 @@ struct WhatsNewSheet: View {
             Spacer()
 
             FeatureRow(
-                systemImage: "applewatch",
-                title: String(localized: "Redesigned watchOS App"),
-                description: String(localized: "Enjoy a refreshed look for the watchOS app."),
-                color: customColor
-            )
-
-            FeatureRow(
                 systemImage: "clock.arrow.circlepath",
                 title: String(localized: "Notification History"),
                 description: String(localized: "Added notification history."),
-                color: customColor
-            )
-
-            FeatureRow(
-                systemImage: "calendar.badge.clock",
-                title: String(localized: "Organized Notifications"),
-                description: String(localized: "Now the home tab list will group notifications by date."),
                 color: customColor
             )
 
