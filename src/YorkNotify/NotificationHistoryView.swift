@@ -12,6 +12,7 @@ struct NotificationHistoryView: View {
     @State private var history: [NotificationItem] = []
     @State private var sortOrder: SortOrder = .time
     @State private var searchText: String = ""
+    @AppStorage("groupByDate") private var groupByDate: Bool = true
     
     enum SortOrder: String, CaseIterable, Identifiable {
         case time = "Time"
@@ -27,6 +28,30 @@ struct NotificationHistoryView: View {
         }
 
         var id: String { self.rawValue }
+    }
+    
+    @ViewBuilder
+    private func notificationRow(for item: NotificationItem) -> some View {
+        NavigationLink(destination: CreateFromHistoryView(notifications: $history, history: $history, sourceNotification: item)) {
+            VStack(alignment: .leading) {
+                Text(item.title)
+                    .font(.headline)
+                Text(item.content)
+                    .font(.body)
+                Text(groupByDate ? item.time.formatted(date: .omitted, time: .shortened)
+                                 : item.time.formatted(date: .abbreviated, time: .shortened))
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive) {
+                delete(item)
+            } label: {
+                Label("Delete", systemImage: "trash")
+                    .tint(.red)
+            }
+        }
     }
 
     var body: some View {
@@ -47,29 +72,17 @@ struct NotificationHistoryView: View {
                     .padding()
                 } else {
                     List {
-                        ForEach(groupedHistory, id: \.0) { date, items in
-                            Section(header: Text(formatSectionHeader(date))) {
-                                ForEach(items) { item in
-                                    NavigationLink(destination: CreateFromHistoryView(notifications: $history, history: $history, sourceNotification: item)) {
-                                        VStack(alignment: .leading) {
-                                            Text(item.title)
-                                                .font(.headline)
-                                            Text(item.content)
-                                                .font(.body)
-                                            Text(item.time, style: .time)
-                                                .font(.subheadline)
-                                                .foregroundColor(.secondary)
-                                        }
-                                    }
-                                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                        Button(role: .destructive) {
-                                            delete(item)
-                                        } label: {
-                                            Label("Delete", systemImage: "trash")
-                                                .tint(.red)
-                                        }
+                        if groupByDate {
+                            ForEach(groupedHistory, id: \.0) { date, items in
+                                Section(header: Text(formatSectionHeader(date))) {
+                                    ForEach(items) { item in
+                                        notificationRow(for: item)
                                     }
                                 }
+                            }
+                        } else {
+                            ForEach(searchResults) { item in
+                                notificationRow(for: item)
                             }
                         }
                     }
@@ -79,11 +92,19 @@ struct NotificationHistoryView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
-                        Picker("Sort by...", selection: $sortOrder) {
+                        Picker(selection: $sortOrder, label: Text("Sort by...")) {
                             ForEach(SortOrder.allCases) { sort in
-                                Text(sort.localizedString).tag(sort)
+                                Label(sort.localizedString, systemImage: sort == .time ? "clock" : "character")
+                                    .tag(sort)
                             }
                         }
+                        
+                        Divider()
+                        
+                        Toggle(isOn: $groupByDate) {
+                                Label("Group by Date", systemImage: "calendar")
+                        }
+
                     } label: {
                         Label("Sort by...", systemImage: "arrow.up.arrow.down.circle")
                     }

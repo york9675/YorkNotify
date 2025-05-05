@@ -1327,6 +1327,22 @@
         }
       }
     },
+    "Group by Date" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照日期分组"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照日期分組"
+          }
+        }
+      }
+    },
     "Help" : {
       "localizations" : {
         "ja" : {

@@ -18,6 +18,7 @@ struct NotificationListView: View {
     @State private var searchText = ""
     @State private var notificationToDelete: NotificationItem?
     @State private var greetingTitle: String = "Notification List"
+    @AppStorage("groupByDate") private var groupByDate: Bool = true
     
     @State private var latestVersion: String?
     
@@ -105,6 +106,32 @@ struct NotificationListView: View {
         updateGreeting()
         checkNotificationSettings()
     }
+    
+    @ViewBuilder
+    private func notificationRow(for notification: NotificationItem) -> some View {
+        NavigationLink(destination: EditNotificationView(notification: notification, notifications: $notifications)) {
+            VStack(alignment: .leading) {
+                Text(notification.title)
+                    .font(.headline)
+                Text(notification.content)
+                    .font(.body)
+                Text(groupByDate ?
+                     notification.time.formatted(date: .omitted, time: .shortened) :
+                     notification.time.formatted(date: .abbreviated, time: .shortened))
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button {
+                notificationToDelete = notification
+                activeAlert = .delete
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+            .tint(.red)
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -124,32 +151,17 @@ struct NotificationListView: View {
                     .padding()
                 } else {
                     List {
-                        ForEach(groupedNotifications, id: \.0) { date, notifications in
-                            Section(header: Text(formatSectionHeader(date))) {
-                                ForEach(notifications) { notification in
-                                    NavigationLink(destination: EditNotificationView(notification: notification, notifications: $notifications)) {
-                                        VStack(alignment: .leading) {
-                                            Text(notification.title)
-                                                .font(.headline)
-                                            Text(notification.content)
-                                                .font(.body)
-                                            HStack {
-                                                Text(notification.time, style: .time)
-                                                    .font(.subheadline)
-                                                    .foregroundColor(.secondary)
-                                            }
-                                        }
-                                    }
-                                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                        Button {
-                                            notificationToDelete = notification
-                                            activeAlert = .delete
-                                        } label: {
-                                            Label("Delete", systemImage: "trash")
-                                        }
-                                        .tint(.red)
+                        if groupByDate {
+                            ForEach(groupedNotifications, id: \.0) { date, notifications in
+                                Section(header: Text(formatSectionHeader(date))) {
+                                    ForEach(notifications) { notification in
+                                        notificationRow(for: notification)
                                     }
                                 }
+                            }
+                        } else {
+                            ForEach(searchResults) { notification in
+                                notificationRow(for: notification)
                             }
                         }
                     }
@@ -182,6 +194,11 @@ struct NotificationListView: View {
                                 }
                             }
                         }
+
+                        Toggle(isOn: $groupByDate) {
+                            Label("Group by Date", systemImage: "calendar")
+                        }
+
                     } label: {
                         Label("Sort by...", systemImage: "arrow.up.arrow.down.circle")
                     }
