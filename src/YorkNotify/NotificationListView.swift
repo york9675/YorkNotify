@@ -194,10 +194,13 @@ struct NotificationListView: View {
                                 }
                             }
                         }
+                        .tint(.primary)
+                        
 
                         Toggle(isOn: $groupByDate) {
                             Label("Group by Date", systemImage: "calendar")
                         }
+                        .tint(.primary)
 
                     } label: {
                         Label("Sort by...", systemImage: "arrow.up.arrow.down.circle")

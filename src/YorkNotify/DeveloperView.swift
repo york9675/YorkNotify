@@ -56,6 +56,28 @@ struct DeveloperView: View {
             // Links Section
             Section(header: Text("Links")) {
                 Button(action: {
+                    if let url = URL(string: "mailto:york@york.qzz.io") {
+                        openURL(url)
+                    }
+                }) {
+                    HStack {
+                        Label("york@york.qzz.io", systemImage: "envelope")
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                }
+                Button(action: {
+                    if let url = URL(string: "https://york.qzz.io/") {
+                        openURL(url)
+                    }
+                }) {
+                    HStack {
+                        Label("Profile", systemImage: "person")
+                        Spacer()
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                }
+                Button(action: {
                     if let url = URL(string: "https://york9675.github.io/website/") {
                         openURL(url)
                     }

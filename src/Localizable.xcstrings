@@ -1329,6 +1329,12 @@
     },
     "Group by Date" : {
       "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付でグループ化"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2049,6 +2055,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "仍要繼續"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人資料"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "个人档案"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "個人檔案"
           }
         }
       }
@@ -3026,6 +3054,9 @@
           }
         }
       }
+    },
+    "york@york.qzz.io" : {
+      "shouldTranslate" : false
     },
     "YorkNotify" : {
       "localizations" : {
