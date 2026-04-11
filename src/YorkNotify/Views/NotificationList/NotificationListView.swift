@@ -165,6 +165,7 @@ struct NotificationListView: View {
                             }
                         }
                     }
+                    .listStyle(.insetGrouped)
                 }
             }
             .searchable(text: $searchText, prompt: "Search Notifications")
@@ -203,7 +204,7 @@ struct NotificationListView: View {
                         .tint(.primary)
 
                     } label: {
-                        Label("Sort by...", systemImage: "arrow.up.arrow.down.circle")
+                        Label("Sort by...", systemImage: "arrow.up.arrow.down")
                     }
                 }
 
@@ -353,6 +354,11 @@ struct NotificationListView: View {
             }
         }
     }
+}
+
+#Preview {
+    NotificationListView()
+        .environmentObject(AppState())
 }
 
 /*

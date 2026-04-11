@@ -28,6 +28,7 @@ struct CreateFromHistoryView: View {
     @State private var repeats: Bool = false
     @State private var repeatFrequency: RepeatFrequency = .daily
     @State private var isValid = false
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         Form {
@@ -52,13 +53,32 @@ struct CreateFromHistoryView: View {
                     }
                 }
             }
-
-            Section {
-                Button("Create Notification") {
-                    saveNotification()
+        }
+        .formStyle(.grouped)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            Group {
+                if #available(iOS 26.0, *) {
+                    Button(action: saveNotification) {
+                        Label("Create Notification", systemImage: "plus")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 8)
+                    }
+                    .liquidGlassProminentButtonIfAvailable()
+                } else {
+                    Button(action: saveNotification) {
+                        Label("Create Notification", systemImage: "plus")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 8)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(customColor)
                 }
-                .bold()
             }
+            .fontWeight(.semibold)
+            .disabled(!isValid)
+            .padding(.horizontal)
+            .padding(.top, 8)
+            .padding(.bottom, 6)
         }
         .onAppear {
             title = sourceNotification.title
@@ -66,14 +86,22 @@ struct CreateFromHistoryView: View {
             updateValidity()
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(role: .destructive) {
-                    deleteHistoryNotification()
+                    showDeleteConfirmation = true
                 } label: {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
                 }
             }
+        }
+        .alert("Delete Notification?", isPresented: $showDeleteConfirmation) {
+            Button("Delete", role: .destructive) {
+                deleteHistoryNotification()
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This will remove this item from your history.")
         }
     }
 
@@ -133,6 +161,25 @@ struct CreateFromHistoryView: View {
     private func saveHistory() {
         if let encoded = try? JSONEncoder().encode(history) {
             UserDefaults.standard.set(encoded, forKey: "notificationHistory")
+        }
+    }
+}
+
+#Preview {
+    CreateFromHistoryPreviewContainer()
+}
+
+private struct CreateFromHistoryPreviewContainer: View {
+    @State private var notifications: [NotificationItem] = [NotificationItem.previewSample]
+    @State private var history: [NotificationItem] = [NotificationItem.previewSample]
+
+    var body: some View {
+        NavigationStack {
+            CreateFromHistoryView(
+                notifications: $notifications,
+                history: $history,
+                sourceNotification: NotificationItem.previewSample
+            )
         }
     }
 }

@@ -147,6 +147,12 @@ struct DeveloperView: View {
     }
 }
 
+#Preview {
+    NavigationStack {
+        DeveloperView()
+    }
+}
+
 /*
 ░░░░░██████╗░░██████╗░░░░░
 ░░░░██╔════╝░██╔════╝░░░░░

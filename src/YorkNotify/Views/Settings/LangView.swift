@@ -29,33 +29,35 @@ struct LangView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "globe")
                         .resizable()
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("Language")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
                     if !isMacOS {
-                        Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the feedback form to report it. Thank you!")
+                        Text("Please click the button below to jump to the system settings and tap \"Language\" to change your preferred App language.\n\nThe translation may use a large amount of machine translation and contain many errors or irrationalities. If there are any errors in the translation, please go to the GitHub Issues to report it. Thank you!")
                             .font(.subheadline)
-                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
                     } else {
                         Text("Please go to System Settings > General > Language & Region, scroll to the Applications section, and click Add (+). In the dialog, select YorkNotify from the app list, choose your preferred language from the dropdown menu, and click Add. Restart YorkNotify to apply the new language setting.")
                             .font(.subheadline)
-                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
                     }
                     
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 if !isMacOS {
                     Button(action: {
@@ -67,7 +69,7 @@ struct LangView: View {
                 }
                 
                 Button(action: {
-                    if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
+                    if let url = URL(string: "https://github.com/york9675/YorkNotify/issues") {
                         openURL(url)
                     }
                 }) {
@@ -78,6 +80,12 @@ struct LangView: View {
         }
         .navigationTitle("Language")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        LangView()
     }
 }
 

@@ -19,24 +19,25 @@ struct CustomColorSchemeView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "paintbrush.fill")
                         .font(.largeTitle)
                         .foregroundColor(customColor)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("Color Scheme")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
                     Text("Personalize and customize the theme colors for this app to match your style and preferences.")
                         .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
             Section {
@@ -80,6 +81,12 @@ struct CustomColorSchemeView: View {
         customColorHex = ""
     }
     
+}
+
+#Preview {
+    NavigationStack {
+        CustomColorSchemeView()
+    }
 }
 
 /*

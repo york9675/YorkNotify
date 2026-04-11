@@ -25,24 +25,25 @@ struct DefaultContentView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "character")
                         .font(.largeTitle)
                         .foregroundColor(customColor)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("Default Content")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
-                    Text("Set the default notification content here.\n\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here.")
+                    Text("Set the default notification content here.\nWhenever you create a new notification but leave certain fields empty, the app will automatically insert the default content you've defined here.")
                         .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Section(header: Text("Default Notification Content")) {
@@ -77,6 +78,12 @@ struct DefaultContentView: View {
     private func resetToDefault() {
         defaultTitle = originalDefaultTitle
         defaultContent = originalDefaultContent
+    }
+}
+
+#Preview {
+    NavigationStack {
+        DefaultContentView()
     }
 }
 

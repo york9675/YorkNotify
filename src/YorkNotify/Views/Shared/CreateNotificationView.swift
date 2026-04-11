@@ -50,7 +50,7 @@ struct CreateNotificationView: View {
     @AppStorage("enableCustomFrequency") private var enableCustomFrequency = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Notification Content")) {
                     TextField("Notification Title", text: $title)
@@ -89,17 +89,25 @@ struct CreateNotificationView: View {
                     }
                 }
             }
+                .formStyle(.grouped)
             .navigationTitle("Create Notification")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text("Cancel")
+                        if #available(iOS 26.0, *) {
+                            Image(systemName: "xmark")
+                                .foregroundStyle(.primary)
+                        } else {
+                            Text("Cancel")
+                        }
                     }
+                    .tint(.primary)
+                    .accessibilityLabel("Cancel")
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         if title.isEmpty || content.isEmpty {
                             handleMissingInfo()
@@ -109,9 +117,22 @@ struct CreateNotificationView: View {
                             activeAlert = .warning
                         }
                     }) {
-                        Text("Save")
-                            .bold()
+                        if #available(iOS 26.0, *) {
+                            Image(systemName: "checkmark")
+                                .opacity(0)
+                        } else {
+                            Text("Save")
+                                .bold()
+                        }
                     }
+                    .liquidGlassProminentButtonIfAvailable()
+                    .overlay {
+                        if #available(iOS 26.0, *) {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(.white)
+                        }
+                    }
+                    .accessibilityLabel("Save")
                 }
             }
             .alert(item: $activeAlert) { alertType in
@@ -225,6 +246,18 @@ struct CreateNotificationView: View {
                 print("Failed to create notification \(error.localizedDescription)")
             }
         }
+    }
+}
+
+#Preview {
+    CreateNotificationPreviewContainer()
+}
+
+private struct CreateNotificationPreviewContainer: View {
+    @State private var notifications: [NotificationItem] = [NotificationItem.previewSample]
+
+    var body: some View {
+        CreateNotificationView(notifications: $notifications)
     }
 }
 

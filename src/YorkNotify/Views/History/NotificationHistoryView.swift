@@ -12,6 +12,8 @@ struct NotificationHistoryView: View {
     @State private var history: [NotificationItem] = []
     @State private var sortOrder: SortOrder = .time
     @State private var searchText: String = ""
+    @State private var pendingDeleteItem: NotificationItem?
+    @State private var showDeleteConfirmation = false
     @AppStorage("groupByDate") private var groupByDate: Bool = true
     
     enum SortOrder: String, CaseIterable, Identifiable {
@@ -46,7 +48,8 @@ struct NotificationHistoryView: View {
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive) {
-                delete(item)
+                pendingDeleteItem = item
+                showDeleteConfirmation = true
             } label: {
                 Label("Delete", systemImage: "trash")
                     .tint(.red)
@@ -86,6 +89,7 @@ struct NotificationHistoryView: View {
                             }
                         }
                     }
+                    .listStyle(.insetGrouped)
                 }
             }
             .navigationTitle("History")
@@ -108,11 +112,22 @@ struct NotificationHistoryView: View {
                         .tint(.primary)
 
                     } label: {
-                        Label("Sort by...", systemImage: "arrow.up.arrow.down.circle")
+                        Label("Sort by...", systemImage: "arrow.up.arrow.down")
                     }
                 }
             }
             .searchable(text: $searchText, prompt: "Search History")
+            .alert("Delete Notification?", isPresented: $showDeleteConfirmation, presenting: pendingDeleteItem) { item in
+                Button("Delete", role: .destructive) {
+                    delete(item)
+                    pendingDeleteItem = nil
+                }
+                Button("Cancel", role: .cancel) {
+                    pendingDeleteItem = nil
+                }
+            } message: { item in
+                Text("This will remove \"\(item.title)\" from your history.")
+            }
             .onAppear {
                 loadHistory()
             }
@@ -169,6 +184,10 @@ struct NotificationHistoryView: View {
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "EEE, MMM d", options: 0, locale: Locale.current)
         return formatter.string(from: date)
     }
+}
+
+#Preview {
+    NotificationHistoryView()
 }
 
 /*

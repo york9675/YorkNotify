@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,16 @@
 		983370D82CAC1FBE00B5EB72 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370D72CAC1FBE00B5EB72 /* HelpView.swift */; };
 		983370DA2CAC1FD700B5EB72 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370D92CAC1FD700B5EB72 /* DeveloperView.swift */; };
 		983370DC2CAC1FF900B5EB72 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370DB2CAC1FF900B5EB72 /* IconView.swift */; };
+		986AF9642F8A148100D53559 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95B2F8A148100D53559 /* AboutView.swift */; };
+		986AF9652F8A148100D53559 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95D2F8A148100D53559 /* ContentView.swift */; };
+		986AF9662F8A148100D53559 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95E2F8A148100D53559 /* NotificationListView.swift */; };
+		986AF9672F8A148100D53559 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95F2F8A148100D53559 /* SettingsView.swift */; };
+		986AF9682F8A148100D53559 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */; };
+		986AF9692F8A148100D53559 /* WatchNotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9612F8A148100D53559 /* WatchNotificationItem.swift */; };
+		986AF96A2F8A148100D53559 /* YorkNotifyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9622F8A148100D53559 /* YorkNotifyWatchApp.swift */; };
+		986AF96B2F8A148100D53559 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986AF9592F8A148100D53559 /* Preview Assets.xcassets */; };
+		986AF96C2F8A148100D53559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986AF95C2F8A148100D53559 /* Assets.xcassets */; };
+		986AF96D2F8A148100D53559 /* WatchNotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9612F8A148100D53559 /* WatchNotificationItem.swift */; };
 		986EF3272CAD3864009AC755 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */; };
 		987730E92DBB35A90081B278 /* CreateFromHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */; };
 		988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */; };
@@ -75,6 +85,15 @@
 		983370D72CAC1FBE00B5EB72 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		983370D92CAC1FD700B5EB72 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
 		983370DB2CAC1FF900B5EB72 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		986AF9592F8A148100D53559 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		986AF95B2F8A148100D53559 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		986AF95C2F8A148100D53559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		986AF95D2F8A148100D53559 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		986AF95E2F8A148100D53559 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
+		986AF95F2F8A148100D53559 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		986AF9612F8A148100D53559 /* WatchNotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationItem.swift; sourceTree = "<group>"; };
+		986AF9622F8A148100D53559 /* YorkNotifyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YorkNotifyWatchApp.swift; sourceTree = "<group>"; };
 		986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFromHistoryView.swift; sourceTree = "<group>"; };
 		988516F02C2EEFA60025FCAC /* YorkNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YorkNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,20 +106,6 @@
 		98CC8BF62C901FE20057111D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		98E1EEFD2D10533B00AB5DB0 /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		98EA72392CDF6E9F004DC5E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				WatchNotificationItem.swift,
-			);
-			target = 988516EF2C2EEFA60025FCAC /* YorkNotify */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		98079BC62CD2574C00D8C631 /* YorkNotifyWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (98EA72392CDF6E9F004DC5E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "YorkNotifyWatch Watch App"; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		98079BC22CD2574B00D8C631 /* Frameworks */ = {
@@ -120,12 +125,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		986AF95A2F8A148100D53559 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				986AF9592F8A148100D53559 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		986AF9632F8A148100D53559 /* YorkNotifyWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				986AF95D2F8A148100D53559 /* ContentView.swift */,
+				986AF95E2F8A148100D53559 /* NotificationListView.swift */,
+				986AF95F2F8A148100D53559 /* SettingsView.swift */,
+				986AF95B2F8A148100D53559 /* AboutView.swift */,
+				986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */,
+				986AF9612F8A148100D53559 /* WatchNotificationItem.swift */,
+				986AF9622F8A148100D53559 /* YorkNotifyWatchApp.swift */,
+				986AF95C2F8A148100D53559 /* Assets.xcassets */,
+				986AF95A2F8A148100D53559 /* Preview Content */,
+			);
+			path = "YorkNotifyWatch Watch App";
+			sourceTree = "<group>";
+		};
 		988516E72C2EEFA60025FCAC = {
 			isa = PBXGroup;
 			children = (
 				98CC8BF62C901FE20057111D /* Localizable.xcstrings */,
 				988516F22C2EEFA60025FCAC /* YorkNotify */,
-				98079BC62CD2574C00D8C631 /* YorkNotifyWatch Watch App */,
+				986AF9632F8A148100D53559 /* YorkNotifyWatch Watch App */,
 				988516F12C2EEFA60025FCAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,29 +171,16 @@
 		988516F22C2EEFA60025FCAC /* YorkNotify */ = {
 			isa = PBXGroup;
 			children = (
-				981D9BD12CD9E69200C3B4CE /* YorkNotify.entitlements */,
-				983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */,
 				989B53C22CAE5B3F00BDA23C /* WhatsNewSheet.swift */,
 				988516F52C2EEFA60025FCAC /* ContentView.swift */,
-				983370C52CAC1E6100B5EB72 /* NotificationListView.swift */,
-				9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */,
-				987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */,
-				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
-				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
 				983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */,
-				983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */,
-				983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */,
-				983370DB2CAC1FF900B5EB72 /* IconView.swift */,
-				983370D52CAC1FA300B5EB72 /* LangView.swift */,
-				983370D32CAC1F8500B5EB72 /* LabView.swift */,
-				983370D72CAC1FBE00B5EB72 /* HelpView.swift */,
-				98E1EEFD2D10533B00AB5DB0 /* VersionView.swift */,
-				983370D92CAC1FD700B5EB72 /* DeveloperView.swift */,
-				986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */,
+				9A1111112E4A000100000001 /* Views */,
+				983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */,
 				989D91C22CD76860000FDB7B /* PhoneConnectivityManager.swift */,
 				988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */,
 				988516F72C2EEFA70025FCAC /* Assets.xcassets */,
 				98301D382C5D4024000CF262 /* Info.plist */,
+				981D9BD12CD9E69200C3B4CE /* YorkNotify.entitlements */,
 				988516F92C2EEFA70025FCAC /* Preview Content */,
 			);
 			path = YorkNotify;
@@ -176,6 +192,59 @@
 				988516FA2C2EEFA70025FCAC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A1111112E4A000100000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A1111112E4A000100000002 /* Settings */,
+				9A1111112E4A000100000003 /* History */,
+				9A1111112E4A000100000004 /* NotificationList */,
+				9A1111112E4A000100000005 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A1111112E4A000100000002 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */,
+				983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */,
+				983370DB2CAC1FF900B5EB72 /* IconView.swift */,
+				983370D52CAC1FA300B5EB72 /* LangView.swift */,
+				983370D32CAC1F8500B5EB72 /* LabView.swift */,
+				983370D72CAC1FBE00B5EB72 /* HelpView.swift */,
+				98E1EEFD2D10533B00AB5DB0 /* VersionView.swift */,
+				986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */,
+				983370D92CAC1FD700B5EB72 /* DeveloperView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9A1111112E4A000100000003 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */,
+				987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		9A1111112E4A000100000004 /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				983370C52CAC1E6100B5EB72 /* NotificationListView.swift */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		9A1111112E4A000100000005 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
+				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +261,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				98079BC62CD2574C00D8C631 /* YorkNotifyWatch Watch App */,
 			);
 			name = "YorkNotifyWatch Watch App";
 			packageProductDependencies = (
@@ -230,7 +296,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					98079BC42CD2574B00D8C631 = {
 						CreatedOnToolsVersion = 16.0;
@@ -269,6 +335,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986AF96B2F8A148100D53559 /* Preview Assets.xcassets in Resources */,
+				986AF96C2F8A148100D53559 /* Assets.xcassets in Resources */,
 				98ADDC0D2CD7451C008BD27F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +358,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986AF9642F8A148100D53559 /* AboutView.swift in Sources */,
+				986AF9652F8A148100D53559 /* ContentView.swift in Sources */,
+				986AF9662F8A148100D53559 /* NotificationListView.swift in Sources */,
+				986AF9672F8A148100D53559 /* SettingsView.swift in Sources */,
+				986AF9682F8A148100D53559 /* WatchConnectivityManager.swift in Sources */,
+				986AF9692F8A148100D53559 /* WatchNotificationItem.swift in Sources */,
+				986AF96A2F8A148100D53559 /* YorkNotifyWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +383,7 @@
 				986EF3272CAD3864009AC755 /* AcknowledgementsView.swift in Sources */,
 				989B53C32CAE5B3F00BDA23C /* WhatsNewSheet.swift in Sources */,
 				983370DA2CAC1FD700B5EB72 /* DeveloperView.swift in Sources */,
+				986AF96D2F8A148100D53559 /* WatchNotificationItem.swift in Sources */,
 				983370D62CAC1FA300B5EB72 /* LangView.swift in Sources */,
 				98E1EEFE2D10533B00AB5DB0 /* VersionView.swift in Sources */,
 				983370D42CAC1F8500B5EB72 /* LabView.swift in Sources */,
@@ -339,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -350,7 +426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -369,7 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -380,7 +456,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -453,6 +529,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -514,6 +591,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
@@ -532,8 +610,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YorkNotify/Info.plist;
@@ -548,7 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -572,8 +652,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotify/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YorkNotify/Info.plist;
@@ -588,7 +670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -24,7 +24,7 @@ struct SettingsTabView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             Form {
                 Section(header: Text("General")) {
                     Picker(selection: $selectedTheme, label: Label("Theme", systemImage: "moon")) {
@@ -59,7 +59,7 @@ struct SettingsTabView: View {
                     }
                 }
 
-                Section(header: Text("About"), footer: Text("© 2025 York Development")) {
+                Section(header: Text("About"), footer: Text("© 2026 York Development")) {
                     NavigationLink(destination: HelpView()) {
                         Label("Help", systemImage: "questionmark.circle")
                     }
@@ -81,21 +81,23 @@ struct SettingsTabView: View {
                     .sheet(isPresented: $showAcknowledgementsView) {
                         AcknowledgementsView()
                     }
-
+                    
                     Button(action: {
-                        if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
+                        if let url = URL(string: "https://github.com/york9675/YorkNotify/issues") {
                             openURL(url)
                         }
                     }) {
                         HStack {
-                            Label("Feedback", systemImage: "info.bubble")
+                            Label("Feedback / Bug Report", systemImage: "exclamationmark.bubble")
                             Spacer()
                             Image(systemName: "arrow.up.right.square")
                         }
                     }
                 }
             }
+            .formStyle(.grouped)
             .navigationTitle("Settings")
+        } detail: {
             VStack {
                 Image(systemName: "gear")
                     .padding(.bottom, 5)
@@ -107,6 +109,18 @@ struct SettingsTabView: View {
             }
             .padding()
         }
+    }
+}
+
+#Preview {
+    SettingsTabPreviewContainer()
+}
+
+private struct SettingsTabPreviewContainer: View {
+    @State private var selectedTheme: Theme = .system
+
+    var body: some View {
+        SettingsTabView(selectedTheme: $selectedTheme)
     }
 }
 

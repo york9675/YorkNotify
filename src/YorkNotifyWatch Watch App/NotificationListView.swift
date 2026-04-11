@@ -38,13 +38,13 @@ struct NotificationListView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 if connectivityManager.notifications.isEmpty {
                     VStack {
                         Image(systemName: "bell")
                             .font(.system(size: 40))
-                            .padding(.bottom, 8)
+                            .padding(.bottom, 5)
                             .foregroundStyle(.secondary)
                         
                         Text("No notifications yet")
@@ -78,16 +78,26 @@ struct NotificationListView: View {
                                 }
                             }
                         }
+
+                        Text("Not synced yet? Tap ")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                            + Text(Image(systemName: "arrow.triangle.2.circlepath"))
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                            + Text(" on iPhone")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
                     }
                 }
             }
+            .navigationTitle("List")
         }
-        .navigationTitle("List")
     }
 }
 
 #Preview {
-    ContentView()
+    NotificationListView()
 }
 
 /*

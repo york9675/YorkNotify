@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct AboutView: View {
-    let appVersion = "v" + (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown") + "-beta"
+    let appVersion = "v" + (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown")
     let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "Unknown"
 
     var body: some View {
@@ -17,8 +17,10 @@ struct AboutView: View {
             Text("YorkNotify")
                 .font(.title)
 
-            Text("By York")
-                .font(.body)
+            Text("© 2026 York Development")
+                .font(.caption2)
+                .minimumScaleFactor(0.7)
+                .foregroundStyle(.secondary)
 
             VStack(spacing: 4) {
                 Text("Version: \(appVersion) (\(buildNumber))")
@@ -28,6 +30,12 @@ struct AboutView: View {
         }
         .padding()
         .navigationTitle("About")
+    }
+}
+
+#Preview {
+    NavigationStack {
+        AboutView()
     }
 }
 

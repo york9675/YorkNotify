@@ -16,23 +16,12 @@
 </p>
 
 <p align="center"> 
-  <a href="README.md">English</a> 
+  <b>English</b>
   ·
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-<p align="center">
-  <table>
-    <tr>
-      <td><img src="./Screenshots/iOS.png" alt="iOS" width="250"/></td>
-      <td><img src="./Screenshots/watchOS.png" alt="watchOS" width="250"/></td>
-    </tr>
-    <tr>
-      <td><img src="./Screenshots/iPadOS.png" alt="iPadOS" width="250"/></td>
-      <td><img src="./Screenshots/macOS.png" alt="macOS" width="250"/></td>
-    </tr>
-  </table>
-</p>
+![iOS](./Screenshots/iOS.png)
 
 **YorkNotify** is a fully-featured, beautifully designed iOS app that makes scheduling notifications incredibly easy.
 
@@ -50,6 +39,7 @@ This guide will help you import this project into Xcode and run it on your iPhon
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Prerequisites](#prerequisites)
 - [Steps to Import and Run the Project in Xcode](#steps-to-import-and-run-the-project-in-xcode)
   - [1. Clone the Repository](#1-clone-the-repository)
@@ -62,6 +52,25 @@ This guide will help you import this project into Xcode and run it on your iPhon
 - [Contribution](#contribution)
 - [License](#license)
 - [Support](#support)
+
+## Screenshots
+
+<details>
+  <summary>Click to expand screenshots</summary>
+
+### iOS
+![iOS](./Screenshots/iOS.png)
+
+### iPadOS
+![iPadOS](./Screenshots/iPadOS.png)
+
+### macOS
+![macOS](./Screenshots/macOS.png)
+
+### watchOS
+![watchOS](./Screenshots/watchOS.png)
+
+</details>
 
 ## Prerequisites
 
@@ -126,9 +135,7 @@ git clone https://github.com/york9675/YorkNotify.git
 
 ## Bug report / Feedback
 
-If you encounter any problems during use or have feedback, please fill out **[this form](https://forms.gle/o1hFjy4q98Ua1H7L7)** to report.
-
-Alternatively, you can report back by creating issues.
+If you encounter any problems during use or have feedback, please open an issue to report it.
 
 ## Contribution
 
@@ -136,21 +143,13 @@ Feel free to contribute to this project by creating issues, submitting pull requ
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+[MIT](LICENSE)
 
 ## Support
 
-When I began developing apps, my mission was simple: to create genuinely helpful tools and offer them for free. In a world saturated with paid features and ads, I aimed to build something that anyone could use without cost, simply to make life a little easier. My apps have always been ad-free, and some, like this project, are open-source. If my work can help even a small group of people become more efficient or solve a problem, it’s worth it.
-
-However, as a student and independent developer, I’ve encountered some financial challenges. The $99 annual fee for Apple’s Developer Program has become a significant hurdle. This membership is necessary to unlock key iOS features, like Time-Sensitive Notifications, and to distribute apps on the App Store. Unfortunately, it’s a cost I can’t currently afford. I’ve even had to use a Hackintosh because I don’t have the resources to purchase a Mac for development.
-
-Despite these challenges, I remain committed to keeping this app **completely free**—with no ads or in-app purchases. But in order to make the app fully functional and accessible to iOS users, I need assistance covering the Apple Developer Account fee.
-
-### How You Can Help
-
 If you believe in this project and would like to support its growth, here are a few ways you can contribute:
 
-- **Donate:** Any amount, large or small, will help cover the annual Apple Developer fee. You can sponsor the project via [Buy Me a Coffee](https://buymeacoffee.com/york0524) using the button below!
+- **Donate:** Any amount, large or small, will help me. You can sponsor the project via [Buy Me a Coffee](https://buymeacoffee.com/york0524) using the button below!
 - **Spread the Word:** Share this project with your network—friends, family, or anyone who might benefit from or support it!
 - **Collaborate:** If you’re a developer, designer, or have ideas for improvement, feel free to contribute to the project by creating issues, submitting pull requests, or improving documentation!
 
@@ -168,6 +167,6 @@ _Thank you for taking the time to read and for any support you can offer. Togeth
 
 ***
 
-© 2025 York Development
+© 2026 York Development
 
 Made with :heart: and Swift in Taiwan.

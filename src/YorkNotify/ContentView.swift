@@ -41,6 +41,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
+        .liquidGlassTabBehavior()
         .tint(customColor)
         .preferredColorScheme(Theme(rawValue: selectedTheme)?.colorScheme)
         .sheet(isPresented: $showWhatsNew) {
@@ -60,8 +61,9 @@ struct ContentView: View {
 }
 
 #Preview {
-   ContentView()
-}
+    ContentView()
+         .environmentObject(AppState())
+ }
 
 /*
 ░░░░░██████╗░░██████╗░░░░░

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import UserNotifications
 
-let appVersion = "v" + (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown") + "-beta"
+let appVersion = "v" + (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown")
 let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "Unknown"
 
 extension Color {
@@ -125,6 +125,20 @@ enum RepeatFrequency: String, CaseIterable, Identifiable, Codable {
     var id: String { self.rawValue }
 }
 
+#if DEBUG
+extension NotificationItem {
+    static var previewSample: NotificationItem {
+        NotificationItem(
+            title: "Team Standup",
+            content: "Daily sync starts in 10 minutes.",
+            time: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(),
+            repeats: true,
+            repeatFrequency: .daily
+        )
+    }
+}
+#endif
+
 private func dateFromSectionTitle(_ title: String, today: Date, tomorrow: Date, dateFormatter: DateFormatter) -> Date {
     if title == "Today" {
         return today
@@ -171,6 +185,37 @@ class CommonUtils {
                     print("Icon updated successfully to: \(iconName ?? "default")")
                 }
             }
+        }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func liquidGlassTabBehavior() -> some View {
+        if #available(iOS 26.0, *) {
+            self
+                .tabViewStyle(.sidebarAdaptable)
+                .tabBarMinimizeBehavior(.onScrollDown)
+        } else {
+            self
+        }
+    }
+
+    @ViewBuilder
+    func liquidGlassProminentButtonIfAvailable() -> some View {
+        if #available(iOS 26.0, *) {
+            self.buttonStyle(.glassProminent)
+        } else {
+            self
+        }
+    }
+
+    @ViewBuilder
+    func liquidGlassButtonIfAvailable() -> some View {
+        if #available(iOS 26.0, *) {
+            self.buttonStyle(.glass)
+        } else {
+            self
         }
     }
 }

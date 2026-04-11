@@ -20,26 +20,27 @@ struct IconView: View {
     var body: some View {
         List {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "square.grid.2x2.fill")
                         .resizable()
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("App Icon")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
                     Text("Here, you have the option to personalize your app experience by selecting your preferred app icon.")
                         .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             Section(header: Text("Select the app icon you want to change")) {
                 ForEach(AppIcon.allCases, id: \.self) { icon in
@@ -84,6 +85,12 @@ struct IconView: View {
     private func updateIcon() {
         print("Attempting to update icon to: \(selectedIcon.name ?? "default")")
         CommonUtils.updateAppIcon(with: selectedIcon.name)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        IconView()
     }
 }
 

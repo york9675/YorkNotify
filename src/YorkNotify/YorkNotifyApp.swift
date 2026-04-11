@@ -23,9 +23,9 @@ struct YorkNotifyApp: App {
         Welcome to the YorkNotify app by York!
         
         If you like this app, please leave a star on the GitHub project page, or consider sponsoring me through Buy Me a Coffee!
-        Encounter any problems during use? Please create GitHub Issues or fill out the feedback form to report!
+        Encounter any problems during use? Please create GitHub Issues to report!
         
-        © 2025 York Development
+        © 2026 York Development
         
         ========== HAVE A NICE DAY! ==========
         """#)

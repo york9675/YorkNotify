@@ -12,18 +12,20 @@ struct SettingsView: View {
 
     var body: some View {
         NavigationStack {
-            Form{
+            Form {
                 Section(header: Text("About")) {
-                    List {
-                        NavigationLink(destination: AboutView()) {
-                            Label("About", systemImage: "info.circle")
-                        }
+                    NavigationLink(destination: AboutView()) {
+                        Label("About", systemImage: "info.circle")
                     }
                 }
             }
+            .navigationTitle("Settings")
         }
-        .navigationTitle("Settings")
     }
+}
+
+#Preview {
+    SettingsView()
 }
 
 /*

@@ -84,10 +84,11 @@ struct EditNotificationView: View {
                     .bold()
             }
         }
+        .formStyle(.grouped)
         .navigationTitle("Edit Notification")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     activeAlert = .delete
                 }) {
@@ -215,6 +216,23 @@ struct EditNotificationView: View {
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
+        }
+    }
+}
+
+#Preview {
+    EditNotificationPreviewContainer()
+}
+
+private struct EditNotificationPreviewContainer: View {
+    @State private var notifications: [NotificationItem] = [NotificationItem.previewSample]
+
+    var body: some View {
+        NavigationStack {
+            EditNotificationView(
+                notification: notifications.first ?? NotificationItem.previewSample,
+                notifications: $notifications
+            )
         }
     }
 }

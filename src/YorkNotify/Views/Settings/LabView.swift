@@ -22,24 +22,25 @@ struct LabView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "flask.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color.purple)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("Lab")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
-                    Text("Enable Experimental Features to try out new, unfinished features that may not work as expected.\n\nThese features are in testing and could change or be removed in future updates. Use with caution, and expect occasional issues.")
+                    Text("Enable Experimental Features to try out new, unfinished features that may not work as expected.\nThese features are in testing and could change or be removed in future updates. Use with caution, and expect occasional issues.")
                         .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Toggle("Enable Experimental Features", isOn: Binding(
                     get: { enableExperimentalFeatures },
@@ -105,6 +106,12 @@ struct LabView: View {
         }
         .navigationTitle("Lab")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        LabView()
     }
 }
 

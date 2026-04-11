@@ -38,26 +38,27 @@ struct VersionView: View {
     var body: some View {
         Form {
             Section {
-                VStack(alignment: .center) {
+                VStack(alignment: .leading) {
                     Image(systemName: "info.circle.fill")
                         .resizable()
                         .foregroundColor(customColor)
                         .frame(width: 30, height: 30)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 5)
                     
                     Text("Version")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
+                        .padding(.bottom, 5)
                     
-                    Text("Access comprehensive details about the current software version.\n\nAdditionally, you can easily report bugs using the button below.")
+                    Text("Access comprehensive details about the current software version.\nAdditionally, you can easily report bugs using the button below.")
                         .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             
             Section {
@@ -87,7 +88,7 @@ struct VersionView: View {
             
             Section {
                 Button(action: {
-                    if let url = URL(string: "https://forms.gle/o1hFjy4q98Ua1H7L7") {
+                    if let url = URL(string: "https://github.com/york9675/YorkNotify/issues") {
                         openURL(url)
                     }
                 }) {

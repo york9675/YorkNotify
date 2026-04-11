@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let whatNewVersion = "5"
+let whatNewVersion = "6"
 
 struct WhatsNewSheet: View {
     @AppStorage("customColor") private var customColorHex: String = ""
@@ -34,16 +34,9 @@ struct WhatsNewSheet: View {
             Spacer()
 
             FeatureRow(
-                systemImage: "clock.arrow.circlepath",
-                title: String(localized: "Notification History"),
-                description: String(localized: "Added notification history."),
-                color: customColor
-            )
-
-            FeatureRow(
-                systemImage: "ladybug.fill",
-                title: String(localized: "Bug Fixes"),
-                description: String(localized: "Other minor modifications and bug fixes to make this app better!"),
+                systemImage: "xmark.triangle.circle.square.fill",
+                title: String(localized: "Support Liquid Glass"),
+                description: String(localized: "Now support for OS 26's new Liquid Glass design."),
                 color: customColor
             )
 
@@ -56,23 +49,38 @@ struct WhatsNewSheet: View {
             }
             .padding(.bottom, 10)
 
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                    Spacer()
-                    Text(String(localized: "Continue"))
-                        .bold()
-                    Image(systemName: "arrow.forward")
-                    Spacer()
+            if #available(iOS 26.0, *) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Text(String(localized: "Continue"))
+                        Image(systemName: "arrow.forward")
+                    }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
                 }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .foregroundColor(.white)
-                .background(customColor)
-                .cornerRadius(10)
+                .liquidGlassProminentButtonIfAvailable()
+                .padding(.bottom, 20)
+            } else {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Spacer()
+                        Text(String(localized: "Continue"))
+                            .bold()
+                        Image(systemName: "arrow.forward")
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(customColor)
+                    .cornerRadius(10)
+                }
+                .padding(.bottom, 20)
             }
-            .padding(.bottom, 20)
         }
         .padding(.bottom)
         .padding(.horizontal)

@@ -4,7 +4,7 @@ Thank you for considering contributing to **YorkNotify**! Your contributions are
 
 ## How Can You Contribute?
 
-- **Report Bugs or Provide Feedback**: If you encounter any issues or have suggestions, please fill out [this form](https://forms.gle/o1hFjy4q98Ua1H7L7) or open an [issue](https://github.com/york9675/YorkNotify/issues).
+- **Report Bugs or Provide Feedback**: If you encounter any issues or have suggestions, please open an [issue](https://github.com/york9675/YorkNotify/issues).
 - **Improve Documentation**: Enhancements to documentation are always welcome.
 - **Submit Code Improvements**: You can fix bugs, add new features, or improve existing code.
 
