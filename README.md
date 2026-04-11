@@ -21,7 +21,7 @@
   <a href="README_TW.md">繁體中文</a> 
 </p>
 
-![iOS](./Screenshots/iOS.png)
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
 
 **YorkNotify** is a fully-featured, beautifully designed iOS app that makes scheduling notifications incredibly easy.
 
@@ -59,7 +59,7 @@ This guide will help you import this project into Xcode and run it on your iPhon
   <summary>Click to expand screenshots</summary>
 
 ### iOS
-![iOS](./Screenshots/iOS.png)
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
 
 ### iPadOS
 ![iPadOS](./Screenshots/iPadOS.png)
@@ -68,7 +68,7 @@ This guide will help you import this project into Xcode and run it on your iPhon
 ![macOS](./Screenshots/macOS.png)
 
 ### watchOS
-![watchOS](./Screenshots/watchOS.png)
+<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
 
 </details>
 

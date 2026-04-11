@@ -21,7 +21,7 @@
   <b>繁體中文</b> 
 </p>
 
-![iOS](./Screenshots/iOS.png)
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
 
 **YorkNotify** 是一款功能齊全、設計精美的 iOS 應用程式，讓排程通知變得非常簡單！
 
@@ -59,7 +59,7 @@
   <summary>Click to expand screenshots</summary>
 
 ### iOS
-![iOS](./Screenshots/iOS.png)
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
 
 ### iPadOS
 ![iPadOS](./Screenshots/iPadOS.png)
@@ -68,7 +68,7 @@
 ![macOS](./Screenshots/macOS.png)
 
 ### watchOS
-![watchOS](./Screenshots/watchOS.png)
+<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
 
 </details>
 
