@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let whatNewVersion = "6"
+let whatNewVersion = "7"
 
 struct WhatsNewSheet: View {
     @AppStorage("customColor") private var customColorHex: String = ""
@@ -37,6 +37,13 @@ struct WhatsNewSheet: View {
                 systemImage: "xmark.triangle.circle.square.fill",
                 title: String(localized: "Support Liquid Glass"),
                 description: String(localized: "Now support for OS 26's new Liquid Glass design."),
+                color: customColor
+            )
+
+            FeatureRow(
+                systemImage: "repeat.circle.fill",
+                title: String(localized: "Expanded Repeat Options"),
+                description: String(localized: "Added more repeat frequencies and the ability to set custom repeat intervals."),
                 color: customColor
             )
 

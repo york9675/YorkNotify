@@ -11,8 +11,7 @@
 		98079BD22CD2574D00D8C631 /* YorkNotifyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 98079BC52CD2574C00D8C631 /* YorkNotifyWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */; };
 		983370C62CAC1E6100B5EB72 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C52CAC1E6100B5EB72 /* NotificationListView.swift */; };
-		983370C82CAC1E9100B5EB72 /* CreateNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */; };
-		983370CA2CAC1EC400B5EB72 /* EditNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */; };
+		9A1111132E4A000100000007 /* NotificationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1111122E4A000100000006 /* NotificationSheetView.swift */; };
 		983370CC2CAC1F0500B5EB72 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */; };
 		983370D02CAC1F4700B5EB72 /* CustomColorSchemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */; };
 		983370D22CAC1F5E00B5EB72 /* DefaultContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */; };
@@ -32,7 +31,6 @@
 		986AF96C2F8A148100D53559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986AF95C2F8A148100D53559 /* Assets.xcassets */; };
 		986AF96D2F8A148100D53559 /* WatchNotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9612F8A148100D53559 /* WatchNotificationItem.swift */; };
 		986EF3272CAD3864009AC755 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */; };
-		987730E92DBB35A90081B278 /* CreateFromHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */; };
 		988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */; };
 		988516F62C2EEFA60025FCAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988516F52C2EEFA60025FCAC /* ContentView.swift */; };
 		988516F82C2EEFA70025FCAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988516F72C2EEFA70025FCAC /* Assets.xcassets */; };
@@ -75,8 +73,7 @@
 		98301D382C5D4024000CF262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		983370C32CAC1E1E00B5EB72 /* GlobalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUtils.swift; sourceTree = "<group>"; };
 		983370C52CAC1E6100B5EB72 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
-		983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotificationView.swift; sourceTree = "<group>"; };
-		983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotificationView.swift; sourceTree = "<group>"; };
+		9A1111122E4A000100000006 /* NotificationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSheetView.swift; sourceTree = "<group>"; };
 		983370CB2CAC1F0500B5EB72 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		983370CF2CAC1F4700B5EB72 /* CustomColorSchemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorSchemeView.swift; sourceTree = "<group>"; };
 		983370D12CAC1F5E00B5EB72 /* DefaultContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultContentView.swift; sourceTree = "<group>"; };
@@ -95,7 +92,6 @@
 		986AF9612F8A148100D53559 /* WatchNotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationItem.swift; sourceTree = "<group>"; };
 		986AF9622F8A148100D53559 /* YorkNotifyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YorkNotifyWatchApp.swift; sourceTree = "<group>"; };
 		986EF3262CAD3864009AC755 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
-		987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFromHistoryView.swift; sourceTree = "<group>"; };
 		988516F02C2EEFA60025FCAC /* YorkNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YorkNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988516F32C2EEFA60025FCAC /* YorkNotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YorkNotifyApp.swift; sourceTree = "<group>"; };
 		988516F52C2EEFA60025FCAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -225,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				9804735F2DB8BEE9007C61F2 /* NotificationHistoryView.swift */,
-				987730E82DBB35A90081B278 /* CreateFromHistoryView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -241,8 +236,7 @@
 		9A1111112E4A000100000005 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				983370C72CAC1E9100B5EB72 /* CreateNotificationView.swift */,
-				983370C92CAC1EC400B5EB72 /* EditNotificationView.swift */,
+				9A1111122E4A000100000006 /* NotificationSheetView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -377,7 +371,6 @@
 				983370D02CAC1F4700B5EB72 /* CustomColorSchemeView.swift in Sources */,
 				983370CC2CAC1F0500B5EB72 /* SettingsTabView.swift in Sources */,
 				983370C42CAC1E1E00B5EB72 /* GlobalUtils.swift in Sources */,
-				983370C82CAC1E9100B5EB72 /* CreateNotificationView.swift in Sources */,
 				988516F42C2EEFA60025FCAC /* YorkNotifyApp.swift in Sources */,
 				980473602DB8BEE9007C61F2 /* NotificationHistoryView.swift in Sources */,
 				986EF3272CAD3864009AC755 /* AcknowledgementsView.swift in Sources */,
@@ -388,11 +381,10 @@
 				98E1EEFE2D10533B00AB5DB0 /* VersionView.swift in Sources */,
 				983370D42CAC1F8500B5EB72 /* LabView.swift in Sources */,
 				983370DC2CAC1FF900B5EB72 /* IconView.swift in Sources */,
-				987730E92DBB35A90081B278 /* CreateFromHistoryView.swift in Sources */,
+				9A1111132E4A000100000007 /* NotificationSheetView.swift in Sources */,
 				983370D22CAC1F5E00B5EB72 /* DefaultContentView.swift in Sources */,
 				989D91C32CD76860000FDB7B /* PhoneConnectivityManager.swift in Sources */,
 				983370C62CAC1E6100B5EB72 /* NotificationListView.swift in Sources */,
-				983370CA2CAC1EC400B5EB72 /* EditNotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -456,7 +448,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -628,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -670,7 +662,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

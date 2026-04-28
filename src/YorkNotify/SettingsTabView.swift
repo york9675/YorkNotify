@@ -53,11 +53,11 @@ struct SettingsTabView: View {
 
                 }
 
-                Section {
-                    NavigationLink(destination: LabView()) {
-                        Label("Lab", systemImage: "flask")
-                    }
-                }
+//                Section {
+//                    NavigationLink(destination: LabView()) {
+//                        Label("Lab", systemImage: "flask")
+//                    }
+//                }
 
                 Section(header: Text("About"), footer: Text("© 2026 York Development")) {
                     NavigationLink(destination: HelpView()) {

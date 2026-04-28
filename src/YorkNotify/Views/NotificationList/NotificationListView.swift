@@ -13,7 +13,9 @@ struct NotificationListView: View {
     @StateObject private var connectivityManager = PhoneConnectivityManager.shared
     
     @State private var notifications: [NotificationItem] = []
+    @State private var nextNotificationDates: [UUID: Date] = [:]
     @State private var showingCreateView = false
+    @State private var editingNotification: NotificationItem?
     @State private var sortOrder: SortOrder = .time
     @State private var searchText = ""
     @State private var notificationToDelete: NotificationItem?
@@ -96,7 +98,9 @@ struct NotificationListView: View {
             return String(localized: "Tomorrow")
         } else {
             let formatter = DateFormatter()
-            formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "EEE, MMMM d", options: 0, locale: Locale.current)
+            let includeYear = !calendar.isDate(date, equalTo: Date(), toGranularity: .year)
+            let template = includeYear ? "EEE, MMMM d, yyyy" : "EEE, MMMM d"
+            formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: Locale.current)
             return formatter.string(from: date)
         }
     }
@@ -109,7 +113,9 @@ struct NotificationListView: View {
     
     @ViewBuilder
     private func notificationRow(for notification: NotificationItem) -> some View {
-        NavigationLink(destination: EditNotificationView(notification: notification, notifications: $notifications)) {
+        Button {
+            editingNotification = notification
+        } label: {
             VStack(alignment: .leading) {
                 Text(notification.title)
                     .font(.headline)
@@ -120,8 +126,16 @@ struct NotificationListView: View {
                      notification.time.formatted(date: .abbreviated, time: .shortened))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+
+                if let nextDate = nextNotificationDates[notification.id] {
+                    Text("Next: \(nextDate.formatted(date: .abbreviated, time: .shortened))")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .buttonStyle(.plain)
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button {
                 notificationToDelete = notification
@@ -183,6 +197,11 @@ struct NotificationListView: View {
                 }
             }
             .onAppear(perform: checkForUpdatesOnce)
+            .sheet(item: $editingNotification, onDismiss: {
+                refreshNotifications()
+            }) { notification in
+                NotificationSheetView(notification: notification, notifications: $notifications)
+            }
             .navigationTitle(greetingTitle)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -223,7 +242,7 @@ struct NotificationListView: View {
                         Label("Create Notification", systemImage: "plus")
                     }
                     .sheet(isPresented: $showingCreateView) {
-                        CreateNotificationView(notifications: $notifications)
+                        NotificationSheetView(notifications: $notifications)
                     }
                 }
             }
@@ -236,8 +255,9 @@ struct NotificationListView: View {
                         primaryButton: .destructive(Text("Delete")) {
                             if let notification = notificationToDelete,
                                let index = notifications.firstIndex(where: { $0.id == notification.id }) {
-                                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notification.id.uuidString])
+                                NotificationScheduler.removePendingRequests(for: notification.id)
                                 notifications.remove(at: index)
+                                saveNotifications(notifications)
                             }
                         },
                         secondaryButton: .cancel(Text("Cancel"))
@@ -274,13 +294,14 @@ struct NotificationListView: View {
         }
 
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
-            let activeIds = requests.map { $0.identifier }
+            let activeIds = Set(requests.compactMap { NotificationScheduler.baseNotificationId(from: $0.identifier) })
+            let pendingNextDates = NotificationScheduler.nextDatesByNotificationId(from: requests)
 
             var active: [NotificationItem] = []
             var history: [NotificationItem] = loadNotificationHistory()
 
             for notification in loadedNotifications {
-                if activeIds.contains(notification.id.uuidString) {
+                if activeIds.contains(notification.id) {
                     active.append(notification)
                 } else {
                     // Expired — move to history
@@ -292,6 +313,7 @@ struct NotificationListView: View {
 
             DispatchQueue.main.async {
                 self.notifications = active
+                self.nextNotificationDates = pendingNextDates
                 saveNotifications(active)
                 saveNotifications(history, key: "notificationHistory")
                 saveNotificationHistory(history)

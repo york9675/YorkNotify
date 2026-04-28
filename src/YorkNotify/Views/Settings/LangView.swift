@@ -61,8 +61,9 @@ struct LangView: View {
                 
                 if !isMacOS {
                     Button(action: {
-                        let url = URL(string: UIApplication.openSettingsURLString)!
-                        UIApplication.shared.open(url)
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            openURL(url)
+                        }
                     }) {
                         Label("App Settings", systemImage: "gear")
                     }
