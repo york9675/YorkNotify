@@ -14,6 +14,7 @@ struct NotificationHistoryView: View {
     @State private var searchText: String = ""
     @State private var pendingDeleteItem: NotificationItem?
     @State private var showDeleteConfirmation = false
+    @State private var selectedHistoryItem: NotificationItem?
     @AppStorage("groupByDate") private var groupByDate: Bool = true
     
     enum SortOrder: String, CaseIterable, Identifiable {
@@ -34,7 +35,9 @@ struct NotificationHistoryView: View {
     
     @ViewBuilder
     private func notificationRow(for item: NotificationItem) -> some View {
-        NavigationLink(destination: CreateFromHistoryView(notifications: $history, history: $history, sourceNotification: item)) {
+        Button(action: {
+            selectedHistoryItem = item
+        }) {
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.headline)
@@ -46,6 +49,7 @@ struct NotificationHistoryView: View {
                     .foregroundColor(.secondary)
             }
         }
+        .buttonStyle(.plain)
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive) {
                 pendingDeleteItem = item
@@ -117,6 +121,13 @@ struct NotificationHistoryView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Search History")
+            .sheet(item: $selectedHistoryItem) { item in
+                NotificationSheetView(
+                    sourceNotification: item,
+                    notifications: $history,
+                    history: $history
+                )
+            }
             .alert("Delete Notification?", isPresented: $showDeleteConfirmation, presenting: pendingDeleteItem) { item in
                 Button("Delete", role: .destructive) {
                     delete(item)
@@ -180,8 +191,11 @@ struct NotificationHistoryView: View {
     }
 
     private func formatSectionHeader(_ date: Date) -> String {
+        let calendar = Calendar.current
         let formatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "EEE, MMM d", options: 0, locale: Locale.current)
+        let includeYear = !calendar.isDate(date, equalTo: Date(), toGranularity: .year)
+        let template = includeYear ? "EEE, MMM d, yyyy" : "EEE, MMM d"
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: Locale.current)
         return formatter.string(from: date)
     }
 }

@@ -17,7 +17,6 @@ struct LabView: View {
     
     @AppStorage("enableExperimentalFeatures") private var enableExperimentalFeatures = false
     @AppStorage("enableTimeSensitiveNotifications") private var enableTimeSensitiveNotifications = false
-    @AppStorage("enableCustomFrequency") private var enableCustomFrequency = false
 
     var body: some View {
         Form {
@@ -48,7 +47,6 @@ struct LabView: View {
                         enableExperimentalFeatures = newValue
                         if !newValue {
                             enableTimeSensitiveNotifications = false
-                            enableCustomFrequency = false
                         }
                     }
                 ))
@@ -78,30 +76,6 @@ struct LabView: View {
                         .tint(.green)
                         .disabled(true)
                 }
-                
-                Section {
-                    HStack {
-                        Image(systemName: "square.and.pencil")
-                            .font(.largeTitle)
-                            .foregroundColor(Color.blue)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Custom Frequency")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            
-                            Text("Enable Custom Frequency to customize how often notifications are repeated. This allows you to choose the days of the week on which notifications should be sent regularly.")
-                                .font(.subheadline)
-                        }
-                        Spacer()
-                    }
-                    .padding(.vertical)
-                    
-                    Toggle("Enable", isOn: $enableCustomFrequency)
-                        .tint(.green)
-                        .disabled(true)
-                }
-                
             }
         }
         .navigationTitle("Lab")
