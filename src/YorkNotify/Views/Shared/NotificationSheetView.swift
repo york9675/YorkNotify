@@ -294,18 +294,25 @@ struct NotificationSheetView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
-                        attemptDismiss()
-                    }) {
+                    Group {
                         if #available(iOS 26.0, *) {
-                            Image(systemName: "xmark")
-                                .foregroundStyle(.primary)
+                            Button(action: {
+                                attemptDismiss()
+                            }) {
+                                Image(systemName: "xmark")
+                                    .foregroundStyle(.primary)
+                            }
+                            .tint(.primary)
+                            .accessibilityLabel("Cancel")
                         } else {
-                            Text("Cancel")
+                            Button(action: {
+                                attemptDismiss()
+                            }) {
+                                Text("Cancel")
+                            }
+                            .accessibilityLabel("Cancel")
                         }
                     }
-                    .tint(.primary)
-                    .accessibilityLabel("Cancel")
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -314,15 +321,27 @@ struct NotificationSheetView: View {
                         Button(action: {
                             activeAlert = .delete
                         }) {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
+                            if #available(iOS 26.0, *) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
+                            } else {
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                                    .bold()
+                            }
                         }
                     case .history:
                         Button(role: .destructive) {
                             activeAlert = .deleteHistory
                         } label: {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
+                            if #available(iOS 26.0, *) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.red)
+                            } else {
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                                    .bold()
+                            }
                         }
                     case .create:
                         Button(action: {
