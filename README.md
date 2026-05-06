@@ -33,13 +33,33 @@
 > [!NOTE]  
 > This application is not on the App Store because the developer cannot afford the Apple Developer Program membership fee. You need to install it on your device using Xcode. You are also welcome to sponsor developers through the Buy Me a Coffee button below, thank you!
 
+# Screenshots
+
+<details>
+  <summary>Click to expand screenshots</summary>
+
+## iOS
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
+
+## iPadOS
+![iPadOS](./Screenshots/iPadOS.png)
+
+## macOS
+![macOS](./Screenshots/macOS.png)
+
+## watchOS
+<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
+
+</details>
+
+---
+
 # installation
 
 This guide will help you import this project into Xcode and run it on your iPhone or iOS simulator.
 
 ## Table of Contents
 
-- [Screenshots](#screenshots)
 - [Prerequisites](#prerequisites)
 - [Steps to Import and Run the Project in Xcode](#steps-to-import-and-run-the-project-in-xcode)
   - [1. Clone the Repository](#1-clone-the-repository)
@@ -48,36 +68,13 @@ This guide will help you import this project into Xcode and run it on your iPhon
   - [4. Choose Your Target Device](#4-choose-your-target-device)
   - [5. Build and Run the App](#5-build-and-run-the-app)
 - [Troubleshooting](#troubleshooting)
-- [Bug report / Feedback](#bug-report--feedback)
-- [Contribution](#contribution)
-- [License](#license)
-- [Support](#support)
-
-## Screenshots
-
-<details>
-  <summary>Click to expand screenshots</summary>
-
-### iOS
-<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
-
-### iPadOS
-![iPadOS](./Screenshots/iPadOS.png)
-
-### macOS
-![macOS](./Screenshots/macOS.png)
-
-### watchOS
-<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
-
-</details>
 
 ## Prerequisites
 
 Before you begin, ensure that you have the following:
 
 - **A Computer** with macOS.
-- **Xcode** installed (requires macOS 13 or higher to support development for iOS 16 and above). You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835).
+- **Xcode** installed. You can download Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835/) or from the [Apple Developer website](https://developer.apple.com/download/all/?q=Xcode).
 - **iPhone/iPad** (physical device or simulator) requires iOS 16 or higher. If it is a physical machine, please enable "Developer Mode" first.
 - **Apple Developer Account** (free or paid) for code signing and device testing.
 
@@ -133,19 +130,21 @@ git clone https://github.com/york9675/YorkNotify.git
 
 - **Build Errors**: If you encounter build errors, check the build output in Xcode for clues on missing files, configurations, or dependencies.
 
-## Bug report / Feedback
+---
+
+# Bug report / Feedback
 
 If you encounter any problems during use or have feedback, please open an issue to report it.
 
-## Contribution
+# Contribution
 
 Feel free to contribute to this project by creating issues, submitting pull requests, or improving documentation.
 
-## License
+# License
 
 [MIT](LICENSE)
 
-## Support
+# Support
 
 If you believe in this project and would like to support its growth, here are a few ways you can contribute:
 
@@ -161,11 +160,11 @@ Or, you can simply give the project a :star:!
 
 _Thank you for taking the time to read and for any support you can offer. Together, we can improve this app and help more people!_
 
-## Star History
+# Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=york9675/YorkNotify&type=Date)](https://star-history.com/#york9675/YorkNotify&Date)
 
-***
+---
 
 © 2026 York Development
 

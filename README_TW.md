@@ -33,13 +33,33 @@
 > [!NOTE]  
 > 此應用程式由於開發者無法負擔那個貴死人的蘋果開發者計劃會費，因此未上架App Store，需要自行使用Xcode安裝到您的裝置上。歡迎透過下方Buy Me a Coffee按鈕贊助開發者，感謝！
 
+# 截圖
+
+<details>
+  <summary>Click to expand screenshots</summary>
+
+## iOS
+<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
+
+## iPadOS
+![iPadOS](./Screenshots/iPadOS.png)
+
+## macOS
+![macOS](./Screenshots/macOS.png)
+
+## watchOS
+<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
+
+</details>
+
+---
+
 # 安裝
 
 本指南將幫助您將此專案匯入 Xcode 並將此程式在 iPhone 或 iOS 模擬器上執行。
 
 ## 目錄
 
-- [截圖](#截圖)
 - [備料](#備料)
 - [在 Xcode 中匯入並執行專案的步驟](#在-xcode-中匯入並執行專案的步驟)
   - [1. 複製儲存庫](#1-複製儲存庫)
@@ -48,50 +68,27 @@
   - [4. 選擇您的目標設備](#4-選擇您的目標設備)
   - [5. 建置並運行應用程式](#5-建置並運行應用程式)
 - [故障排除](#故障排除)
-- [問題回報 / 意見回饋](#問題回報--意見回饋)
-- [貢獻](#貢獻)
-- [許可證](#許可證)
-- [贊助](#贊助)
-
-## 截圖
-
-<details>
-  <summary>Click to expand screenshots</summary>
-
-### iOS
-<img src="./Screenshots/iOS.png" alt="iOS" width="300" />
-
-### iPadOS
-![iPadOS](./Screenshots/iPadOS.png)
-
-### macOS
-![macOS](./Screenshots/macOS.png)
-
-### watchOS
-<img src="./Screenshots/watchOS.png" alt="watchOS" width="300" />
-
-</details>
 
 ## 備料
 
 在開始之前，請確保您具備以下條件：
 
 - **一台裝有 macOS 的電腦**。
-- **Xcode** (需要macOS 13 或更高版本以支援iOS 16以上的開發) 您可以從 [App Store](https://apps.apple.com/us/app/xcode/id497799835) 下載 Xcode。
+- 安裝 **Xcode**。您可以從 [App Store](https://apps.apple.com/us/app/xcode/id497799835/) 或 [Apple 開發者網站](https://developer.apple.com/download/all/?q=Xcode) 下載 Xcode。
 - **iPhone/iPad** (實體機或模擬機) 需要 iOS 16 或更高版本。如是實體機，請先開啟「開發者模式」。
 - **Apple 開發者帳戶** (免費或付費) 用於程式碼簽署和裝置測試。
 
 ## 在 Xcode 中匯入並執行專案的步驟
 
-### 1.複製儲存庫
+### 1. 複製儲存庫
 
 - 您可以從 GitHub 儲存庫下載 ZIP 檔案形式的項目，並將其解壓縮到您所需的位置。
 
 - 或者，使用 Git 將專案儲存庫複製到本機：
 
-````bash
+```bash
 git clone https://github.com/york9675/YorkNotify.git
-````
+```
 
 ### 2. 在 Xcode 中開啟項目
 
@@ -133,19 +130,21 @@ git clone https://github.com/york9675/YorkNotify.git
 
 - **建置錯誤**：如果遇到建置錯誤，請檢查 Xcode 中的建置輸出，以取得有關遺失檔案、配置或相依性的線索。
 
-## 問題回報 / 意見回饋
+---
+
+# 問題回報 / 意見回饋
 
 如在使用上遇到任何問題或是有意見回饋，請創建Issues來回報。
 
-## 貢獻
+# 貢獻
 
 請透過建立Issues、提交Pull Request或改進檔案來為該專案做出貢獻。
 
-## 許可證
+# 許可證
 
 [MIT](LICENSE)
 
-## 支持
+# 支持
 
 如果你認同這個專案並希望幫助它成長，以下是幾種支持的方式：
 
@@ -161,11 +160,11 @@ git clone https://github.com/york9675/YorkNotify.git
 
 _感謝你抽出時間閱讀，並感謝你提供的任何支持。讓我們一起改善這款應用程式，幫助更多的人！_
 
-## 星星歷史
+# 星星歷史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=york9675/YorkNotify&type=Date)](https://star-history.com/#york9675/YorkNotify&Date)
 
-***
+---
 
 © 2026 York Development
 
