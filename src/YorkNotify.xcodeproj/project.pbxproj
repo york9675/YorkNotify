@@ -21,7 +21,6 @@
 		983370DC2CAC1FF900B5EB72 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983370DB2CAC1FF900B5EB72 /* IconView.swift */; };
 		986AF9642F8A148100D53559 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95B2F8A148100D53559 /* AboutView.swift */; };
 		986AF9652F8A148100D53559 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95D2F8A148100D53559 /* ContentView.swift */; };
-		986AF9662F8A148100D53559 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95E2F8A148100D53559 /* NotificationListView.swift */; };
 		986AF9672F8A148100D53559 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF95F2F8A148100D53559 /* SettingsView.swift */; };
 		986AF9682F8A148100D53559 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */; };
 		986AF9692F8A148100D53559 /* WatchNotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986AF9612F8A148100D53559 /* WatchNotificationItem.swift */; };
@@ -85,7 +84,6 @@
 		986AF95B2F8A148100D53559 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		986AF95C2F8A148100D53559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		986AF95D2F8A148100D53559 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		986AF95E2F8A148100D53559 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		986AF95F2F8A148100D53559 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		986AF9612F8A148100D53559 /* WatchNotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNotificationItem.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				986AF95D2F8A148100D53559 /* ContentView.swift */,
-				986AF95E2F8A148100D53559 /* NotificationListView.swift */,
 				986AF95F2F8A148100D53559 /* SettingsView.swift */,
 				986AF95B2F8A148100D53559 /* AboutView.swift */,
 				986AF9602F8A148100D53559 /* WatchConnectivityManager.swift */,
@@ -354,7 +351,6 @@
 			files = (
 				986AF9642F8A148100D53559 /* AboutView.swift in Sources */,
 				986AF9652F8A148100D53559 /* ContentView.swift in Sources */,
-				986AF9662F8A148100D53559 /* NotificationListView.swift in Sources */,
 				986AF9672F8A148100D53559 /* SettingsView.swift in Sources */,
 				986AF9682F8A148100D53559 /* WatchConnectivityManager.swift in Sources */,
 				986AF9692F8A148100D53559 /* WatchNotificationItem.swift in Sources */,
@@ -418,8 +414,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
+				MARKETING_VERSION = 3.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -448,8 +444,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
+				MARKETING_VERSION = 3.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -620,8 +616,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
+				MARKETING_VERSION = 3.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -662,8 +658,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
+				MARKETING_VERSION = 3.1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
