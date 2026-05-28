@@ -405,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = YorkNotify;
@@ -414,8 +415,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify.watchkitapp;
+				MARKETING_VERSION = 3.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -435,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YorkNotifyWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Z27QLJCPBB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = YorkNotify;
@@ -444,8 +446,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify.watchkitapp;
+				MARKETING_VERSION = 3.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -616,8 +618,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify;
+				MARKETING_VERSION = 3.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -658,8 +660,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = io.qzz.york.yorknotify;
+				MARKETING_VERSION = 3.1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yorkdev.YorkNotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
