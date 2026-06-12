@@ -552,7 +552,7 @@ class CommonUtils {
 extension View {
     @ViewBuilder
     func liquidGlassTabBehavior() -> some View {
-        if #available(iOS 26.0, *) {
+        if #available(macOS 26.0, iOS 26.0, *) {
             self
                 .tabViewStyle(.sidebarAdaptable)
                 .tabBarMinimizeBehavior(.onScrollDown)
@@ -563,7 +563,7 @@ extension View {
 
     @ViewBuilder
     func liquidGlassProminentButtonIfAvailable() -> some View {
-        if #available(iOS 26.0, *) {
+        if #available(macOS 26.0, iOS 26.0, *) {
             self.buttonStyle(.glassProminent)
         } else {
             self
@@ -572,7 +572,7 @@ extension View {
 
     @ViewBuilder
     func liquidGlassButtonIfAvailable() -> some View {
-        if #available(iOS 26.0, *) {
+        if #available(macOS 26.0, iOS 26.0, *) {
             self.buttonStyle(.glass)
         } else {
             self

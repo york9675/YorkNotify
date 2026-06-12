@@ -3303,24 +3303,24 @@
         }
       }
     },
-    "You have unsaved changes. Are you sure you want to close this sheet?" : {
+    "You have unsaved changes." : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "未保存の変更があります。このシートを閉じてもよろしいですか？"
+            "value" : "保存されていない変更があります。"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您有未储存的变更。确定要关闭吗？"
+            "value" : "您有未储存的变更。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您有未儲存的變更。確定要關閉嗎？"
+            "value" : "您有未儲存的變更。"
           }
         }
       }

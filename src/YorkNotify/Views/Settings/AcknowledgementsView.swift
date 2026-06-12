@@ -36,7 +36,7 @@ struct AcknowledgementsView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }) {
-                        if #available(iOS 26.0, *) {
+                        if #available(macOS 26.0, iOS 26.0, *) {
                             Image(systemName: "xmark")
                                 .foregroundStyle(.primary)
                         } else {

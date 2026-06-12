@@ -56,7 +56,7 @@ struct WhatsNewSheet: View {
             }
             .padding(.bottom, 10)
 
-            if #available(iOS 26.0, *) {
+            if #available(macOS 26.0, iOS 26.0, *) {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {

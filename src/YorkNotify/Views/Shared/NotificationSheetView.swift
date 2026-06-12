@@ -48,7 +48,7 @@ struct NotificationSheetView: View {
     @State private var alertMessage = ""
 
     enum ActiveAlert: Identifiable {
-        case delete, deleteHistory, warning, proceedWithDefault, discardChanges
+        case delete, deleteHistory, warning, proceedWithDefault
 
         var id: String {
             switch self {
@@ -56,12 +56,12 @@ struct NotificationSheetView: View {
             case .deleteHistory: return "deleteHistory"
             case .warning: return "warning"
             case .proceedWithDefault: return "proceedWithDefault"
-            case .discardChanges: return "discardChanges"
             }
         }
     }
 
     @State private var activeAlert: ActiveAlert? = nil
+    @State private var showDiscardDialog = false
 
     @AppStorage("defaultNotificationTitle") private var defaultTitle: String = "York Notify"
     @AppStorage("defaultNotificationContent") private var defaultContent: String = "Please remember."
@@ -295,7 +295,7 @@ struct NotificationSheetView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Group {
-                        if #available(iOS 26.0, *) {
+                        if #available(macOS 26.0, iOS 26.0, *) {
                             Button(action: {
                                 attemptDismiss()
                             }) {
@@ -304,6 +304,18 @@ struct NotificationSheetView: View {
                             }
                             .tint(.primary)
                             .accessibilityLabel("Cancel")
+                            .confirmationDialog(
+                                "Discard Changes?",
+                                isPresented: $showDiscardDialog,
+                                titleVisibility: .visible
+                            ) {
+                                Button("Discard", role: .destructive) {
+                                    forceDismiss()
+                                }
+                                Button("Cancel", role: .cancel) {}
+                            } message: {
+                                Text("You have unsaved changes.")
+                            }
                         } else {
                             Button(action: {
                                 attemptDismiss()
@@ -311,6 +323,18 @@ struct NotificationSheetView: View {
                                 Text("Cancel")
                             }
                             .accessibilityLabel("Cancel")
+                            .confirmationDialog(
+                                "Discard Changes?",
+                                isPresented: $showDiscardDialog,
+                                titleVisibility: .visible
+                            ) {
+                                Button("Discard", role: .destructive) {
+                                    forceDismiss()
+                                }
+                                Button("Cancel", role: .cancel) {}
+                            } message: {
+                                Text("You have unsaved changes.")
+                            }
                         }
                     }
                 }
@@ -321,7 +345,7 @@ struct NotificationSheetView: View {
                         Button(action: {
                             activeAlert = .delete
                         }) {
-                            if #available(iOS 26.0, *) {
+                            if #available(macOS 26.0, iOS 26.0, *) {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)
                             } else {
@@ -334,7 +358,7 @@ struct NotificationSheetView: View {
                         Button(role: .destructive) {
                             activeAlert = .deleteHistory
                         } label: {
-                            if #available(iOS 26.0, *) {
+                            if #available(macOS 26.0, iOS 26.0, *) {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)
                             } else {
@@ -353,7 +377,7 @@ struct NotificationSheetView: View {
                                 activeAlert = .warning
                             }
                         }) {
-                            if #available(iOS 26.0, *) {
+                            if #available(macOS 26.0, iOS 26.0, *) {
                                 Image(systemName: "checkmark")
                                     .opacity(0)
                             } else {
@@ -363,7 +387,7 @@ struct NotificationSheetView: View {
                         }
                         .liquidGlassProminentButtonIfAvailable()
                         .overlay {
-                            if #available(iOS 26.0, *) {
+                            if #available(macOS 26.0, iOS 26.0, *) {
                                 Image(systemName: "checkmark")
                                     .foregroundStyle(.white)
                             }
@@ -419,20 +443,6 @@ struct NotificationSheetView: View {
                                 content = defaultContent
                             }
                             saveNotification()
-                        },
-                        secondaryButton: .cancel(Text("Cancel"))
-                    )
-
-                case .discardChanges:
-                    return Alert(
-                        title: Text("Discard Changes?"),
-                        message: Text("You have unsaved changes. Are you sure you want to close this sheet?"),
-                        primaryButton: .destructive(Text("Discard")) {
-                            if isEditMode {
-                                dismiss()
-                            } else {
-                                presentationMode.wrappedValue.dismiss()
-                            }
                         },
                         secondaryButton: .cancel(Text("Cancel"))
                     )
@@ -592,13 +602,17 @@ struct NotificationSheetView: View {
 
     private func attemptDismiss() {
         if hasChanges {
-            activeAlert = .discardChanges
+            showDiscardDialog = true
         } else {
-            if isEditMode {
-                dismiss()
-            } else {
-                presentationMode.wrappedValue.dismiss()
-            }
+            forceDismiss()
+        }
+    }
+
+    private func forceDismiss() {
+        if isEditMode {
+            dismiss()
+        } else {
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }
