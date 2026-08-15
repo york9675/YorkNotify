@@ -1,3 +1,5 @@
+
+
 ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=YorkNotify&desc=An%20iOS%20app%20that%20can%20schedule%20notifications.&descAlign=50&descAlignY=65&section=header&animation=fadeIn)
 
 <p align="center">
@@ -93,7 +95,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 2. Open the Project in Xcode
 
 1. **Open Xcode**.
-2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `YorkNotify/src/YorkNotify.xcodeproj`.
+2. **Open the Project**: Navigate to the directory where you cloned/downloaded the project, then open the `src/YorkNotify.xcodeproj`.
 
 ### 3. Set Up Signing & Capabilities
 
@@ -109,7 +111,7 @@ git clone https://github.com/york9675/YorkNotify.git
 ### 4. Choose Your Target Device
 
 1. In the top toolbar, select your target device (e.g., iPhone simulator or your connected iPhone) from the dropdown menu.
-2. Ensure your device is connected via USB or select a simulator if you don’t have a physical device available.
+2. Ensure your device is connected via USB or select a simulator if you don't have a physical device available.
 
 ### 5. Build and Run the App
 
