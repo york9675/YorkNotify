@@ -31,7 +31,7 @@
 - 💸 **免費和開源**：無廣告、無花費，完全透明！
 
 > [!NOTE]  
-> 此應用程式由於開發者無法負擔那個貴死人的蘋果開發者計劃會費，因此未上架App Store，需要自行使用Xcode安裝到您的裝置上。歡迎透過下方Buy Me a Coffee按鈕贊助開發者，感謝！
+> 此應用程式由於開發者無法負擔那個貴死人的蘋果開發者計劃會費，因此未上架App Store，需要自行使用Xcode安裝到您的裝置上。歡迎透過下方Ko-fi按鈕贊助開發者，感謝！
 
 # 截圖
 
@@ -148,13 +148,13 @@ git clone https://github.com/york9675/YorkNotify.git
 
 如果你認同這個專案並希望幫助它成長，以下是幾種支持的方式：
 
-- **捐款：** 無論金額大小，都能幫助我。你可以透過下方的 [Buy Me a Coffee](https://buymeacoffee.com/york0524) 按鈕贊助這個專案！
+- **捐款：** 無論金額大小，都能幫助我。你可以透過下方的 [Ko-fi](https://ko-fi.com/york0524) 按鈕贊助這個專案！
 - **分享：** 將這個專案分享給你的朋友、家人，或任何可能受益或支持的人！
 - **合作：** 如果你是開發者、設計師，或者有改進建議，歡迎透過創建Issues、提交 Pull Requests或改善文件來為這個專案做出貢獻！
 
 無論你選擇如何支持，這都將幫助我解鎖這款應用程式的全部潛力，並保持它對所有人免費。感謝你幫助我維持這個願景的實現！
 
-<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q4T226QWSQ)
 
 或者，您也可以簡單的給顆 :star: ！
 

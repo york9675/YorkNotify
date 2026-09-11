@@ -422,24 +422,24 @@
         }
       }
     },
-    "Buy Me A Coffee" : {
+    "Ko-fi" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Me A Coffee"
+            "value" : "Ko-fi"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Me A Coffee"
+            "value" : "Ko-fi"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Me A Coffee"
+            "value" : "Ko-fi"
           }
         }
       }

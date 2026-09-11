@@ -31,7 +31,7 @@
 - 💸 **Free & Open Source**: No ads, no cost, and fully transparent.
 
 > [!NOTE]  
-> This application is not on the App Store because the developer cannot afford the Apple Developer Program membership fee. You need to install it on your device using Xcode. You are also welcome to sponsor developers through the Buy Me a Coffee button below, thank you!
+> This application is not on the App Store because the developer cannot afford the Apple Developer Program membership fee. You need to install it on your device using Xcode. You are also welcome to sponsor developers through the Ko-fi button below, thank you!
 
 # Screenshots
 
@@ -148,13 +148,13 @@ Feel free to contribute to this project by creating issues, submitting pull requ
 
 If you believe in this project and would like to support its growth, here are a few ways you can contribute:
 
-- **Donate:** Any amount, large or small, will help me. You can sponsor the project via [Buy Me a Coffee](https://buymeacoffee.com/york0524) using the button below!
+- **Donate:** Any amount, large or small, will help me. You can sponsor the project via [Ko-fi](https://ko-fi.com/york0524) using the button below!
 - **Spread the Word:** Share this project with your network—friends, family, or anyone who might benefit from or support it!
 - **Collaborate:** If you’re a developer, designer, or have ideas for improvement, feel free to contribute to the project by creating issues, submitting pull requests, or improving documentation!
 
 Your support, in any form, will help unlock the full potential of this app and keep it free for everyone. Thank you for helping keep this vision alive!
 
-<p><a href="https://www.buymeacoffee.com/york0524"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="york0524" /></a></p><br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q4T226QWSQ)
 
 Or, you can simply give the project a :star:!
 

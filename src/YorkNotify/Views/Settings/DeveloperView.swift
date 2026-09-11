@@ -104,12 +104,12 @@ struct DeveloperView: View {
             // Donate Section
             Section(header: Text("Donate")) {
                 Button(action: {
-                    if let url = URL(string: "https://www.buymeacoffee.com/york0524") {
+                    if let url = URL(string: "https://ko-fi.com/york0524") {
                         openURL(url)
                     }
                 }) {
                     HStack {
-                        Label("Buy Me A Coffee", systemImage: "cup.and.saucer")
+                        Label("Ko-fi", systemImage: "cup.and.saucer")
                         Spacer()
                         Image(systemName: "arrow.up.right.square")
                     }
